@@ -1,7 +1,7 @@
 package com.flightreservationsystem.model.services.registerservice;
 
 
-import com.flightreservationsystem.model.domain.FlightComposite;
+import com.flightreservationsystem.model.domain.ReserveFlight;
 
 /**
  * Service Interface for Register
@@ -17,6 +17,6 @@ public interface IRegisterSvc {
 	 * @return 
 	 */
 	
-	public boolean storeCustomer(FlightComposite flightComposite);
+	public boolean storeCustomer(ReserveFlight reserveFlight);
 	
 }

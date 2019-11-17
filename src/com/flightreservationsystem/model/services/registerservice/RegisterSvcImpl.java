@@ -1,7 +1,7 @@
 package com.flightreservationsystem.model.services.registerservice;
 
 
-import com.flightreservationsystem.model.domain.FlightComposite;
+import com.flightreservationsystem.model.domain.ReserveFlight;
 
 /**
  * Register Service Implementation
@@ -14,15 +14,10 @@ public class RegisterSvcImpl implements IRegisterSvc {
 	/**
 	 * implements storeCustomer from interface
 	 */
-	public boolean storeCustomer(FlightComposite flightComposite) {
+	public boolean storeCustomer(ReserveFlight reserveFlight) {
 		System.out.println("Entering method RegisterSvcImpl::storeCustomer");
 		return true;
 	}
-	
-	
-
-
-	
 	
 	
 

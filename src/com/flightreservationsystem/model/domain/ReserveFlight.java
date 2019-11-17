@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  */
 
-public class FlightComposite implements Serializable{
+public class ReserveFlight implements Serializable{
 
 	
 	/** 
@@ -24,7 +24,7 @@ public class FlightComposite implements Serializable{
 	/**
 	 * Default constructor
 	 */
-	public FlightComposite() {
+	public ReserveFlight() {
 		
 	}
 	/**
@@ -34,7 +34,7 @@ public class FlightComposite implements Serializable{
 	 * @param flight
 	 * @param availableFlights
 	 */
-	public FlightComposite(Customer customer, Flight flight, AvailableFlights availableFlights) {
+	public ReserveFlight(Customer customer, Flight flight, AvailableFlights availableFlights) {
 		this.customer = customer;
 		this.flight = flight;
 		this.availableFlights = availableFlights;
@@ -83,7 +83,7 @@ public class FlightComposite implements Serializable{
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("FlightComposite [customer=");
+		builder.append("ReserveFlight [customer=");
 		builder.append(customer);
 		builder.append(", flight=");
 		builder.append(flight);

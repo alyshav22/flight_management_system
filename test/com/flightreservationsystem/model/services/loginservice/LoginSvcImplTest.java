@@ -1,6 +1,8 @@
 package com.flightreservationsystem.model.services.loginservice;
 
 import org.junit.Assert;
+import org.junit.Test;
+
 import com.flightreservationsystem.model.domain.Customer;
 import com.flightreservationsystem.model.domain.Manager;
 import com.flightreservationsystem.model.services.factory.ServiceFactory;
@@ -24,6 +26,7 @@ public class LoginSvcImplTest extends TestCase {
 	
 	/**
 	 * Instantiates needed object for all test and configure test environment
+	 * @throws java.lang.Exception
 	 */
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -39,6 +42,7 @@ public class LoginSvcImplTest extends TestCase {
 	/**
 	 * Asserts if you can retrieve manager using services
 	 */
+	@Test
 	public final void testVerifyManager() {
 		ILoginSvc loginSvc = (ILoginSvc)serviceFactory.getLoginSvc();
 		Assert.assertTrue(loginSvc.verifyManager(manager));
@@ -48,6 +52,7 @@ public class LoginSvcImplTest extends TestCase {
 	/**
 	 * Asserts if you can retrieve customer using services
 	 */
+	@Test
 	public final void testVerifyCustomer() {
 		ILoginSvc loginSvc = (ILoginSvc)serviceFactory.getLoginSvc();
 		Assert.assertTrue(loginSvc.verifyCustomer(customer));

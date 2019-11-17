@@ -16,7 +16,7 @@ public class LoginSvcImpl implements ILoginSvc {
 	 * Implements verifyCustomer from interface
 	 */
 	public boolean verifyCustomer(Customer customer) {
-		System.out.println("Entering method LoginSvcImpl::verifyCustomer");
+		System.out.println("Starting method LoginSvcImpl: verifyCustomer");
 		return true;
 	}
 	
@@ -24,7 +24,7 @@ public class LoginSvcImpl implements ILoginSvc {
 	 * Implements verifyManager from interface
 	 */
 	public boolean verifyManager(Manager manager) {
-		System.out.println("Entering method LoginSvcImpl::verifyManager");
+		System.out.println("Starting method LoginSvcImpl: verifyManager");
 		return true;
 	}
 

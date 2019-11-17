@@ -3,6 +3,8 @@ package com.flightreservationsystem.model.services.factory;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Test;
+
 import com.flightreservationsystem.model.services.loginservice.ILoginSvc;
 import com.flightreservationsystem.model.services.loginservice.LoginSvcImpl;
 import com.flightreservationsystem.model.services.registerservice.IRegisterSvc;
@@ -36,12 +38,14 @@ public class ServiceFactoryTest {
 	 * Test will try to get Login Service and check 
 	 * if its an instance of LoginSvcImpl
 	 */
-
+	
+	@Test
 	public void testGetLoginSvc() {
 		ILoginSvc loginSvc = (ILoginSvc)serviceFactory.getLoginSvc();
 		assertTrue(loginSvc instanceof LoginSvcImpl);
 	}
 	
+	@Test
 	/**
 	 * Test will try to get Register Service 
 	 * and check if its an instance of RegisterSvcImpl
