@@ -6,6 +6,11 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
+/**
+ * CustomerTest tests validate and equal methods for the domain class Customer.
+ * @author alysha_velasquez
+ *
+ */
 public class CustomerTest extends TestCase{
 
 	/**

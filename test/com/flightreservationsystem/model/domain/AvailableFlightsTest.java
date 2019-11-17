@@ -6,6 +6,11 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
+/**
+ * AvailableFlightTest tests equal and validate methods for the domain AvailableFlights class
+ * @author alysha_velasquez
+ *
+ */
 public class AvailableFlightsTest extends TestCase{
 
 	/**

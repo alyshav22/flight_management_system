@@ -5,6 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * ReserveFlightTest test the validate method 
+ * and default constructor for the Domain class ReserveFlight
+ * @author alysha_velasquez
+ *
+ */
 public class ReserveFlightTest {
 
 	// Declare Instance variables
