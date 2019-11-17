@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import junit.framework.TestCase;
+
 /**
  * 
  * Domain FlightTest layer tests equal and validate methods 
@@ -13,7 +15,7 @@ import org.junit.Test;
  */
 
 
-public class FlightTest {
+public class FlightTest extends TestCase{
 
 	/**
 	 * Tests if a valid Flight is being passed in

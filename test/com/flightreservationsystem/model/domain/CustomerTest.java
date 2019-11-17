@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CustomerTest {
+import junit.framework.TestCase;
+
+public class CustomerTest extends TestCase{
 
 	/**
 	 * Tests if valid Customer is being passed in

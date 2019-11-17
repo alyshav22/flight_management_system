@@ -4,7 +4,7 @@ import com.flightreservationsystem.model.domain.Customer;
 import com.flightreservationsystem.model.domain.Manager;
 
 /**
- * 
+ * Login Service Implementation
  * @author alysha_velasquez
  *
  */
@@ -12,15 +12,19 @@ import com.flightreservationsystem.model.domain.Manager;
 
 public class LoginSvcImpl implements ILoginSvc {
 
-	
-	public boolean authenticateCustomer(Customer customer) {
-		System.out.println("Entering method LoginSvcImpl::authenticateCustomer");
+	/**
+	 * Implements verifyCustomer from interface
+	 */
+	public boolean verifyCustomer(Customer customer) {
+		System.out.println("Entering method LoginSvcImpl::verifyCustomer");
 		return true;
 	}
-
-
-	public boolean authenticateManager(Manager manager) {
-		System.out.println("Entering method LoginSvcImpl::authenticateManager");
+	
+	/**
+	 * Implements verifyManager from interface
+	 */
+	public boolean verifyManager(Manager manager) {
+		System.out.println("Entering method LoginSvcImpl::verifyManager");
 		return true;
 	}
 

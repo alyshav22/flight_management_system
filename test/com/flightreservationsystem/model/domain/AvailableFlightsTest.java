@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class AvailableFlightsTest {
+import junit.framework.TestCase;
+
+public class AvailableFlightsTest extends TestCase{
 
 	/**
 	 * Tests if two AvailableFlights are equal

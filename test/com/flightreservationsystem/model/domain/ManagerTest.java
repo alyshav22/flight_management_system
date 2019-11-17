@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import junit.framework.TestCase;
+
 /**
  * 
  * Domain ManagerTest layer tests validate and 
@@ -14,7 +16,7 @@ import org.junit.Test;
  *
  */
 
-public class ManagerTest {
+public class ManagerTest extends TestCase{
 
 	/**
 	 * Tests if a valid Manager is being passed in
