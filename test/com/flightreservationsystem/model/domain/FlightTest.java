@@ -1,8 +1,8 @@
 package com.flightreservationsystem.model.domain;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * 
@@ -12,7 +12,8 @@ import org.junit.jupiter.api.Test;
  *
  */
 
-class FlightTest {
+
+public class FlightTest {
 
 	/**
 	 * Tests if a valid Flight is being passed in

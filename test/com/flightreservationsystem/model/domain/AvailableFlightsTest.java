@@ -1,18 +1,10 @@
 package com.flightreservationsystem.model.domain;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-
-/**
- * Domain class AvailableFlightsTests test equal and validate methods 
- * for Domain class AvailableFlightsTest
- * 
- * @author alysha_velasquez
- *
- */
-class AvailableFlightsTest {
+public class AvailableFlightsTest {
 
 	/**
 	 * Tests if two AvailableFlights are equal

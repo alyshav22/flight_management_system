@@ -1,18 +1,10 @@
 package com.flightreservationsystem.model.domain;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-
-/**
- * Domain CustomerTest class tests validate and equal methods 
- * with the Domain Customer class
- * 
- * @author alysha_velasquez
- */
-
-class CustomerTest {
+public class CustomerTest {
 
 	/**
 	 * Tests if valid Customer is being passed in
@@ -45,4 +37,5 @@ class CustomerTest {
 		assertTrue("c2 equals c3", c2.equals(c3));
 		System.out.println("CustomerTest: testEqualsCustomer PASSED");
 	}
+
 }

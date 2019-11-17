@@ -1,8 +1,8 @@
 package com.flightreservationsystem.model.domain;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * 
