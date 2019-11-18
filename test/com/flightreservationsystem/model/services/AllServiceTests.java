@@ -10,7 +10,7 @@ import com.flightreservationsystem.model.services.loginservice.LoginSvcImplTest;
 import com.flightreservationsystem.model.services.registerservice.RegisterSvcImplTest;
 
 /**
- * TestSuite for service layer components
+ * Test Suite for service layer components
  * @author alysha_velasquez
  *
  */
