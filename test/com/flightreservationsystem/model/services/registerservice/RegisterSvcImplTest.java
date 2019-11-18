@@ -1,9 +1,6 @@
 package com.flightreservationsystem.model.services.registerservice;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import com.flightreservationsystem.model.domain.Customer;
