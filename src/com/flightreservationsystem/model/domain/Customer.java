@@ -19,9 +19,9 @@ public class Customer implements Serializable {
 
 	
 	/**
-	 * holds customer id
+	 * holds customer ID
 	 */
-	private String customerId;
+	private int customerID;
 	/**
 	 * holds customer full name
 	 */
@@ -39,150 +39,145 @@ public class Customer implements Serializable {
 	 */
 	private String email;
 	/**
-	 * holds customer password
-	 */
-	private String password;
-	/**
-	 * holds credit card number
+	 * holds customer credit card number
 	 */
 	private int creditCard;
-
 	
 	/**
-	 * default constructor
+	 * holds login information
 	 */
-	public Customer() {
-	}
+	private User user;
 
+	
+	public Customer() {
+		this(555,"name","phone","address","email",111, new User());
+	}
+	
 	/**
-	 * Override default constructor
-	 * 
-	 * @param customerId
+	 * @param customerID
 	 * @param customerName
 	 * @param phoneNumber
 	 * @param address
 	 * @param email
-	 * @param password
 	 * @param creditCard
+	 * @param user
 	 */
-	public Customer(String customerId, String customerName, String phoneNumber, String address, String email,
-			String password, int creditCard) {
-		this.customerId = customerId;
+	public Customer(int customerID, String customerName, String phoneNumber, String address, String email,
+			int creditCard, User user) {
+		this.customerID = customerID;
 		this.customerName = customerName;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.email = email;
-		this.password = password;
 		this.creditCard = creditCard;
+		this.user = user;
 	}
 
 	/**
-	 * Get customer id
-	 * @return the customerId
+	 * @return the customerID
 	 */
-	public String getCustomerId() {
-		return customerId;
+	public int getCustomerID() {
+		return customerID;
 	}
+
 	/**
-	 * Set customer id
-	 * @param customerId to set customerId 
+	 * @param customerID the customerID to set
 	 */
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
 	}
+
 	/**
-	 * Get customer name
 	 * @return the customerName
 	 */
 	public String getCustomerName() {
 		return customerName;
 	}
+
 	/**
-	 * Set customer name
-	 * @param customerName to set customerName 
+	 * @param customerName the customerName to set
 	 */
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+
 	/**
-	 * Get customer phone number
 	 * @return the phoneNumber
 	 */
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	/**
-	 * Set customer phone number
-	 * @param phoneNumber to set phoneNumber
+	 * @param phoneNumber the phoneNumber to set
 	 */
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	/**
-	 * Get customer address
 	 * @return the address
 	 */
 	public String getAddress() {
 		return address;
 	}
+
 	/**
-	 * Set customer address
-	 * @param address the to set address
+	 * @param address the address to set
 	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	/**
-	 * Get customer email
 	 * @return the email
 	 */
 	public String getEmail() {
 		return email;
 	}
+
 	/**
-	 * Set customer email
-	 * @param email to set email
+	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	/**
-	 * Get customer password
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-	/**
-	 * Set customer password
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	/**
-	 * Get customer credit card
 	 * @return the creditCard
 	 */
 	public int getCreditCard() {
 		return creditCard;
 	}
+
 	/**
-	 * Set customer credit card
-	 * @param creditCard to set creditCard
+	 * @param creditCard the creditCard to set
 	 */
 	public void setCreditCard(int creditCard) {
 		this.creditCard = creditCard;
 	}
 
-	
+	/**
+	 * @return the user
+	 */
+	public User getUser() {
+		return user;
+	}
+
+	/**
+	 * @param user the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	/**
 	 * Validate if the instance variables are valid
 	 * @return boolean - true if instance variables are valid, else false.
 	 */
 	public boolean validate() {
 
-		if (this.customerId == null) {
+		if (this.customerID == 0) {
 			return false;
 		}
 		if (this.customerName == null) {
@@ -197,40 +192,30 @@ public class Customer implements Serializable {
 		if (this.email == null) {
 			return false;
 		}
-		if (this.password == null) {
+		if (this.creditCard == 0) {
 			return false;
 		}
-		if (this.creditCard == 0) {
+		if (this.user == null) {
 			return false;
 		}
 
 		return true;
 	}
 
-	
-	/**
-	 * Override HashCode when overriding equals method
-	 * @return result is the hash value.
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + creditCard;
-		result = prime * result + ((customerId == null) ? 0 : customerId.hashCode());
+		result = prime * result + customerID;
 		result = prime * result + ((customerName == null) ? 0 : customerName.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
-	/**
-	 * Overriding default equals method from Object Class
-	 * @param obj - Inherited from Object
-	 * @return boolean - False if any of the test fail equality default return true
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -247,10 +232,7 @@ public class Customer implements Serializable {
 			return false;
 		if (creditCard != other.creditCard)
 			return false;
-		if (customerId == null) {
-			if (other.customerId != null)
-				return false;
-		} else if (!customerId.equals(other.customerId))
+		if (customerID != other.customerID)
 			return false;
 		if (customerName == null) {
 			if (other.customerName != null)
@@ -262,28 +244,38 @@ public class Customer implements Serializable {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
 		if (phoneNumber == null) {
 			if (other.phoneNumber != null)
 				return false;
 		} else if (!phoneNumber.equals(other.phoneNumber))
 			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
 		return true;
 	}
 
-	/**
-	 * @return Customer information in string format
-	 */
 	@Override
 	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName 
-				+ ", phoneNumber=" + phoneNumber + ", address=" 
-				+ address + ", email=" + email + ", password=" + password 
-				+ ", creditCard=" + creditCard
-				+ "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Customer [customerID=");
+		builder.append(customerID);
+		builder.append(", customerName=");
+		builder.append(customerName);
+		builder.append(", phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", address=");
+		builder.append(address);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", creditCard=");
+		builder.append(creditCard);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append("]");
+		return builder.toString();
 	}
+	
 }

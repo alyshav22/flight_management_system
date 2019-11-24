@@ -3,7 +3,7 @@ package com.flightreservationsystem.model.domain;
 import java.io.Serializable;
 
 /**
- * Domain Manager class holds managerId, managerName, workPhone, workEmail, and
+ * Domain Manager class holds managerID, managerName, workPhone, workEmail, and
  * managerPassword
  * 
  * @author alysha_velasquez
@@ -18,7 +18,7 @@ public class Manager implements Serializable {
 	/**
 	 * holds manager id
 	 */
-	private int managerId;
+	private int managerID;
 
 	/**
 	 * holds full name of manager
@@ -36,174 +36,126 @@ public class Manager implements Serializable {
 	private String workEmail;
 
 	/**
-	 * holds manager password
+	 * holds login information
 	 */
-	private String managerPassword;
+	private User user;
 
 	/**
-	 * default constructor
+	 * default constructor for Manager that calls overloaded constructor with default values
 	 */
 	public Manager() {
+		this(999,"name","phone","email",new User());
 	}
 
+
 	/**
-	 * Override default constructor
-	 * 
-	 * @param managerId
+	 * @param managerID
 	 * @param managerName
 	 * @param workPhone
 	 * @param workEmail
-	 * @param managerPassword
+	 * @param user
 	 */
-	public Manager(int managerId, String managerName, String workPhone, String workEmail, String managerPassword) {
-		this.managerId = managerId;
+	public Manager(int managerId, String managerName, String workPhone, String workEmail, User user) {
+		this.managerID = managerId;
 		this.managerName = managerName;
 		this.workPhone = workPhone;
 		this.workEmail = workEmail;
-		this.managerPassword = managerPassword;
+		this.user = user;
 	}
 
 	/**
-	 * Get manager id
-	 * 
-	 * @return the managerId
+	 * @return the managerID
 	 */
-	public int getManagerId() {
-		return managerId;
+	public int getManagerID() {
+		return managerID;
 	}
 
+
 	/**
-	 * Set manager id
-	 * 
-	 * @param managerId set managerId
+	 * @param managerID the managerID to set
 	 */
-	public void setManagerId(int managerId) {
-		this.managerId = managerId;
+	public void setManagerID(int managerId) {
+		this.managerID = managerId;
 	}
 
+
 	/**
-	 * Get the full name of manager
-	 * 
 	 * @return the managerName
 	 */
 	public String getManagerName() {
 		return managerName;
 	}
 
+
 	/**
-	 * Set manager name
-	 * 
-	 * @param managerName to set managerName
+	 * @param managerName the managerName to set
 	 */
 	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
 
+
 	/**
-	 * Get manager work phone number
-	 * 
 	 * @return the workPhone
 	 */
 	public String getWorkPhone() {
 		return workPhone;
 	}
 
+
 	/**
-	 * Set manager work phone number
-	 * 
-	 * @param workPhone to set set workPhone
+	 * @param workPhone the workPhone to set
 	 */
 	public void setWorkPhone(String workPhone) {
 		this.workPhone = workPhone;
 	}
 
+
 	/**
-	 * Get manager work email
-	 * 
 	 * @return the workEmail
 	 */
 	public String getWorkEmail() {
 		return workEmail;
 	}
 
+
 	/**
-	 * Set manager work email
-	 * 
-	 * @param workEmail to set workEmail
+	 * @param workEmail the workEmail to set
 	 */
 	public void setWorkEmail(String workEmail) {
 		this.workEmail = workEmail;
 	}
 
+
 	/**
-	 * Get manager password
-	 * 
-	 * @return the managerPassword
+	 * @return the user
 	 */
-	public String getManagerPassword() {
-		return managerPassword;
+	public User getUser() {
+		return user;
 	}
 
-	/**
-	 * Set manager password
-	 * 
-	 * @param managerPassword to set managerPassword
-	 */
-	public void setManagerPassword(String managerPassword) {
-		this.managerPassword = managerPassword;
-	}
-	
-	
 
 	/**
-	 * Validate if the instance variables are valid
-	 * 
-	 * @return boolean - true if instance variables are valid, else false
+	 * @param user the user to set
 	 */
-	public boolean validate() {
-
-		if (this.managerId == 0) {
-			return false;
-		}
-		if (this.managerName == null) {
-			return false;
-		}
-
-		if (this.workPhone == null) {
-			return false;
-		}
-		if (this.workEmail == null) {
-			return false;
-		}
-		if (this.managerPassword == null) {
-			return false;
-		}
-		return true;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	/**
-	 * Override HashCode when overriding equals method
-	 * 
-	 * @return result - the hash value
-	 */
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + managerId;
+		result = prime * result + managerID;
 		result = prime * result + ((managerName == null) ? 0 : managerName.hashCode());
-		result = prime * result + ((managerPassword == null) ? 0 : managerPassword.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		result = prime * result + ((workEmail == null) ? 0 : workEmail.hashCode());
 		result = prime * result + ((workPhone == null) ? 0 : workPhone.hashCode());
 		return result;
 	}
 
-	/**
-	 * Overriding default equals method from Object Class
-	 * 
-	 * @param obj - Inherited from Object
-	 * @return boolean - False if any of the test fail equality default returns true
-	 */
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -213,17 +165,17 @@ public class Manager implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Manager other = (Manager) obj;
-		if (managerId != other.managerId)
+		if (managerID != other.managerID)
 			return false;
 		if (managerName == null) {
 			if (other.managerName != null)
 				return false;
 		} else if (!managerName.equals(other.managerName))
 			return false;
-		if (managerPassword == null) {
-			if (other.managerPassword != null)
+		if (user == null) {
+			if (other.user != null)
 				return false;
-		} else if (!managerPassword.equals(other.managerPassword))
+		} else if (!user.equals(other.user))
 			return false;
 		if (workEmail == null) {
 			if (other.workEmail != null)
@@ -238,14 +190,55 @@ public class Manager implements Serializable {
 		return true;
 	}
 
+
 	/**
+	 * Validate if the instance variables are valid
 	 * 
-	 * @return Manager information in string format
+	 * @return boolean - true if instance variables are valid, else false
 	 */
+	public boolean validate() {
+
+		if (this.managerID == 0) {
+			return false;
+		}
+		if (this.managerName == null) {
+			return false;
+		}
+
+		if (this.workPhone == null) {
+			return false;
+		}
+		if (this.workEmail == null) {
+			return false;
+		}
+		if (this.user == null) {
+			return false;
+		}
+		return true;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Manager [managerId=" + managerId + ", managerName=" + managerName + ", workPhone=" + workPhone
-				+ ", workEmail=" + workEmail + ", managerPassword=" + managerPassword + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Manager [managerID=");
+		builder.append(managerID);
+		builder.append(", managerName=");
+		builder.append(managerName);
+		builder.append(", workPhone=");
+		builder.append(workPhone);
+		builder.append(", workEmail=");
+		builder.append(workEmail);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append("]");
+		return builder.toString();
 	}
+	
+	
+
+	
+
+	
 
 }

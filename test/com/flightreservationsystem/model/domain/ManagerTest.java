@@ -1,48 +1,60 @@
 package com.flightreservationsystem.model.domain;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import junit.framework.TestCase;
-
-/**
- * 
- * Domain ManagerTest layer tests validate and 
- * equal methods for the Domain Manager class
- * 
- * 
- * @author alysha_velasquez
- *
- */
-
-public class ManagerTest extends TestCase{
-
+public class ManagerTest {
+	
+	//Declare instance variables
+	private Manager m1,m2,m3;
+	private User user;
+	
 	/**
-	 * Tests if a valid Manager is being passed in
+	 * Instantiates required object for all test, and configures test environment
+	 * @throws java.lang.Exception
+	 */
+	
+	@Before
+	public void setup() throws Exception{
+		//Initialize instance variables
+		user = new User("alysha101","password");
+		m1 = new Manager();
+		m2 = new Manager(555,"Laura","555-555-5555","laura@gmail.com",user);
+		m3 = new Manager(555,"Laura","555-555-5555","laura@gmail.com",user);
+	}
+	
+	/**
+	 * Test with valid Manager passed in
 	 */
 	@Test
-	public void testValidate() {
-		System.out.println("Starting testValidate()");
-		Manager m1 = new Manager(9999, "Hailey Duff", "555-555-5555", "duff@gmail.com", "password");
-		/**
-		 * Validate method from m1 should assert to True, since all variables
-		 * being passed to create a new Manager are all valid.
-		 */
-		assertTrue("n1 validates", m1.validate());
+	public final void testValidate() {
+		assertTrue("m1 validates",m1.validate());
+		assertTrue("m2 validates",m2.validate());
 		System.out.println("ManagerTest: testValidate PASSED");
 	}
-
+	
 	/**
-	 * Tests if two Managers are equal
+	 * Test default constructor
 	 */
 	@Test
-	public void testEqualsManager() {
+	public final void testManager() {
+		//No argument constructor should be null
+		assertNotNull("should not be null",m1);
+		System.out.println("ManagerTest: testManager() PASSED");
+	}
+	
+	/**
+	 * Test if two manager are equal
+	 */
+	@Test
+	public final void testEqualsManager() {
 		System.out.println("Starting testEqualsManager()");
-		Manager m2 = new Manager(9999, "Hailey Duff", "555-555-5555", "duff@gmail.com", "password");
-		Manager m3 = new Manager(9999, "Hailey Duff", "555-555-5555", "duff@gmail.com", "password");
-		assertTrue("m1 equals m2", m2.equals(m3));
-		System.out.println("ManagerTest: testEqualsFlight PASSED");
+		//assert should be equal
+		assertTrue("m2 equals m3", m2.equals(m3));
+		System.out.println("ManagerTest: testEqualsManager PASSED");
 	}
 
 }

@@ -11,8 +11,8 @@ import org.junit.runners.Suite.SuiteClasses;
  *
  */
 @RunWith(Suite.class)
-@SuiteClasses({ AvailableFlightsTest.class, CustomerTest.class, ReserveFlightTest.class, FlightTest.class,
-		ManagerTest.class })
+@SuiteClasses({ CustomerTest.class, FlightTest.class, 
+	ManagerTest.class, ReservationTest.class, UserTest.class })
 public class AllDomainTests {
 	
 	/**

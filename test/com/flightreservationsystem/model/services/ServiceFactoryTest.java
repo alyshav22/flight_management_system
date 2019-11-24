@@ -1,0 +1,59 @@
+package com.flightreservationsystem.model.services;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.flightreservationsystem.model.services.ServiceFactory;
+import com.flightreservationsystem.model.services.ServiceLoadException;
+import com.flightreservationsystem.model.services.FlightServiceImpl;
+import com.flightreservationsystem.model.services.IFlightService;
+
+
+/**
+ * 
+ * Service Factory test for services
+ * 
+ * @author alysha_velasquez
+ *
+ */
+
+
+public class ServiceFactoryTest {
+	
+	// Declare Instance variables
+		private ServiceFactory testServiceFactory;
+		private IFlightService flightService;
+	
+		/**
+		 *  Instantiates required object for all test, and configures test environment. 
+		 * @throws java.lang.Exception
+		 */
+		
+		@Before
+		public void setUp() throws Exception {
+			// initialize instance variables
+			testServiceFactory = ServiceFactory.getInstance();
+		}
+		
+		/**
+		 * This test will try and get a Flight Service and check that it is a instance of MuseumServiceImpl
+		 *
+		 * 
+		 */
+		
+		@Test
+		public final void testGetFlightService() {
+			System.out.println("Starting testGetFlightService()");
+			try {
+				flightService = (IFlightService) testServiceFactory.getService(IFlightService.NAME);
+				assertTrue(flightService instanceof FlightServiceImpl);
+				System.out.println("ServiceFactoryTest: testGetFlightService() PASSED");
+			} catch (ServiceLoadException e) {
+				e.printStackTrace();
+				fail("ServiceLoadException");
+			}
+		}
+
+}

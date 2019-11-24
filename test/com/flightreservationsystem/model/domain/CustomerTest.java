@@ -2,6 +2,7 @@ package com.flightreservationsystem.model.domain;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import junit.framework.TestCase;
@@ -12,6 +13,26 @@ import junit.framework.TestCase;
  *
  */
 public class CustomerTest extends TestCase{
+	
+	//Declare instance variables
+	private User user;
+	private Customer c1, c2, c3;
+	
+	/**
+	 * Instantiates required object for all test, and config test environment
+	 * @throws Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		//initialize instance variables
+		user = new User("ironman101","pword");
+		c1 = new Customer();
+		c2 = new Customer(999,"Edward","555-555-5555","1234 Christmas lane",
+				"ironman101@gmail.com",9999, user);
+		c3 = new Customer(999,"Edward","555-555-5555","1234 Christmas lane",
+				"ironman101@gmail.com",9999, user);
+		
+	}
 
 	/**
 	 * Tests if valid Customer is being passed in
@@ -19,14 +40,18 @@ public class CustomerTest extends TestCase{
 	@Test
 	public void testValidate() {
 		System.out.println("Starting testValidate()");
-		Customer c1 = new Customer("9999", "Billy Bob", "555-555-5555", "1234 Madison ave", 
-				"billy@gmail.com", "password", 122344564);
-		/**
-		 * Validate method from c1 will assert True, since all variables being passed to
-		 * create a new Customer are all valid.
-		 */
-		assertTrue("c1 validates", c1.validate());
+		assertTrue("c1 validates",c1.validate());
+		assertTrue("c2 validates", c2.validate());
 		System.out.println("CustomerTest: testValidate PASSED");
+	}
+	/**
+	 * Test default Customer constructor
+	 */
+	@Test
+	public final void testCustomer() {
+		//No argument constructor should not be null
+		assertNotNull("should not be null", c1);
+		System.out.println("CustomerTest: testCustomer() PASSED");
 	}
 
 	/**
@@ -35,13 +60,7 @@ public class CustomerTest extends TestCase{
 	@Test
 	public void testEqualsCustomer() {
 		System.out.println("Starting testEqualsCustomer()");
-		Customer c2 = new Customer("999", "Billy Bob", "555-555-5555", 
-				"1234 Madison ave", "billy@gmail.com",
-				"password", 122344564);
-		Customer c3 = new Customer("999", "Billy Bob", "555-555-5555", 
-				"1234 Madison ave", "billy@gmail.com",
-				"password", 122344564);
-		assertTrue("c2 equals c3", c2.equals(c3));
+		assertTrue("c1 equals c3",c2.equals(c3));
 		System.out.println("CustomerTest: testEqualsCustomer PASSED");
 	}
 
