@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Domain Flight class holds flightID, airlineCode, 
  * airlineName,fromLocation, toLocation departureTime,
- * arrivalTime,duration, economySeats, businessSeats, fareCost
+ * arrivalTime,duration, seatTotal, fareCost
  * 
  * @author alysha_velasquez
  *
@@ -51,15 +51,9 @@ public class Flight implements Serializable{
 	 */
 	private float duration;
 	/**
-	 * holds total economy seats in a flight
+	 * holds total seats in a flight
 	 */
-	private int economySeats;
-	
-	/**
-	 * holds total business seats in a fight
-	 */
-	private int businessSeats;
-	
+	private int seatTotal;
 	/**
 	 * holds cost of flight fare
 	 */
@@ -70,10 +64,12 @@ public class Flight implements Serializable{
 	 * default constructor for Flight
 	 */
 	public Flight() {
-		this(999, "Code","Name","Origin","Location","time1","time2",0.00f,10,20,0.00);
+		this(999,"code","name","aiport1","airport2","time1","time2",0f,30,19.99);
 	}
 	
 	/**
+	 * Override default constructor to create Flight object
+	 *  
 	 * @param flightID
 	 * @param airlineCode
 	 * @param airlineName
@@ -82,25 +78,24 @@ public class Flight implements Serializable{
 	 * @param departureTime
 	 * @param arrivalTime
 	 * @param duration
-	 * @param economySeats
-	 * @param businessSeats
+	 * @param seatTotal
 	 * @param fareCost
 	 */
-	public Flight(int flightID, String airlineCode, String airlineName, String fromLocation, String toLocation,
-			String departureTime, String arrivalTime, float duration, int economySeats, int businessSeats,
-			double fareCost) {
-		this.flightID = flightID;
-		this.airlineCode = airlineCode;
+	public Flight(int flightId, String airlineId, String airlineName, String fromLocation, String toLocation,
+			String departureTime, String arrivalTime, float duration, int seatTotal, double fareCost) {
+		this.flightID = flightId;
+		this.airlineCode = airlineId;
 		this.airlineName = airlineName;
 		this.fromLocation = fromLocation;
 		this.toLocation = toLocation;
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
 		this.duration = duration;
-		this.economySeats = economySeats;
-		this.businessSeats = businessSeats;
+		this.seatTotal = seatTotal;
 		this.fareCost = fareCost;
 	}
+
+	
 	/**
 	 * Get flight number
 	 * @return the flightID
@@ -226,6 +221,21 @@ public class Flight implements Serializable{
 		this.duration = duration;
 	}
 
+	/**
+	 * Get flight seat total
+	 * @return the seatTotal
+	 */
+	public int getSeatTotal() {
+		return seatTotal;
+	}
+
+	/**
+	 * Set flight seat total
+	 * @param seatTotal to set seatTotal
+	 */
+	public void setSeatTotal(int seatTotal) {
+		this.seatTotal = seatTotal;
+	}
 
 	/**
 	 * Get the cost of flight
@@ -243,33 +253,83 @@ public class Flight implements Serializable{
 		this.fareCost = fareCost;
 	}
 
-
 	/**
-	 * @return the economySeats
+	 * Override HashCode when overriding equals method
+	 * @return result is the hash value
 	 */
-	public int getEconomySeats() {
-		return economySeats;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((airlineCode == null) ? 0 : airlineCode.hashCode());
+		result = prime * result + ((airlineName == null) ? 0 : airlineName.hashCode());
+		result = prime * result + ((arrivalTime == null) ? 0 : arrivalTime.hashCode());
+		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
+		result = prime * result + Float.floatToIntBits(duration);
+		long temp;
+		temp = Double.doubleToLongBits(fareCost);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + flightID;
+		result = prime * result + ((fromLocation == null) ? 0 : fromLocation.hashCode());
+		result = prime * result + seatTotal;
+		result = prime * result + ((toLocation == null) ? 0 : toLocation.hashCode());
+		return result;
 	}
-
+	
 	/**
-	 * @param economySeats the economySeats to set
-	 */
-	public void setEconomySeats(int economySeats) {
-		this.economySeats = economySeats;
-	}
-
-	/**
-	 * @return the businessSeats
-	 */
-	public int getBusinessSeats() {
-		return businessSeats;
-	}
-
-	/**
-	 * @param businessSeats the businessSeats to set
-	 */
-	public void setBusinessSeats(int businessSeats) {
-		this.businessSeats = businessSeats;
+     * Overriding default equals method from Object Class
+     * @param obj is inherited from Object
+     * @return boolean - False if any of the test fail equality default return
+     * true
+     */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Flight other = (Flight) obj;
+		if (airlineCode == null) {
+			if (other.airlineCode != null)
+				return false;
+		} else if (!airlineCode.equals(other.airlineCode))
+			return false;
+		if (airlineName == null) {
+			if (other.airlineName != null)
+				return false;
+		} else if (!airlineName.equals(other.airlineName))
+			return false;
+		if (arrivalTime == null) {
+			if (other.arrivalTime != null)
+				return false;
+		} else if (!arrivalTime.equals(other.arrivalTime))
+			return false;
+		if (departureTime == null) {
+			if (other.departureTime != null)
+				return false;
+		} else if (!departureTime.equals(other.departureTime))
+			return false;
+		if (Float.floatToIntBits(duration) != Float.floatToIntBits(other.duration))
+			return false;
+		if (Double.doubleToLongBits(fareCost) != Double.doubleToLongBits(other.fareCost))
+			return false;
+		if (flightID != other.flightID)
+			return false;
+		if (fromLocation == null) {
+			if (other.fromLocation != null)
+				return false;
+		} else if (!fromLocation.equals(other.fromLocation))
+			return false;
+		if (seatTotal != other.seatTotal)
+			return false;
+		if (toLocation == null) {
+			if (other.toLocation != null)
+				return false;
+		} else if (!toLocation.equals(other.toLocation))
+			return false;
+		return true;
 	}
 
 	/**
@@ -302,10 +362,7 @@ public class Flight implements Serializable{
         if (this.duration == 0f) {
             return false;
         }
-        if (this.economySeats == 0) {
-            return false;
-        }
-        if (this.businessSeats == 0) {
+        if (this.seatTotal == 0) {
             return false;
         }
         if (this.fareCost == 0) {
@@ -315,7 +372,37 @@ public class Flight implements Serializable{
         return true;
     }
     
-   
+    /**
+     * 
+     * @return Flight information in string format
+     */
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Flight [flightID=");
+		builder.append(flightID);
+		builder.append(", airlineCode=");
+		builder.append(airlineCode);
+		builder.append(", airlineName=");
+		builder.append(airlineName);
+		builder.append(", fromLocation=");
+		builder.append(fromLocation);
+		builder.append(", toLocation=");
+		builder.append(toLocation);
+		builder.append(", departureTime=");
+		builder.append(departureTime);
+		builder.append(", arrivalTime=");
+		builder.append(arrivalTime);
+		builder.append(", duration=");
+		builder.append(duration);
+		builder.append(", seatTotal=");
+		builder.append(seatTotal);
+		builder.append(", fareCost=");
+		builder.append(fareCost);
+		builder.append("]");
+		return builder.toString();
+	}
 		
 } 
 		

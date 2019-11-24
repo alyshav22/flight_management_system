@@ -6,7 +6,8 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 /**
- * Test Suite for domain layer components.
+ * Test Suite for domain layer components
+ * 
  * @author alysha_velasquez
  *
  */

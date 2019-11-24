@@ -1,8 +1,6 @@
 package com.flightreservationsystem.model.domain;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ public class ManagerTest {
 	private User user;
 	
 	/**
-	 * Instantiates required object for all test, and configures test environment
+	 * Instantiates required object for all test and configures test environment
 	 * @throws java.lang.Exception
 	 */
 	
@@ -31,6 +29,7 @@ public class ManagerTest {
 	 */
 	@Test
 	public final void testValidate() {
+		System.out.println("Starting testValidate()");
 		assertTrue("m1 validates",m1.validate());
 		assertTrue("m2 validates",m2.validate());
 		System.out.println("ManagerTest: testValidate PASSED");
@@ -41,6 +40,7 @@ public class ManagerTest {
 	 */
 	@Test
 	public final void testManager() {
+		System.out.println("Starting testManager()");
 		//No argument constructor should be null
 		assertNotNull("should not be null",m1);
 		System.out.println("ManagerTest: testManager() PASSED");

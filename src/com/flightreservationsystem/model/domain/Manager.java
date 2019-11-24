@@ -41,14 +41,16 @@ public class Manager implements Serializable {
 	private User user;
 
 	/**
-	 * default constructor for Manager that calls overloaded constructor with default values
+	 * default constructor for Manager that calls overloaded constructor with
+	 * default values
 	 */
 	public Manager() {
-		this(999,"name","phone","email",new User());
+		this(999, "name", "phone", "email", new User());
 	}
 
-
 	/**
+	 * Override default constructor to create Manager object
+	 * 
 	 * @param managerID
 	 * @param managerName
 	 * @param workPhone
@@ -70,14 +72,12 @@ public class Manager implements Serializable {
 		return managerID;
 	}
 
-
 	/**
 	 * @param managerID the managerID to set
 	 */
 	public void setManagerID(int managerId) {
 		this.managerID = managerId;
 	}
-
 
 	/**
 	 * @return the managerName
@@ -86,14 +86,12 @@ public class Manager implements Serializable {
 		return managerName;
 	}
 
-
 	/**
 	 * @param managerName the managerName to set
 	 */
 	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
-
 
 	/**
 	 * @return the workPhone
@@ -102,14 +100,12 @@ public class Manager implements Serializable {
 		return workPhone;
 	}
 
-
 	/**
 	 * @param workPhone the workPhone to set
 	 */
 	public void setWorkPhone(String workPhone) {
 		this.workPhone = workPhone;
 	}
-
 
 	/**
 	 * @return the workEmail
@@ -118,14 +114,12 @@ public class Manager implements Serializable {
 		return workEmail;
 	}
 
-
 	/**
 	 * @param workEmail the workEmail to set
 	 */
 	public void setWorkEmail(String workEmail) {
 		this.workEmail = workEmail;
 	}
-
 
 	/**
 	 * @return the user
@@ -134,7 +128,6 @@ public class Manager implements Serializable {
 		return user;
 	}
 
-
 	/**
 	 * @param user the user to set
 	 */
@@ -142,7 +135,9 @@ public class Manager implements Serializable {
 		this.user = user;
 	}
 
-
+	/**
+	 * Override HashCode when overriding equals method
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -155,7 +150,12 @@ public class Manager implements Serializable {
 		return result;
 	}
 
-
+	/**
+	 * Overriding default equals method from Object Class
+	 * 
+	 * @param obj is inherited from Object
+	 * @return boolean - False if any of the test fail equality default return true
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -190,7 +190,6 @@ public class Manager implements Serializable {
 		return true;
 	}
 
-
 	/**
 	 * Validate if the instance variables are valid
 	 * 
@@ -217,7 +216,9 @@ public class Manager implements Serializable {
 		return true;
 	}
 
-
+	/**
+	 * @return Customer information in string format
+	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -234,11 +235,5 @@ public class Manager implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-
-	
-
-	
 
 }

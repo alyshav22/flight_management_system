@@ -2,19 +2,36 @@ package com.flightreservationsystem.model.domain;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+/**
+ * Domain User class holds username and password
+ * 
+ * @author alysha_velasquez
+ *
+ */
 
-	
+public class User implements Serializable {
+
 	private static final long serialVersionUID = 6090091675974840036L;
-	
-	private String username;
-	private String password;
-	
-	public User() {
-		this("username","password");
-	}
-	
+
 	/**
+	 * holds username
+	 */
+	private String username;
+	/**
+	 * holds user password
+	 */
+	private String password;
+
+	/**
+	 * Default constructor
+	 */
+	public User() {
+		this("username", "password");
+	}
+
+	/**
+	 * Override default constructor to create User object
+	 * 
 	 * @param username
 	 * @param password
 	 */
@@ -23,25 +40,27 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-
 	/**
 	 * @return the username
 	 */
 	public String getUsername() {
 		return username;
 	}
+
 	/**
 	 * @param username the username to set
 	 */
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	/**
 	 * @return the password
 	 */
 	public String getPassword() {
 		return password;
 	}
+
 	/**
 	 * @param password the password to set
 	 */
@@ -49,6 +68,9 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
+	/**
+	 * Override HashCode when overriding equals method
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -58,6 +80,12 @@ public class User implements Serializable{
 		return result;
 	}
 
+	/**
+	 * Overriding default equals method from Object Class
+	 * 
+	 * @param obj is inherited from Object
+	 * @return boolean - False if any of the test fail equality default return true
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -79,18 +107,35 @@ public class User implements Serializable{
 			return false;
 		return true;
 	}
-	
+
+	/**
+	 * Validate if the instance variables are valid
+	 * 
+	 * @return boolean - true if instance variables are valid, else false.
+	 */
 	public boolean validate() {
-		
-				if (this.username == null) {
-					return false;
-				}
-				if (this.password == null) {
-					return false;
-				}
-				return true;
-			}
-	
-	
+
+		if (this.username == null) {
+			return false;
+		}
+		if (this.password == null) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * @return User information in string format
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [username=");
+		builder.append(username);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append("]");
+		return builder.toString();
+	}
 
 }

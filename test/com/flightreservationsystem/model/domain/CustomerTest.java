@@ -1,7 +1,5 @@
 package com.flightreservationsystem.model.domain;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -49,6 +47,7 @@ public class CustomerTest extends TestCase{
 	 */
 	@Test
 	public final void testCustomer() {
+		System.out.println("Starting testCustomer()");
 		//No argument constructor should not be null
 		assertNotNull("should not be null", c1);
 		System.out.println("CustomerTest: testCustomer() PASSED");

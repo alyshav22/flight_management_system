@@ -1,17 +1,17 @@
 package com.flightreservationsystem.model.domain;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
-public class UserTest {
+import junit.framework.TestCase;
+
+public class UserTest extends TestCase{
 	
 	//Declare instance variables
 	private User u1, u2, u3;
 	
 	/**
-	 * Instantiates required object for all test and config test environment
+	 * Instantiates required object for all test and configure test environment
 	 * @throws Exception
 	 */
 	@Before
@@ -24,7 +24,6 @@ public class UserTest {
 	/**
 	 * Test with valid User passed in
 	 */
-
 	@Test
 	public final void testValidate() {
 		System.out.println("Starting testValidate()");
@@ -32,11 +31,18 @@ public class UserTest {
 		assertTrue("user validates", u2.validate());
 		System.out.println("UserTest: testValidate PASSED");
 	}
+	/**
+	 * Test default User constructor
+	 */
 	@Test
 	public final void testNotNull() {
+		System.out.println("Starting testNotNull()");
 		assertNotNull("should not be null", u1);
 		System.out.println("UserTest: testNotNull PASSED");
 	}
+	/**
+	 * Tests if two users are equal
+	 */
 	@Test
 	public final void testEqualsUser() {
 		System.out.println("starting testEqualsUser()");

@@ -2,6 +2,13 @@ package com.flightreservationsystem.model.domain;
 
 import java.io.Serializable;
 
+/**
+ * Domain Reservation class holds customer and flight objects
+ * 
+ * @author alysha_velasquez
+ *
+ */
+
 public class Reservation implements Serializable{
 	
 	/**
@@ -21,7 +28,7 @@ public class Reservation implements Serializable{
 	}
 	
 	/**
-	 * Override default constructor to create FlightComposite object
+	 * Override default constructor to create Reservation object
 	 * 
 	 * @param customer
 	 * @param flight
@@ -69,7 +76,6 @@ public class Reservation implements Serializable{
 		}
 		return true;
 	}
-	
 	/**
 	 * 
 	 * @return Reservation information in string format

@@ -13,11 +13,10 @@ import java.io.Serializable;
 public class Customer implements Serializable {
 
 	/**
-	 * facilitates versioning of serialized data 
+	 * facilitates versioning of serialized data
 	 */
 	private static final long serialVersionUID = 8818801978078639753L;
 
-	
 	/**
 	 * holds customer ID
 	 */
@@ -42,18 +41,22 @@ public class Customer implements Serializable {
 	 * holds customer credit card number
 	 */
 	private int creditCard;
-	
+
 	/**
 	 * holds login information
 	 */
 	private User user;
 
-	
-	public Customer() {
-		this(555,"name","phone","address","email",111, new User());
-	}
-	
 	/**
+	 * Default constructor
+	 */
+	public Customer() {
+		this(555, "name", "phone", "address", "email", 111, new User());
+	}
+
+	/**
+	 * Override default constructor to create Customer object
+	 * 
 	 * @param customerID
 	 * @param customerName
 	 * @param phoneNumber
@@ -173,6 +176,7 @@ public class Customer implements Serializable {
 
 	/**
 	 * Validate if the instance variables are valid
+	 * 
 	 * @return boolean - true if instance variables are valid, else false.
 	 */
 	public boolean validate() {
@@ -202,6 +206,9 @@ public class Customer implements Serializable {
 		return true;
 	}
 
+	/**
+	 * Override HashCode when overriding equals method
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -216,6 +223,12 @@ public class Customer implements Serializable {
 		return result;
 	}
 
+	/**
+	 * Overriding default equals method from Object Class
+	 * 
+	 * @param obj is inherited from Object
+	 * @return boolean - False if any of the test fail equality default return true
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -257,6 +270,9 @@ public class Customer implements Serializable {
 		return true;
 	}
 
+	/**
+	 * @return Customer information in string format
+	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -277,5 +293,5 @@ public class Customer implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

@@ -10,7 +10,6 @@ import com.flightreservationsystem.model.services.SaveException;
  *
  */
 
-
 public interface IFlightService extends IService{
 	
 	public final String NAME = "IFlightService";
@@ -18,9 +17,9 @@ public interface IFlightService extends IService{
 	/**
 	 * Stub to save a flight
 	 * 
-	 * @param flight
-	 * @return boolean - the flight to save
-	 * @throws SaveException
+	 * @param flight - contains flight information to be save
+	 * @return boolean - true if saved
+	 * @throws SaveException 
 	 */
 	
 	public boolean saveFlight(Flight flight) throws SaveException;

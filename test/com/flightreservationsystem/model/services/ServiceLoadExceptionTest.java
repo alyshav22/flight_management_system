@@ -17,7 +17,7 @@ public class ServiceLoadExceptionTest {
 	
 	
 	/**
-	 * Instantiates required object for all test, and configures test environment
+	 * Set up test environment and instantiates required object for all test
 	 * @throws java.lang.Exception
 	 */
 	@Before
@@ -27,14 +27,12 @@ public class ServiceLoadExceptionTest {
 	}
 	
 	/**
-	 * Test the expected Exception to be thrown from Service Layer Factory getService method
+	 * Tests the expected Exception to be thrown from Service Layer Factory getService method
 	 * @throws ServiceLoadException
 	 */
-
 	@Test(expected = ServiceLoadException.class)
 	public void testThrowsServiceLoadException() throws ServiceLoadException{
 		System.out.println("Starting testThrowsServiceLoadException()");
-		//The results of the following statement will be thrown ServiceLoadException...
 		saveFlightService = (IFlightService) testServiceFactory.getService(NAME);
 	}
 
