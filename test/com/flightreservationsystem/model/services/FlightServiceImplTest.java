@@ -45,9 +45,9 @@ public class FlightServiceImplTest {
 		} catch (ServiceLoadException e) {
 			e.printStackTrace();
 			fail("ServiceLoadException");
-		} catch (SaveException e) {
+		} catch (FlightSaveException e) {
 			e.printStackTrace();
-			fail("SaveException");
+			fail("FlightSaveException");
 		}
 	}
 

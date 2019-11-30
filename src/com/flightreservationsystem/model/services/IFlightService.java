@@ -2,7 +2,7 @@ package com.flightreservationsystem.model.services;
 
 import com.flightreservationsystem.model.domain.Flight;
 import com.flightreservationsystem.model.services.IService;
-import com.flightreservationsystem.model.services.SaveException;
+import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Service interface for a Flight
@@ -19,9 +19,9 @@ public interface IFlightService extends IService{
 	 * 
 	 * @param flight - contains flight information to be save
 	 * @return boolean - true if saved
-	 * @throws SaveException 
+	 * @throws FlightSaveException 
 	 */
 	
-	public boolean saveFlight(Flight flight) throws SaveException;
+	public boolean saveFlight(Flight flight) throws FlightSaveException;
 
 }

@@ -1,42 +1,89 @@
 package com.flightreservationsystem.model.domain;
 
+import static org.junit.Assert.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.TestCase;
 
-public class FlightTest extends TestCase{
+public class FlightTest {
 
+	//Declare instance variables
+	private Airplane airplane1, airplane2;
+	private Flight flight, flight2, flight3;
+	private LocalDate departureDate, arrivalDate;
+	
 	/**
-	 * Tests if a valid Flight is being passed in
+	 *  Instantiates required object for all test, and configures test environment. 
+	 * @throws Exception
 	 */
-	@Test
-	public void testValidate() {
-		System.out.println("Starting testValidate()");
-		Flight f1 = new Flight(999, "AAA", "Delta", "DEN", "SFO", 
-				"Nov 10, 2019 @ 5:30AM", "Nov 10, 2019 @ 7:00AM",
-				90.0f, 30, 100.89);
-		/**
-		 * Validate method from f1 assert to True, since all variables
-		 * being passed to create a new Flight are all valid.
-		 */
-		assertTrue("f1 validates", f1.validate());
-		System.out.println("FlightTest: testValidate PASSED");
+	@Before
+	public void setUp() throws Exception {
+		departureDate = LocalDate.of(2019, Month.NOVEMBER, 27);
+		arrivalDate = LocalDate.of(2019, Month.NOVEMBER, 27);
+		
+		airplane1 = new Airplane();
+		airplane2 = new Airplane(999,"Boeing 750", 10, 20);
+		
+		flight2 = new Flight();
+		
+		flight = new Flight(9999,"Frontier","DEN","SJC",departureDate,"7:30AM",
+				arrivalDate,"9:30AM",200.00,100.00);
+		flight.setFlightAirplanes(airplane1);
+		flight.setFlightAirplanes(airplane2);
+		
+		flight3 = new Flight(9999,"Frontier","DEN","SJC",departureDate,"7:30AM",
+				arrivalDate,"9:30AM",200.00,100.00);
+		flight3.setFlightAirplanes(airplane1);
+		flight3.setFlightAirplanes(airplane2);
+		
 	}
 
+	@Test
+	public void testValidate() {
+		assertTrue("flight2 validates", flight2.validate());
+		assertTrue("flight1 validates", flight.validate());
+		
+		System.out.println("FlightTest: testValidate PASSED");
+	}
+	
 	/**
-	 * Tests if two Flights are equal
+	 * Test default Flight constructor
 	 */
 	@Test
-	public void testEqualsFlight() {
-		System.out.println("Starting testEqualsFlight()");
-		Flight f1 = new Flight(999, "AAA", "Delta", "DEN", "SFO", 
-				"Nov 10,2019 @ 5:30AM", "Nov 10, 2019 @ 7:00AM",
-				90.0f, 30, 100.89);
-		Flight f2 = new Flight(999, "AAA", "Delta", "DEN", "SFO", 
-				"Nov 10,2019 @ 5:30AM", "Nov 10, 2019 @ 7:00AM",
-				90.0f, 30, 100.89);
-		assertTrue("f1 equals f2", f1.equals(f2));
-		System.out.println("FlightTest: testEqualsFlight PASSED");
+	public final void testFlight() {
+		
+		// No argument constructor should not be null
+		assertNotNull("should not be null", flight2);
+		System.out.println("FlightTest: testExhibit() PASSED");
+	}
+	
+	/**
+	 * Test if two Flight are equal
+	 */
+	@Test
+	public final void testEqualsFlight() {
+		System.out.println("starting testEqualsFlight()");
+		// assert should be true
+		assertTrue("flight eqauls flight3", flight.equals(flight3));
+		System.out.println("FlightTest:  testEqualsFlight() PASSED");
+		
+	}
+	
+	/**
+	 * Test if two Flight are equal
+	 */
+	@Test
+	public final void testNotEqualsFlight() {
+		System.out.println("starting testEqualsFlight()");
+		// assert should be true
+		assertFalse("flight eqauls flight3", flight2.equals(flight3));
+		System.out.println("FlightTest:  testEqualsFlight() PASSED");
+		
 	}
 
 }

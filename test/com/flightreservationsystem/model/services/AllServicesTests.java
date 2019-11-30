@@ -10,7 +10,7 @@ import org.junit.runners.Suite.SuiteClasses;
  *
  */
 @RunWith(Suite.class)
-@SuiteClasses({ FlightServiceImplTest.class, SaveExceptionTest.class, ServiceFactoryTest.class,
+@SuiteClasses({ FlightServiceImplTest.class, FlightSaveExceptionTest.class, ServiceFactoryTest.class,
 		ServiceLoadExceptionTest.class })
 public class AllServicesTests {
 

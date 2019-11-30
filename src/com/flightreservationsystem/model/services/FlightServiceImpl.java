@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.Hashtable;
 
 import com.flightreservationsystem.model.domain.Flight;
-import com.flightreservationsystem.model.services.SaveException;
+import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Flight Service Interface Implementation
@@ -46,13 +46,13 @@ public class FlightServiceImpl implements IFlightService {
 	 * Implements saveFlight from the interface
 	 * 
 	 * @param flight - contains flight information to save
-	 * @throws SaveException - If the flight cannot be saved because of null
+	 * @throws FlightSaveException - If the flight cannot be saved because of null
 	 *                       reference or other exceptions
 	 * @return boolean - true
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean saveFlight(Flight flight) throws SaveException {
+	public boolean saveFlight(Flight flight) throws FlightSaveException {
 		try {
 			System.out.println("Entering method FlightServiceImpl:: saveFlight");
 			try {
@@ -68,12 +68,12 @@ public class FlightServiceImpl implements IFlightService {
 
 		} catch (FileNotFoundException e) {
 			System.out.println("File containing saved Flight not found!");
-			throw new SaveException("File containing saved Flight not found", e);
+			throw new FlightSaveException("File containing saved Flight not found", e);
 		} catch (IOException e) {
 			System.out.println("IOException while accessing file containing saved flight");
-			throw new SaveException("IOException while accesssing file contianing saved flight", e);
+			throw new FlightSaveException("IOException while accesssing file contianing saved flight", e);
 		} catch (ClassNotFoundException e) {
-			throw new SaveException("ClassNotFoundException while reading file containing saved flight", e);
+			throw new FlightSaveException("ClassNotFoundException while reading file containing saved flight", e);
 		} finally {
 			if (output != null) {
 				try {

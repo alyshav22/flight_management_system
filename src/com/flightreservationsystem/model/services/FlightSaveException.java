@@ -7,7 +7,7 @@ package com.flightreservationsystem.model.services;
  *
  */
 
-public class SaveException extends Exception{
+public class FlightSaveException extends Exception{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -16,7 +16,7 @@ public class SaveException extends Exception{
 	 * @param inMessage
 	 * @param inNestedException
 	 */
-	public SaveException(final String inMessage, final Throwable inNestedException) {
+	public FlightSaveException(final String inMessage, final Throwable inNestedException) {
 		super(inMessage, inNestedException);
 	}
 
