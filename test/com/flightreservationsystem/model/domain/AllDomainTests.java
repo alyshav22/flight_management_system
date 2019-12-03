@@ -13,7 +13,7 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({ CustomerTest.class, FlightTest.class, 
-	ManagerTest.class, UserTest.class })
+	AdminTest.class, UserTest.class, AirplaneTest.class })
 public class AllDomainTests {
 	
 	/**

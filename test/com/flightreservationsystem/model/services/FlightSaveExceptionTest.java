@@ -5,18 +5,18 @@ import org.junit.Test;
 public class FlightSaveExceptionTest {
 
 	/**
-	 * Testing throwing a Save Exception 
+	 * Testing throwing Save Exception 
 	 * 
 	 *@throws FlightSaveException
 	 */
 
 	@Test
-	public void testSaveException(){
-		System.out.println("Starting testSaveException()");
+	public void testFlightSaveException(){
+		System.out.println("Starting testFlightSaveException()");
 		try {
-			throw new FlightSaveException("Testing throwing a Save Exception", null);
+			throw new FlightSaveException("Testing throwing a Flight Save Exception", null);
 		}  catch (FlightSaveException e) {
-			System.out.println("FlightSaveExceptionTest: testSaveException() PASSED ");
+			System.out.println("SaveExceptionTest: testFlightSaveException() PASSED ");
 			System.out.println(e);
 		}
 	}

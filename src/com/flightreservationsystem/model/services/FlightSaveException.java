@@ -12,7 +12,7 @@ public class FlightSaveException extends Exception{
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Custom Save Exception for Services
+	 * Custom Flight Save Exception for Services
 	 * @param inMessage
 	 * @param inNestedException
 	 */

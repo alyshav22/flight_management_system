@@ -3,17 +3,28 @@ package com.flightreservationsystem.model.domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
 public class Airplane implements Serializable{
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 4741252782361318697L;
+	private static final long serialVersionUID = -4800878345040305688L;
 	
+	/**
+	 * holds airplane ID
+	 */
 	private Integer airplaneID;
+	/**
+	 * holds airplane model
+	 */
 	private String airplaneModel;
+	/**
+	 * holds number of economy seats
+	 */
 	private Integer economySeatsQuantity;
+	/**
+	 * holds number of business seats
+	 */
 	private Integer businessSeatsQuantity;
 	
 	/*
@@ -21,12 +32,17 @@ public class Airplane implements Serializable{
 	 */
 	private ArrayList<Flight> flights;
 	
+	/**
+	 * default constructor for Airplane that calls overloaded constructor with
+	 * default values
+	 */
 	public Airplane() {
 		this(99999,"airplaneModel",0,0);
 	}
 
 	
 	/**
+	 * Override default constructor to create Airplane object
 	 * @param airplaneID
 	 * @param airplaneModel
 	 * @param economySeatsQuantity
@@ -42,16 +58,12 @@ public class Airplane implements Serializable{
 	}
 
 
-
-
 	/**
 	 * @return the airplaneID
 	 */
 	public Integer getAirplaneID() {
 		return airplaneID;
 	}
-
-
 
 
 	/**
@@ -62,16 +74,12 @@ public class Airplane implements Serializable{
 	}
 
 
-
-
 	/**
 	 * @return the airplaneModel
 	 */
 	public String getAirplaneModel() {
 		return airplaneModel;
 	}
-
-
 
 
 	/**
@@ -82,16 +90,12 @@ public class Airplane implements Serializable{
 	}
 
 
-
-
 	/**
 	 * @return the economySeatsQuantity
 	 */
 	public Integer getEconomySeatsQuantity() {
 		return economySeatsQuantity;
 	}
-
-
 
 
 	/**
@@ -102,8 +106,6 @@ public class Airplane implements Serializable{
 	}
 
 
-
-
 	/**
 	 * @return the businessSeatsQuantity
 	 */
@@ -112,16 +114,12 @@ public class Airplane implements Serializable{
 	}
 
 
-
-
 	/**
 	 * @param businessSeatsQuantity the businessSeatsQuantity to set
 	 */
 	public void setBusinessSeatsQuantity(Integer businessSeatsQuantity) {
 		this.businessSeatsQuantity = businessSeatsQuantity;
 	}
-
-
 
 
 	/**
@@ -156,7 +154,9 @@ public class Airplane implements Serializable{
 		return true;
 	}
 
-
+	/**
+	 * Override HashCode when overriding equals method
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -169,7 +169,12 @@ public class Airplane implements Serializable{
 		return result;
 	}
 
-
+	/**
+	 * Overriding default equals method from Object Class
+	 * 
+	 * @param obj is inherited from Object
+	 * @return boolean - False if any of the test fail equality default return true
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -206,17 +211,15 @@ public class Airplane implements Serializable{
 			return false;
 		return true;
 	}
-
-
+	
+	/**
+	 * Airplane information in string format
+	 */
 	@Override
 	public String toString() {
 		return "Airplane [airplaneID=" + airplaneID + ", airplaneModel=" + airplaneModel + ", economySeatsQuantity="
 				+ economySeatsQuantity + ", businessSeatsQuantity=" + businessSeatsQuantity + ", flights=" + flights
 				+ "]";
 	}
-	
-	
-
-	
 
 }

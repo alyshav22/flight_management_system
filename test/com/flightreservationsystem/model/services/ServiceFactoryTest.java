@@ -29,7 +29,6 @@ public class ServiceFactoryTest {
 	 * 
 	 * @throws java.lang.Exception
 	 */
-
 	@Before
 	public void setUp() throws Exception {
 		// initialize instance variables
@@ -41,7 +40,6 @@ public class ServiceFactoryTest {
 	 * and check that it is a instance of FlightServiceImpl
 	 *
 	 */
-
 	@Test
 	public final void testGetFlightService() {
 		System.out.println("Starting testGetFlightService()");

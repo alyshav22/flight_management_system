@@ -1,8 +1,7 @@
 package com.flightreservationsystem.model.services;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+
 
 import org.junit.Before;
 import org.junit.Test;

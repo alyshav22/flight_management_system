@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
 /**
  * Domain Flight class holds flightID, airlineCode, 
  * airlineName,fromLocation, toLocation departureTime,
@@ -14,12 +13,12 @@ import java.util.ArrayList;
  *
  */
 public class Flight implements Serializable{
-
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7608672016413181978L;
-	
+	private static final long serialVersionUID = -1345193417183314726L;
+
 	/**
 	 * holds flight ID
 	 */
@@ -348,7 +347,9 @@ public class Flight implements Serializable{
 			return false;
 		return true;
 	}
-
+	/**
+	 * @return Flight information in string format
+	 */
 	@Override
 	public String toString() {
 		return "Flight [flightID=" + flightID + ", airlineName=" + airlineName + ", origin=" + origin + ", destination="
@@ -356,12 +357,6 @@ public class Flight implements Serializable{
 				+ ", arrivalDate=" + arrivalDate + ", arrivalTime=" + arrivalTime + ", businessFare=" + businessFare
 				+ ", economyFare=" + economyFare + ", flightAirplanes=" + flightAirplanes + "]";
 	}
-	
-	
-	
-	
-	
-	
 		
 } 
 		

@@ -10,7 +10,9 @@ public class PropertyManager {
 	private static Properties properties;
 	 
 	/**
-	 * Loads property file to make data available in appilcation state 	
+	 * Loads property file from the file location
+	 * to make data available in application state 	
+	 * 
 	 * @param FileLocation
 	 * @throws FileNotFoundException
 	 */
@@ -22,7 +24,7 @@ public class PropertyManager {
 		      properties.load(input);
 		      System.out.println("Property file loaded from location: " + FileLocation);
 		    } catch (FileNotFoundException e) {
-			    	System.out.println("file not found.");
+			    	System.out.println("file cannot be found.");
 			    throw new FileNotFoundException();
 			 }
 		    catch (IOException e) {
@@ -40,12 +42,12 @@ public class PropertyManager {
 					e.printStackTrace();
 				   }
 			    }	
-			}	    
-		} 
+			}//End finally    
+		} //End loadProperties
 
 		
 		/**
-		 * Get the property value 
+		 * Method gets the the property value 
 		 * @param value
 		 * @return
 		 */
@@ -54,4 +56,4 @@ public class PropertyManager {
 	    	return properties.getProperty(value);
 	    }
 
-}
+}//End class propertyManager

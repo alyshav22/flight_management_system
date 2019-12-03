@@ -1,6 +1,5 @@
 package com.flightreservationsystem.model.services;
 
-
 import org.junit.Before;
 import org.junit.Test;
 

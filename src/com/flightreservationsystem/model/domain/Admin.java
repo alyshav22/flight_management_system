@@ -3,27 +3,27 @@ package com.flightreservationsystem.model.domain;
 import java.io.Serializable;
 
 /**
- * Domain Manager class holds managerID, managerName, workPhone, workEmail, and
+ * Domain Admin class holds adminID, adminName, workPhone, workEmail, and
  * managerPassword
  * 
  * @author alysha_velasquez
  *
  */
-public class Manager implements Serializable {
+public class Admin implements Serializable {
 	/**
-	 * facilitates versioning of serialized data for Domain Manager class
+	 * facilitates versioning of serialized data for Domain Admin class
 	 */
 	private static final long serialVersionUID = 8574182862248453883L;
 
 	/**
-	 * holds manager id
+	 * holds admin id
 	 */
-	private int managerID;
+	private int adminID;
 
 	/**
-	 * holds full name of manager
+	 * holds full name of admin
 	 */
-	private String managerName;
+	private String adminName;
 
 	/**
 	 * holds work phone number of manager
@@ -41,56 +41,56 @@ public class Manager implements Serializable {
 	private User user;
 
 	/**
-	 * default constructor for Manager that calls overloaded constructor with
+	 * default constructor for Admin that calls overloaded constructor with
 	 * default values
 	 */
-	public Manager() {
+	public Admin() {
 		this(999, "name", "phone", "email", new User());
 	}
 
 	/**
-	 * Override default constructor to create Manager object
+	 * Override default constructor to create Admin object
 	 * 
-	 * @param managerID
-	 * @param managerName
+	 * @param adminID
+	 * @param adminName
 	 * @param workPhone
 	 * @param workEmail
 	 * @param user
 	 */
-	public Manager(int managerId, String managerName, String workPhone, String workEmail, User user) {
-		this.managerID = managerId;
-		this.managerName = managerName;
+	public Admin(int adminId, String adminName, String workPhone, String workEmail, User user) {
+		this.adminID = adminId;
+		this.adminName = adminName;
 		this.workPhone = workPhone;
 		this.workEmail = workEmail;
 		this.user = user;
 	}
 
 	/**
-	 * @return the managerID
+	 * @return the adminID
 	 */
-	public int getManagerID() {
-		return managerID;
+	public int getAdminID() {
+		return adminID;
 	}
 
 	/**
-	 * @param managerID the managerID to set
+	 * @param adminID the adminID to set
 	 */
-	public void setManagerID(int managerId) {
-		this.managerID = managerId;
+	public void setAdminID(int managerId) {
+		this.adminID = managerId;
 	}
 
 	/**
-	 * @return the managerName
+	 * @return the adminName
 	 */
-	public String getManagerName() {
-		return managerName;
+	public String getAdminName() {
+		return adminName;
 	}
 
 	/**
-	 * @param managerName the managerName to set
+	 * @param adminName the adminName to set
 	 */
-	public void setManagerName(String managerName) {
-		this.managerName = managerName;
+	public void setAdminName(String managerName) {
+		this.adminName = managerName;
 	}
 
 	/**
@@ -142,8 +142,8 @@ public class Manager implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + managerID;
-		result = prime * result + ((managerName == null) ? 0 : managerName.hashCode());
+		result = prime * result + adminID;
+		result = prime * result + ((adminName == null) ? 0 : adminName.hashCode());
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		result = prime * result + ((workEmail == null) ? 0 : workEmail.hashCode());
 		result = prime * result + ((workPhone == null) ? 0 : workPhone.hashCode());
@@ -164,13 +164,13 @@ public class Manager implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Manager other = (Manager) obj;
-		if (managerID != other.managerID)
+		Admin other = (Admin) obj;
+		if (adminID != other.adminID)
 			return false;
-		if (managerName == null) {
-			if (other.managerName != null)
+		if (adminName == null) {
+			if (other.adminName != null)
 				return false;
-		} else if (!managerName.equals(other.managerName))
+		} else if (!adminName.equals(other.adminName))
 			return false;
 		if (user == null) {
 			if (other.user != null)
@@ -197,10 +197,10 @@ public class Manager implements Serializable {
 	 */
 	public boolean validate() {
 
-		if (this.managerID == 0) {
+		if (this.adminID == 0) {
 			return false;
 		}
-		if (this.managerName == null) {
+		if (this.adminName == null) {
 			return false;
 		}
 
@@ -217,15 +217,15 @@ public class Manager implements Serializable {
 	}
 
 	/**
-	 * @return Customer information in string format
+	 * @return Admin information in string format
 	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Manager [managerID=");
-		builder.append(managerID);
-		builder.append(", managerName=");
-		builder.append(managerName);
+		builder.append("Admin [adminID=");
+		builder.append(adminID);
+		builder.append(", adminName=");
+		builder.append(adminName);
 		builder.append(", workPhone=");
 		builder.append(workPhone);
 		builder.append(", workEmail=");
