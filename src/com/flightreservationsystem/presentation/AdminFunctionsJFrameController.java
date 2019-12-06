@@ -46,7 +46,7 @@ public class AdminFunctionsJFrameController implements ActionListener{
 			addFlight_actionPerformed(event);
 		} else if (event.getSource().equals(homeJFrameView.getSearchButton())) {
 			System.out.println("SearchFlight Button Pressed!!");
-			//searchFlight_actionPerformed(event);
+			searchFlight_actionPerformed(event);
 		} else if  (event.getSource().equals(homeJFrameView.getFileCloseItem())) {
 			System.out.println("File menu exit button clicked !!");
 			fileCloseItem_actionPerformed(event);
@@ -70,17 +70,18 @@ public class AdminFunctionsJFrameController implements ActionListener{
 
 	}
 	
-//	private void searchFlight_actionPerformed(ActionEvent event) {
-//		/**
-//		 * Create view class
-//		 */
-//		SearchFlightJFrameView searchFlightJFrameView = new SearchFlightJFrameView();
-//		/**
-//		  * Create controller and the view 
-//		  */
-//		SearchFlightJFrameController searchFlightJFrameController = new SearchFlightJFrameController(searchFlightJFrameView);
-//
-//	}
+	@SuppressWarnings("unused")
+	private void searchFlight_actionPerformed(ActionEvent event) {
+		/**
+		 * Create view class
+		 */
+		SearchFlightJFrameView searchFlightJFrameView = new SearchFlightJFrameView();
+		/**
+		  * Create controller and the view 
+		  */
+		SearchFlightJFrameController searchFlightJFrameController = new SearchFlightJFrameController(searchFlightJFrameView);
+
+	}
 	
 	/**
 	 * Close window component and exit application  

@@ -58,15 +58,9 @@ public class ServiceFactory {
 	 * @return Name - fully qualified package name
 	 * @throws Exception
 	 */
-	private String getImplementation(String name) throws Exception {
+	private String getImplementation(String serviceName) throws Exception {
 
-		java.util.Properties props = new java.util.Properties();
-		String propertyFileLocation = System.getProperty("prop_location");
-		System.out.println("Property File Location passed : " + propertyFileLocation);
-		java.io.FileInputStream file = new java.io.FileInputStream(propertyFileLocation);
-		props.load(file);
-		file.close();
-		return props.getProperty(name);
+		return PropertyManager.getPropertyValue(serviceName);
 
 	}
 

@@ -86,4 +86,39 @@ public class FlightServiceImpl implements IFlightService {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public Flight findFlight(int flightId) throws FlightFindException {
+		System.out.println("Entering method FlightServiceImpl:: findExhibit");
+		try {
+				try {
+					input = new ObjectInputStream(new FileInputStream("savedFlight.ser"));
+					flightHashtable = (Hashtable<Integer, Flight>) input.readObject();
+				}catch (FileNotFoundException e) {
+					System.out.println("savedFlight.ser does not exist for input, but will be created for output");
+					}
+			Flight flight = flightHashtable.get(flightId);
+			return flight;
+		}catch (FileNotFoundException e) {
+			System.out.println("File containing saved Flight not found!");
+			throw new FlightFindException( "File containing saved Flight not found!", e);
+		} catch (ClassNotFoundException e) {
+			
+			System.out.println("IOException while accessing file containing saved Flight!");
+			throw new FlightFindException("IOException while accessing file containing saved Flight!",e);
+		} catch (IOException e) {
+			throw new FlightFindException("ClassNotFoundException while reading file containing saved Flight",e);
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					// If an error occurs trying to close out stream print stack trace
+					e.printStackTrace();
+			
+				}
+			}
+		}
+	}
+
 }

@@ -36,7 +36,6 @@ public class MainGUIJFrameController implements ActionListener {
 		 * Listens and checks the value of each actions and 
 		 * performs the correct logic based on action
 		 */
-		
 		if(event.getSource().equals(mainGUIJFrameView.getAdminFunctionsItem())) {
 			System.out.println("Admin Functions pressed");
 			adminFunctions_actionPerformed(event);

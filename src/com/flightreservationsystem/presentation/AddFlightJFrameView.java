@@ -17,6 +17,11 @@ import javax.swing.JTextField;
 
 import com.flightreservationsystem.model.domain.Flight;
 
+/**
+ * AddFlightJFrameView UI to load flight page and capture Admin inventory action
+ * @author alysha_velasquez
+ *
+ */
 public class AddFlightJFrameView {
 
 	private JFrame flightMainFrame;
@@ -28,7 +33,7 @@ public class AddFlightJFrameView {
 			flightDepartureTimeLabel, flightArrivalDateLabel, flightArrivalTimeLabel, flightBusinessFareLabel,
 			flightEconomyFareLabel;
 	private JTextField flightIDField, airlineNameField, flightOriginField, flightDestinationField,
-			flightDepartureDateField, flightDepartureTimeField, flightArrivalDateField, flightArrivalTimeField,
+			departureDateField, flightDepartureTimeField, flightArrivalDateField, flightArrivalTimeField,
 			flightBusinessFareField, flightEconomyFareField;
 	private JButton saveFlightButton, cancelFlightButton;
 	private Box flightBoxLayout;
@@ -129,9 +134,9 @@ public class AddFlightJFrameView {
 		departureDateLabel.setBounds(40, 400, 120, 17);
 		flightPanel.add(departureDateLabel);
 
-		flightDepartureDateField = new JTextField("MM/dd/yyyy", 40);
-		flightDepartureDateField.setBounds(160, 400, 240, 20);
-		flightPanel.add(flightDepartureDateField);
+		departureDateField = new JTextField("MM/dd/yyyy", 40);
+		departureDateField.setBounds(160, 400, 240, 20);
+		flightPanel.add(departureDateField);
 
 		flightDepartureTimeLabel = new JLabel();
 		flightDepartureTimeLabel.setText("Flight Departure Time:");
@@ -241,10 +246,10 @@ public class AddFlightJFrameView {
 	}
 
 	/**
-	 * @return the flightDepartureDateField
+	 * @return the departureDateField
 	 */
-	public JTextField getFlightDepartureDateField() {
-		return flightDepartureDateField;
+	public JTextField getDepartureDateField() {
+		return departureDateField;
 	}
 
 	/**
@@ -304,7 +309,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight Origin VIA controller
 	 * @param error
 	 */
-	public void setdflightOriginError(String error) {
+	public void setFlightOriginError(String error) {
 		airlineNameField.setText(error);
 		airlineNameField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -313,7 +318,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight Destination VIA controller
 	 * @param error
 	 */
-	public void setflightDestinationError(String error) {
+	public void setFlightDestinationError(String error) {
 		flightDestinationField.setText(error);
 		flightDestinationField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -322,25 +327,40 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight Departure Date VIA controller
 	 * @param error
 	 */
-	public void setflightDepartureDateError(String error) {
-		flightDepartureDateField.setText(error);
-		flightDepartureDateField.setForeground(new java.awt.Color(255, 0, 0));
+	public void setDepartureDateError() {
+		departureDateField.setForeground(new java.awt.Color(255, 0, 0));
+	}
+	
+	/**
+	 * UI Error Handle for Flight Departure Date VIA controller
+	 * @param error
+	 */
+	public void setDepartureDateError(String error) {
+		departureDateField.setForeground(new java.awt.Color(255, 0, 0));
+		departureDateField.setText(error);
 	}
 	
 	/**
 	 * UI Error Handle for Flight Departure Time VIA controller
 	 * @param error
 	 */
-	public void setflightDepartureTimeError(String error) {
+	public void setFlightDepartureTimeError(String error) {
 		flightDepartureTimeField.setText(error);
 		flightDepartureTimeField.setForeground(new java.awt.Color(255, 0, 0));
+	}
+	/**
+	 * UI Error Handle for Flight Arrival Date VIA controller
+	 * @param error
+	 */
+	public void setFlightArrivalDateError() {
+		flightArrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
 	 * UI Error Handle for Flight Arrival Date VIA controller
 	 * @param error
 	 */
-	public void setflightArrivalDateError(String error) {
+	public void setFlightArrivalDateError(String error) {
 		flightArrivalDateField.setText(error);
 		flightArrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -349,7 +369,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight Arrival Date VIA controller
 	 * @param error
 	 */
-	public void setflightArrivalTimeError(String error) {
+	public void setFlightArrivalTimeError(String error) {
 		flightArrivalTimeField.setText(error);
 		flightArrivalTimeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -358,7 +378,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight business fare VIA controller
 	 * @param error
 	 */
-	public void setflightBusinessFareError(String error) {
+	public void setFlightBusinessFareError(String error) {
 		flightBusinessFareField.setText(error);
 		flightBusinessFareField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -367,7 +387,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight economy fare VIA controller
 	 * @param error
 	 */
-	public void setflightEconomyFareError(String error) {
+	public void setFlightEconomyFareError(String error) {
 		flightEconomyFareField.setText(error);
 		flightEconomyFareField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -381,9 +401,9 @@ public class AddFlightJFrameView {
 		// Format and validate flight departure date entered by user.
 
 		String pattern = "MM/dd/yyyy";
-		String date = flightDepartureDateField.getText();
+		String date = departureDateField.getText();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
-		if (flightDepartureDateField.getText().equals(pattern)) {
+		if (departureDateField.getText().equals(pattern)) {
 			departureDate = LocalDate.of(1900, Month.JUNE, 05);
 		} else {
 			departureDate = LocalDate.parse(date, formatter);

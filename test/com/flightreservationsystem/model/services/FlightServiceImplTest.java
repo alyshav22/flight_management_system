@@ -26,6 +26,8 @@ public class FlightServiceImplTest {
 		// initialize instance variables
 		testServiceFactory = ServiceFactory.getInstance();
 		flight = new Flight();
+		String fileLocation = System.getProperty("prop_location");
+		PropertyManager.loadProperties(fileLocation);
 	}
 
 	/**
