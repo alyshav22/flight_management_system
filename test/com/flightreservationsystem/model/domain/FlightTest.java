@@ -32,12 +32,12 @@ public class FlightTest {
 
 		flight2 = new Flight();
 
-		flight = new Flight(9999, "Frontier", "DEN", "SJC", departureDate, "7:30AM", arrivalDate, "9:30AM", 200.00,
+		flight = new Flight(123456, "Frontier", "DEN", "SJC", departureDate, "7:30AM", arrivalDate, "9:30AM", 200.00,
 				100.00);
 		//flight.setFlightAirplanes(airplane1);
 		//flight.setFlightAirplanes(airplane2);
 
-		flight3 = new Flight(9999, "Frontier", "DEN", "SJC", departureDate, "7:30AM", arrivalDate, "9:30AM", 200.00,
+		flight3 = new Flight(123456, "Frontier", "DEN", "SJC", departureDate, "7:30AM", arrivalDate, "9:30AM", 200.00,
 				100.00);
 		//flight3.setFlightAirplanes(airplane1);
 		//flight3.setFlightAirplanes(airplane2);

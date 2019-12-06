@@ -12,8 +12,8 @@ public class FlightServiceImplTest {
 
 	// Declare Instance variables
 	private ServiceFactory testServiceFactory;
-	private Flight flight;
-	private IFlightService saveFlightService;
+	private Flight flight, searchFlightResults;
+	private IFlightService saveFlightService, findFlightService;
 
 	/**
 	 * Configures test environment and instantiates required object for all test
@@ -50,6 +50,31 @@ public class FlightServiceImplTest {
 			e.printStackTrace();
 			fail("FlightSaveException");
 		}
+	}
+	
+	/**
+	 * Asserts if you can find find a flight using services
+	 */
+	@Test
+	public final void testFindFlight() {
+		
+		System.out.println("Starting testFindFlight() ");
+		
+		try {
+			findFlightService = (IFlightService) testServiceFactory.getService(IFlightService.NAME);
+			assertNotNull("should not be null", FlightServiceImpl.getFlightHashtable());
+			searchFlightResults = findFlightService.findFlight(123456);
+			assertNotNull("should not be null",searchFlightResults);
+			System.out.println(searchFlightResults.toString());
+			System.out.println("FlightServiceImplTest: testFindFlight() PASSED");
+		} catch (ServiceLoadException e) {
+			e.printStackTrace();
+			fail("ServiceLoadException");
+		} catch (FlightFindException e) {
+			e.printStackTrace();
+			fail("FlightFindException");
+		}
+		
 	}
 
 }

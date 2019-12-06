@@ -89,16 +89,19 @@ public class FlightServiceImpl implements IFlightService {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Flight findFlight(int flightId) throws FlightFindException {
-		System.out.println("Entering method FlightServiceImpl:: findExhibit");
+		
+		System.out.println("Entering method FlightServiceImpl:: findFlight");
 		try {
 				try {
-					input = new ObjectInputStream(new FileInputStream("savedFlight.ser"));
+					input = new ObjectInputStream(new FileInputStream("saveFlight.ser"));
 					flightHashtable = (Hashtable<Integer, Flight>) input.readObject();
 				}catch (FileNotFoundException e) {
-					System.out.println("savedFlight.ser does not exist for input, but will be created for output");
+					System.out.println("saveFlight.ser does not exist for input, but will be created for output");
 					}
+				
 			Flight flight = flightHashtable.get(flightId);
 			return flight;
+			
 		}catch (FileNotFoundException e) {
 			System.out.println("File containing saved Flight not found!");
 			throw new FlightFindException( "File containing saved Flight not found!", e);
