@@ -43,16 +43,8 @@ public class FlightMgrTest {
 	@Test
 	public void testCreate() {
 		System.out.println("Starting testCreate()");
-		try {
-			flightMgr.create(flight);
-			System.out.println("FlightMgrTest: testCreate() PASSED");
-		} catch (ServiceLoadException e) {
-			e.printStackTrace();
-			fail("ServiceLoadException");
-		} catch (FlightSaveException e) {
-			e.printStackTrace();
-			fail("FlightSaveException");
-		}
+		assertTrue(flightMgr.create(flight));
+		System.out.println("FlightMgrTest: testCreate() PASSED");
 	}
 
 }

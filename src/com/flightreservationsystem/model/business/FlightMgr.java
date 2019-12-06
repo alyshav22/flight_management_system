@@ -36,10 +36,19 @@ public class FlightMgr extends ManagerSuperType {
 	 * @throws ServiceLoadException
 	 * @throws FlightSaveException
 	 */
-	public void create(Flight flight) throws ServiceLoadException, FlightSaveException{
+	public boolean create(Flight flight){
+	
+	try {
 		IFlightService flightService = (IFlightService) super.getService(IFlightService.NAME);
 		flightService.saveFlight(flight);
+		return true;
+	} catch (ServiceLoadException e) {
+		return false;
+	} catch (FlightSaveException e) {
+		return false;
 	}
+	
+}
 	
 	
 
