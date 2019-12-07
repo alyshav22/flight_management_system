@@ -20,9 +20,9 @@ public class SearchFlightResultsJFrameView extends JInternalFrame {
 	private Flight flight;
 	private JFrame flightResultsFrame;
 	private JPanel flightResultsPanel;
-	private JLabel flightIDResultsLabel, airlineNameLabel, flightOriginLabel, flightDestinationLabel,
-			departureDateLabel, flightDepartureTimeLabel, flightArrivalDateLabel, flightArrivalTimeLabel,
-			flightBusinessFareLabel, flightEconomyFareLabel;
+	private JLabel flightIDResultsLabel, airlineNameLabel, departureLocationLabel, arrivalLocationLabel,
+			departureDateLabel, departureTimeLabel, arrivalDateLabel, arrivalTimeLabel,
+			businessFareLabel, economyFareLabel;
 
 	/**
 	 * Default constructor that calls method to create GUI components and render to
@@ -33,6 +33,7 @@ public class SearchFlightResultsJFrameView extends JInternalFrame {
 		createGUIComponents();
 		flightResultsFrame.setSize(1366, 868);
 		flightResultsFrame.setVisible(true);
+		flightResultsFrame.setResizable(true);
 	}
 	
 	/**
@@ -48,82 +49,82 @@ public class SearchFlightResultsJFrameView extends JInternalFrame {
 		flightResultsPanel.setLayout(null);
 		
 		flightIDResultsLabel = new JLabel();
-		flightIDResultsLabel.setText("Flight ID: "+ Integer.toString(flight.getFlightID()));
+		flightIDResultsLabel.setText("Flight ID: " + Integer.toString(flight.getFlightID()));
 		flightIDResultsLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		flightIDResultsLabel.setForeground(new java.awt.Color(255, 255, 255));
 		flightIDResultsLabel.setBounds(40, 80, 360, 17);
 		flightResultsPanel.add(flightIDResultsLabel);
 		
 		airlineNameLabel = new JLabel();
-		airlineNameLabel.setText("Flight Name: "+ flight.getAirlineName());
+		airlineNameLabel.setText("Airline Code: " + flight.getAirlineCode());
 		airlineNameLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		airlineNameLabel.setForeground(new java.awt.Color(255, 255, 255));
 		airlineNameLabel.setBounds(40, 160, 360, 17);
 		flightResultsPanel.add(airlineNameLabel);
 		
-		flightOriginLabel = new JLabel();
-		flightOriginLabel.setText("Flight Origin: "+ flight.getOrigin());
-		flightOriginLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightOriginLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightOriginLabel.setBounds(40, 160, 360, 17);
-		flightResultsPanel.add(flightOriginLabel);
+		departureLocationLabel = new JLabel();
+		departureLocationLabel.setText("Arrival Location: "+ flight.getDepartureLocation());
+		departureLocationLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		departureLocationLabel.setForeground(new java.awt.Color(255, 255, 255));
+		departureLocationLabel.setBounds(40, 240, 360, 17);
+		flightResultsPanel.add(departureLocationLabel);
 		
-		flightDestinationLabel = new JLabel();
-		flightDestinationLabel.setText("Flight Destination: "+ flight.getDestination());
-		flightDestinationLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightDestinationLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightDestinationLabel.setBounds(40, 240, 360, 17);
-		flightResultsPanel.add(flightDestinationLabel);
+		arrivalLocationLabel = new JLabel();
+		arrivalLocationLabel.setText("Destination Location: "+ flight.getDestinationLocation());
+		arrivalLocationLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		arrivalLocationLabel.setForeground(new java.awt.Color(255, 255, 255));
+		arrivalLocationLabel.setBounds(40, 320, 360, 17);
+		flightResultsPanel.add(arrivalLocationLabel);
 		
 		LocalDate localDate = flight.getDepartureDate();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 		String formattedString = localDate.format(formatter);
 		
 		departureDateLabel = new JLabel();
-		departureDateLabel.setText("Departure Date:" + formattedString);
+		departureDateLabel.setText("Departure Date: " + formattedString);
 		departureDateLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		departureDateLabel.setForeground(new java.awt.Color(255, 255, 255));
-		departureDateLabel.setBounds(40, 320, 360, 17);
+		departureDateLabel.setBounds(40, 400, 360, 17);
 		flightResultsPanel.add(departureDateLabel);
 		
-		flightDepartureTimeLabel = new JLabel();
-		flightDepartureTimeLabel.setText("Flight Departure Time: "+ flight.getDepartureTime());
-		flightDepartureTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightDepartureTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightDepartureTimeLabel.setBounds(40, 400, 360, 17);
-		flightResultsPanel.add(flightDepartureTimeLabel);
+		departureTimeLabel = new JLabel();
+		departureTimeLabel.setText("Departure Time: "+ flight.getDepartureTime());
+		departureTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		departureTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
+		departureTimeLabel.setBounds(438, 80, 360, 17);
+		flightResultsPanel.add(departureTimeLabel);
 		
 		LocalDate localDateArrival = flight.getArrivalDate();
 		DateTimeFormatter formatterArrival = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 		String formattedStringArrival = localDateArrival.format(formatterArrival);
 		
-		flightArrivalDateLabel = new JLabel();
-		flightArrivalDateLabel.setText("Arrival Date:" + formattedStringArrival);
-		flightArrivalDateLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightArrivalDateLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightArrivalDateLabel.setBounds(40, 480, 360, 17);
-		flightResultsPanel.add(flightArrivalDateLabel);
+		arrivalDateLabel = new JLabel();
+		arrivalDateLabel.setText("Arrival Date: " + formattedStringArrival);
+		arrivalDateLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		arrivalDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+		arrivalDateLabel.setBounds(438, 160, 360, 17);
+		flightResultsPanel.add(arrivalDateLabel);
 		
-		flightArrivalTimeLabel = new JLabel();
-		flightArrivalTimeLabel.setText("Flight Arrival Time: "+ flight.getArrivalTime());
-		flightArrivalTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightArrivalTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightArrivalTimeLabel.setBounds(40, 560, 360, 17);
-		flightResultsPanel.add(flightArrivalTimeLabel);
+		arrivalTimeLabel = new JLabel();
+		arrivalTimeLabel.setText("Arrival Time: "+ flight.getArrivalTime());
+		arrivalTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		arrivalTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
+		arrivalTimeLabel.setBounds(438, 240, 360, 17);
+		flightResultsPanel.add(arrivalTimeLabel);
 		
-		flightBusinessFareLabel = new JLabel();
-		flightBusinessFareLabel.setText("Business Fare: " + Double.toString(flight.getBusinessFare()));
-		flightBusinessFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightBusinessFareLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightBusinessFareLabel.setBounds(40, 640, 360, 17);
-		flightResultsPanel.add(flightBusinessFareLabel);
+		businessFareLabel = new JLabel();
+		businessFareLabel.setText("Business Fare: " + Double.toString(flight.getBusinessFare()));
+		businessFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		businessFareLabel.setForeground(new java.awt.Color(255, 255, 255));
+		businessFareLabel.setBounds(438, 320, 360, 17);
+		flightResultsPanel.add(businessFareLabel);
 		
-		flightEconomyFareLabel = new JLabel();
-		flightEconomyFareLabel.setText("Economy Fare: " + Double.toString(flight.getEconomyFare()));
-		flightEconomyFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightEconomyFareLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightEconomyFareLabel.setBounds(40, 640, 360, 17);
-		flightResultsPanel.add(flightEconomyFareLabel);
+		economyFareLabel = new JLabel();
+		economyFareLabel.setText("Economy Fare: " + Double.toString(flight.getEconomyFare()));
+		economyFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		economyFareLabel.setForeground(new java.awt.Color(255, 255, 255));
+		economyFareLabel.setBounds(438, 400, 360, 17);
+		flightResultsPanel.add(economyFareLabel);
 		
 		flightResultsFrame.getContentPane().add(flightResultsPanel);
 	}

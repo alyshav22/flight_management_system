@@ -37,9 +37,6 @@ public class AddFlightJFrameController implements ActionListener {
 	/**
 	 * Override ActionListener
 	 * 
-	 * flightIDField, airlineNameField, flightOriginField, flightDestinationField,
-	 * DepartureDateField, flightDepartureTimeField, flightArrivalDateField,
-	 * flightArrivalTimeField, flightBusinessFareField, flightEconomyFareField;
 	 */
 
 	@Override
@@ -63,13 +60,13 @@ public class AddFlightJFrameController implements ActionListener {
 					|| (addFlightJFrameView.getFlightIDField().getText().equals("123456"))) {
 				System.out.println("Flight Id cannot be empty !!");
 				addFlightJFrameView.setFlightIDError("Error: Flight ID must be entered!");
-			} else if (addFlightJFrameView.getAirlineNameField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getAirlineCodeField().getText().isEmpty()) {
 				System.out.println("Airline Name cannot be empty !!");
 				addFlightJFrameView.setAirlineNameError("Error: Airline Name must be entered!");
-			} else if (addFlightJFrameView.getFlightOriginField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getDepartureLocationField().getText().isEmpty()) {
 				System.out.println("Flight Origin cannot be empty !!");
 				addFlightJFrameView.setFlightOriginError("Error: Airline Name must be entered!");
-			} else if (addFlightJFrameView.getFlightDestinationField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getDestinationLocationField().getText().isEmpty()) {
 				System.out.println("Flight Destination cannot be empty !!");
 				addFlightJFrameView.setFlightDestinationError("Error: Airline Name must be entered!");
 			} else if (addFlightJFrameView.getDepartureDateField().getText().equals(datePattern)) {
@@ -78,21 +75,21 @@ public class AddFlightJFrameController implements ActionListener {
 			} else if (addFlightJFrameView.getDepartureDateField().getText().isEmpty()) {
 				System.out.println("Departure date must be the following pattern MM/dd/yyyy!!");
 				addFlightJFrameView.setDepartureDateError("MM/dd/yyyy");
-			} else if (addFlightJFrameView.getFlightDepartureTimeField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getDepartureTimeField().getText().isEmpty()) {
 				System.out.println("Flight Departure Time cannot be empty !!");
 				addFlightJFrameView.setFlightDepartureTimeError("Error: Flight Time must be entered!");
-			} else if (addFlightJFrameView.getFlightArrivalDateField().getText().equals(datePattern)) {
+			} else if (addFlightJFrameView.getArrivalDateField().getText().equals(datePattern)) {
 				System.out.println("Departure date must be the following pattern MM/dd/yyyy!!");
 				addFlightJFrameView.setFlightArrivalDateError();
-			} else if (addFlightJFrameView.getFlightArrivalDateField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getArrivalDateField().getText().isEmpty()) {
 				System.out.println("Arrival date must be the following pattern MM/dd/yyyy!!");
 				addFlightJFrameView.setFlightArrivalDateError("MM/dd/yyyy");
-			} else if (addFlightJFrameView.getFlightArrivalTimeField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getArrivalTimeField().getText().isEmpty()) {
 				System.out.println("Flight Arrival Time cannot be empty !!");
 				addFlightJFrameView.setFlightArrivalTimeError("Error: Flight Time must be entered!");
-			} else if (addFlightJFrameView.getFlightBusinessFareField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getBusinessFareField().getText().isEmpty()) {
 				addFlightJFrameView.setFlightBusinessFareError("0.00");
-			} else if (addFlightJFrameView.getFlightEconomyFareField().getText().isEmpty()) {
+			} else if (addFlightJFrameView.getEconomyFareField().getText().isEmpty()) {
 				addFlightJFrameView.setFlightEconomyFareError("0.00");
 			} else {
 				flightSaveButton_actionPerformed(event);

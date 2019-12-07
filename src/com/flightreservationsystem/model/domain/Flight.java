@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 /**
  * Domain Flight class holds flightID, airlineCode, 
- * airlineName,fromLocation, toLocation departureTime,
- * arrivalTime,duration, seatTotal, fareCost
+ * departureLocation, arrivalLocation departureTime,
+ * arrivalTime, businessFare, arrivalFare
  * 
  * @author alysha_velasquez
  *
@@ -27,11 +27,11 @@ public class Flight implements Serializable{
 	/**
 	 * holds airline name
 	 */
-	private String airlineName;
+	private String airlineCode;
 	
-	private String origin;
+	private String departureLocation;
 	
-	private String destination;
+	private String destinationLocation;
 	
 	private LocalDate departureDate;
 	
@@ -54,15 +54,15 @@ public class Flight implements Serializable{
 	 * Default constructor
 	 */
 	public Flight() {
-		this(9999, "airlineName","origin","destination",LocalDate.now(),
+		this(9999, "airlineCode","departureLocation","destinationLocation",LocalDate.now(),
 				"departureTime", LocalDate.now(),"arrivalTime",200.50,100.50);
 	}
 
 	/**
 	 * @param flightID
-	 * @param airlineName
-	 * @param origin
-	 * @param destination
+	 * @param airlineCode
+	 * @param departureLocation
+	 * @param destinationLocation
 	 * @param departureDate
 	 * @param departureTime
 	 * @param arrivalDate
@@ -73,9 +73,9 @@ public class Flight implements Serializable{
 	public Flight(Integer flightID, String airlineName, String origin, String destination, LocalDate departureDate,
 			String departureTime, LocalDate arrivalDate, String arrivalTime, Double businessFare, Double economyFare) {
 		this.flightID = flightID;
-		this.airlineName = airlineName;
-		this.origin = origin;
-		this.destination = destination;
+		this.airlineCode = airlineName;
+		this.departureLocation = origin;
+		this.destinationLocation = destination;
 		this.departureDate = departureDate;
 		this.departureTime = departureTime;
 		this.arrivalDate = arrivalDate;
@@ -100,45 +100,45 @@ public class Flight implements Serializable{
 	}
 
 	/**
-	 * @return the airlineName
+	 * @return the airlineCode
 	 */
-	public String getAirlineName() {
-		return airlineName;
+	public String getAirlineCode() {
+		return airlineCode;
 	}
 
 	/**
-	 * @param airlineName the airlineName to set
+	 * @param airlineCode the airlineCode to set
 	 */
-	public void setAirlineName(String airlineName) {
-		this.airlineName = airlineName;
+	public void setAirlineCode(String airlineName) {
+		this.airlineCode = airlineName;
 	}
 
 	/**
-	 * @return the origin
+	 * @return the departureLocation
 	 */
-	public String getOrigin() {
-		return origin;
+	public String getDepartureLocation() {
+		return departureLocation;
 	}
 
 	/**
-	 * @param origin the origin to set
+	 * @param departureLocation the departureLocation to set
 	 */
-	public void setOrigin(String origin) {
-		this.origin = origin;
+	public void setDepartureLocation(String origin) {
+		this.departureLocation = origin;
 	}
 
 	/**
-	 * @return the destination
+	 * @return the destinationLocation
 	 */
-	public String getDestination() {
-		return destination;
+	public String getDestinationLocation() {
+		return destinationLocation;
 	}
 
 	/**
-	 * @param destination the destination to set
+	 * @param destinationLocation the destinationLocation to set
 	 */
-	public void setDestination(String destination) {
-		this.destination = destination;
+	public void setDestinationLocation(String destination) {
+		this.destinationLocation = destination;
 	}
 
 	/**
@@ -249,9 +249,9 @@ public class Flight implements Serializable{
 	public boolean validate() {
 		
 		if( this.flightID == null ) return false;
-		if( this.airlineName == null ) return false;
-		if( this.origin == null ) return false;
-		if( this.destination == null ) return false;
+		if( this.airlineCode == null ) return false;
+		if( this.departureLocation == null ) return false;
+		if( this.destinationLocation == null ) return false;
 		if( this.departureDate == null ) return false;
 		if( this.departureTime == null ) return false;
 		if( this.arrivalDate == null ) return false;
@@ -267,17 +267,17 @@ public class Flight implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((airlineName == null) ? 0 : airlineName.hashCode());
+		result = prime * result + ((airlineCode == null) ? 0 : airlineCode.hashCode());
 		result = prime * result + ((arrivalDate == null) ? 0 : arrivalDate.hashCode());
 		result = prime * result + ((arrivalTime == null) ? 0 : arrivalTime.hashCode());
 		result = prime * result + ((businessFare == null) ? 0 : businessFare.hashCode());
 		result = prime * result + ((departureDate == null) ? 0 : departureDate.hashCode());
 		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
-		result = prime * result + ((destination == null) ? 0 : destination.hashCode());
+		result = prime * result + ((destinationLocation == null) ? 0 : destinationLocation.hashCode());
 		result = prime * result + ((economyFare == null) ? 0 : economyFare.hashCode());
 		result = prime * result + ((flightAirplanes == null) ? 0 : flightAirplanes.hashCode());
 		result = prime * result + ((flightID == null) ? 0 : flightID.hashCode());
-		result = prime * result + ((origin == null) ? 0 : origin.hashCode());
+		result = prime * result + ((departureLocation == null) ? 0 : departureLocation.hashCode());
 		return result;
 	}
 
@@ -290,10 +290,10 @@ public class Flight implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Flight other = (Flight) obj;
-		if (airlineName == null) {
-			if (other.airlineName != null)
+		if (airlineCode == null) {
+			if (other.airlineCode != null)
 				return false;
-		} else if (!airlineName.equals(other.airlineName))
+		} else if (!airlineCode.equals(other.airlineCode))
 			return false;
 		if (arrivalDate == null) {
 			if (other.arrivalDate != null)
@@ -320,10 +320,10 @@ public class Flight implements Serializable{
 				return false;
 		} else if (!departureTime.equals(other.departureTime))
 			return false;
-		if (destination == null) {
-			if (other.destination != null)
+		if (destinationLocation == null) {
+			if (other.destinationLocation != null)
 				return false;
-		} else if (!destination.equals(other.destination))
+		} else if (!destinationLocation.equals(other.destinationLocation))
 			return false;
 		if (economyFare == null) {
 			if (other.economyFare != null)
@@ -340,10 +340,10 @@ public class Flight implements Serializable{
 				return false;
 		} else if (!flightID.equals(other.flightID))
 			return false;
-		if (origin == null) {
-			if (other.origin != null)
+		if (departureLocation == null) {
+			if (other.departureLocation != null)
 				return false;
-		} else if (!origin.equals(other.origin))
+		} else if (!departureLocation.equals(other.departureLocation))
 			return false;
 		return true;
 	}
@@ -352,8 +352,8 @@ public class Flight implements Serializable{
 	 */
 	@Override
 	public String toString() {
-		return "Flight [flightID=" + flightID + ", airlineName=" + airlineName + ", origin=" + origin + ", destination="
-				+ destination + ", departureDate=" + departureDate + ", departureTime=" + departureTime
+		return "Flight [flightID=" + flightID + ", airlineCode=" + airlineCode + ", departureLocation=" + departureLocation + ", destinationLocation="
+				+ destinationLocation + ", departureDate=" + departureDate + ", departureTime=" + departureTime
 				+ ", arrivalDate=" + arrivalDate + ", arrivalTime=" + arrivalTime + ", businessFare=" + businessFare
 				+ ", economyFare=" + economyFare + ", flightAirplanes=" + flightAirplanes + "]";
 	}

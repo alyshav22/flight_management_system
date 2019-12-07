@@ -29,12 +29,12 @@ public class AddFlightJFrameView {
 	private JMenuBar flightMenuBar;
 	private JMenu flightMenu;
 	private JMenuItem flightFileCloseItem;
-	private JLabel flightIDLabel, airlineNameLabel, flightOriginLabel, flightDestinationLabel, departureDateLabel,
-			flightDepartureTimeLabel, flightArrivalDateLabel, flightArrivalTimeLabel, flightBusinessFareLabel,
-			flightEconomyFareLabel;
-	private JTextField flightIDField, airlineNameField, flightOriginField, flightDestinationField,
-			departureDateField, flightDepartureTimeField, flightArrivalDateField, flightArrivalTimeField,
-			flightBusinessFareField, flightEconomyFareField;
+	private JLabel flightIDLabel, airlineCodeLabel, departureLocationLabel, arrivalLocationLabel, departureDateLabel,
+			departureTimeLabel, arrivalDateLabel, arrivalTimeLabel, businessFareLabel,
+			economyFareLabel;
+	private JTextField flightIDField, airlineCodeField, departureLocationField, destinationLocationField,
+			departureDateField, departureTimeField, arrivalDateField, arrivalTimeField,
+			businessFareField, economyFareField;
 	private JButton saveFlightButton, cancelFlightButton;
 	private Box flightBoxLayout;
 	private LocalDate departureDate, arrivalDate;
@@ -62,7 +62,7 @@ public class AddFlightJFrameView {
 
 		flightBoxLayout.add(cancelFlightButton);
 		flightBoxLayout.add(saveFlightButton);
-		flightBoxLayout.setBounds(885, 740, 200, 50);
+		flightBoxLayout.setBounds(600, 450, 200, 50);
 		flightPanel.add(flightBoxLayout);
 
 		flightMenuBar = new JMenuBar();
@@ -91,107 +91,108 @@ public class AddFlightJFrameView {
 		flightPanel.add(flightIDLabel);
 
 		flightIDField = new JTextField("123456", 40);
-		flightIDField.setBounds(160, 80, 240, 20);
+		flightIDField.setBounds(180, 80, 240, 20);
 		flightPanel.add(flightIDField);
 
-		airlineNameLabel = new JLabel();
-		airlineNameLabel.setText("Airline Name:");
-		airlineNameLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		airlineNameLabel.setForeground(new java.awt.Color(255, 255, 255));
-		airlineNameLabel.setBounds(40, 160, 120, 17);
-		flightPanel.add(airlineNameLabel);
+		airlineCodeLabel = new JLabel();
+		airlineCodeLabel.setText("Airline Code:");
+		airlineCodeLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		airlineCodeLabel.setForeground(new java.awt.Color(255, 255, 255));
+		airlineCodeLabel.setBounds(40, 160, 120, 17);
+		flightPanel.add(airlineCodeLabel);
 
-		airlineNameField = new JTextField("Airline Name", 40);
-		airlineNameField.setBounds(160, 160, 240, 20);
-		flightPanel.add(airlineNameField);
+		airlineCodeField = new JTextField("Airline Code", 40);
+		airlineCodeField.setBounds(180, 160, 240, 20);
+		flightPanel.add(airlineCodeField);
 
-		flightOriginLabel = new JLabel();
-		flightOriginLabel.setText("Flight Origin:");
-		flightOriginLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightOriginLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightOriginLabel.setBounds(40, 240, 120, 17);
-		flightPanel.add(flightOriginLabel);
+		departureLocationLabel = new JLabel();
+		departureLocationLabel.setText("Departure Location:");
+		departureLocationLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		departureLocationLabel.setForeground(new java.awt.Color(255, 255, 255));
+		departureLocationLabel.setBounds(40, 240, 150, 17);
+		flightPanel.add(departureLocationLabel);
 
-		flightOriginField = new JTextField("Flight Origin", 40);
-		flightOriginField.setBounds(160, 240, 240, 20);
-		flightPanel.add(flightOriginField);
+		departureLocationField = new JTextField("Departure Location", 40);
+		departureLocationField.setBounds(180, 240, 240, 20);
+		flightPanel.add(departureLocationField);
 
-		flightDestinationLabel = new JLabel();
-		flightDestinationLabel.setText("Flight Destination:");
-		flightDestinationLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightDestinationLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightDestinationLabel.setBounds(40, 320, 150, 17);
-		flightPanel.add(flightDestinationLabel);
+		arrivalLocationLabel = new JLabel();
+		arrivalLocationLabel.setText("Arrival Location:");
+		arrivalLocationLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		arrivalLocationLabel.setForeground(new java.awt.Color(255, 255, 255));
+		arrivalLocationLabel.setBounds(40, 320, 150, 17);
+		flightPanel.add(arrivalLocationLabel);
 
-		flightDestinationField = new JTextField("Flight Destination", 40);
-		flightDestinationField.setBounds(180, 320, 240, 20);
-		flightPanel.add(flightDestinationField);
+		destinationLocationField = new JTextField("Arrival Location", 40);
+		destinationLocationField.setBounds(180, 320, 240, 20);
+		flightPanel.add(destinationLocationField);
 
 		departureDateLabel = new JLabel();
-		departureDateLabel.setText("Flight Departure Date:");
+		departureDateLabel.setText("Departure Date:");
 		departureDateLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		departureDateLabel.setForeground(new java.awt.Color(255, 255, 255));
 		departureDateLabel.setBounds(40, 400, 120, 17);
 		flightPanel.add(departureDateLabel);
 
 		departureDateField = new JTextField("MM/dd/yyyy", 40);
-		departureDateField.setBounds(160, 400, 240, 20);
+		departureDateField.setBounds(180, 400, 240, 20);
 		flightPanel.add(departureDateField);
+		
+		
+		departureTimeLabel = new JLabel();
+		departureTimeLabel.setText("Departure Time:");
+		departureTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		departureTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
+		departureTimeLabel.setBounds(438, 80, 120, 17);
+		flightPanel.add(departureTimeLabel);
 
-		flightDepartureTimeLabel = new JLabel();
-		flightDepartureTimeLabel.setText("Flight Departure Time:");
-		flightDepartureTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightDepartureTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightDepartureTimeLabel.setBounds(40, 480, 120, 17);
-		flightPanel.add(flightDepartureTimeLabel);
+		departureTimeField = new JTextField("Departure Time", 40);
+		departureTimeField.setBounds(560, 80, 240, 20);
+		flightPanel.add(departureTimeField);
 
-		flightDepartureTimeField = new JTextField("Departure Time", 40);
-		flightDepartureTimeField.setBounds(160, 480, 240, 20);
-		flightPanel.add(flightDepartureTimeField);
+		arrivalDateLabel = new JLabel();
+		arrivalDateLabel.setText("Arrival Date:");
+		arrivalDateLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		arrivalDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+		arrivalDateLabel.setBounds(438, 160, 120, 17);
+		flightPanel.add(arrivalDateLabel);
 
-		flightArrivalDateLabel = new JLabel();
-		flightArrivalDateLabel.setText("Flight Arrival Date:");
-		flightArrivalDateLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightArrivalDateLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightArrivalDateLabel.setBounds(40, 560, 120, 17);
-		flightPanel.add(flightArrivalDateLabel);
+		arrivalDateField = new JTextField("MM/dd/yyyy", 40);
+		arrivalDateField.setBounds(560, 160, 240, 20);
+		flightPanel.add(arrivalDateField);
 
-		flightArrivalDateField = new JTextField("MM/dd/yyyy", 40);
-		flightArrivalDateField.setBounds(160, 560, 240, 20);
-		flightPanel.add(flightArrivalDateField);
+		arrivalTimeLabel = new JLabel();
+		arrivalTimeLabel.setText("Arrival Time:");
+		arrivalTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		arrivalTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
+		arrivalTimeLabel.setBounds(438, 240, 120, 17);
+		flightPanel.add(arrivalTimeLabel);
 
-		flightArrivalTimeLabel = new JLabel();
-		flightArrivalTimeLabel.setText("Flight Arrival Time:");
-		flightArrivalTimeLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightArrivalTimeLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightArrivalTimeLabel.setBounds(40, 640, 120, 17);
-		flightPanel.add(flightArrivalTimeLabel);
+		arrivalTimeField = new JTextField("Arrival Time", 40);
+		arrivalTimeField.setBounds(560, 240, 240, 20);
+		flightPanel.add(arrivalTimeField);
 
-		flightArrivalTimeField = new JTextField("Arrival Time", 40);
-		flightArrivalTimeField.setBounds(160, 640, 240, 20);
-		flightPanel.add(flightArrivalTimeField);
+		businessFareLabel = new JLabel();
+		businessFareLabel.setText("Business Fare:");
+		businessFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		businessFareLabel.setForeground(new java.awt.Color(255, 255, 255));
+		businessFareLabel.setBounds(438, 320, 120, 17);
+		flightPanel.add(businessFareLabel);
 
-		flightBusinessFareLabel = new JLabel();
-		flightBusinessFareLabel.setText("Business Fare:");
-		flightBusinessFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightBusinessFareLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightBusinessFareLabel.setBounds(438, 80, 120, 17);
-		flightPanel.add(flightBusinessFareLabel);
+		businessFareField = new JTextField("0.00", 40);
+		businessFareField.setBounds(560, 320, 240, 20);
+		flightPanel.add(businessFareField);
 
-		flightBusinessFareField = new JTextField("Business Fare", 40);
-		flightBusinessFareField.setBounds(538, 80, 240, 20);
-		flightPanel.add(flightBusinessFareField);
+		economyFareLabel = new JLabel();
+		economyFareLabel.setText("Economy Fare:");
+		economyFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		economyFareLabel.setForeground(new java.awt.Color(255, 255, 255));
+		economyFareLabel.setBounds(438, 400, 120, 17);
+		flightPanel.add(economyFareLabel);
 
-		flightEconomyFareLabel = new JLabel();
-		flightEconomyFareLabel.setText("Economy Fare:");
-		flightEconomyFareLabel.setFont(new java.awt.Font("Arial", 1, 14));
-		flightEconomyFareLabel.setForeground(new java.awt.Color(255, 255, 255));
-		flightEconomyFareLabel.setBounds(438, 160, 120, 17);
-		flightPanel.add(flightEconomyFareLabel);
-
-		flightEconomyFareField = new JTextField("Economy Fare", 40);
-		flightEconomyFareField.setBounds(585, 160, 240, 20);
-		flightPanel.add(flightEconomyFareField);
+		economyFareField = new JTextField("0.00", 40);
+		economyFareField.setBounds(560, 400, 240, 20);
+		flightPanel.add(economyFareField);
 
 		flightMainFrame.getContentPane().add(flightPanel);
 	}
@@ -225,24 +226,24 @@ public class AddFlightJFrameView {
 	}
 
 	/**
-	 * @return the airlineNameField
+	 * @return the airlineCodeField
 	 */
-	public JTextField getAirlineNameField() {
-		return airlineNameField;
+	public JTextField getAirlineCodeField() {
+		return airlineCodeField;
 	}
 
 	/**
-	 * @return the flightOriginField
+	 * @return the departureLocationField
 	 */
-	public JTextField getFlightOriginField() {
-		return flightOriginField;
+	public JTextField getDepartureLocationField() {
+		return departureLocationField;
 	}
 
 	/**
-	 * @return the flightDestinationField
+	 * @return the destinationLocationField
 	 */
-	public JTextField getFlightDestinationField() {
-		return flightDestinationField;
+	public JTextField getDestinationLocationField() {
+		return destinationLocationField;
 	}
 
 	/**
@@ -253,38 +254,38 @@ public class AddFlightJFrameView {
 	}
 
 	/**
-	 * @return the flightDepartureTimeField
+	 * @return the departureTimeField
 	 */
-	public JTextField getFlightDepartureTimeField() {
-		return flightDepartureTimeField;
+	public JTextField getDepartureTimeField() {
+		return departureTimeField;
 	}
 
 	/**
-	 * @return the flightArrivalDateField
+	 * @return the arrivalDateField
 	 */
-	public JTextField getFlightArrivalDateField() {
-		return flightArrivalDateField;
+	public JTextField getArrivalDateField() {
+		return arrivalDateField;
 	}
 
 	/**
-	 * @return the flightArrivalTimeField
+	 * @return the arrivalTimeField
 	 */
-	public JTextField getFlightArrivalTimeField() {
-		return flightArrivalTimeField;
+	public JTextField getArrivalTimeField() {
+		return arrivalTimeField;
 	}
 
 	/**
-	 * @return the flightBusinessFareField
+	 * @return the businessFareField
 	 */
-	public JTextField getFlightBusinessFareField() {
-		return flightBusinessFareField;
+	public JTextField getBusinessFareField() {
+		return businessFareField;
 	}
 
 	/**
-	 * @return the flightEconomyFareField
+	 * @return the economyFareField
 	 */
-	public JTextField getFlightEconomyFareField() {
-		return flightEconomyFareField;
+	public JTextField getEconomyFareField() {
+		return economyFareField;
 	}
 	
 	/**
@@ -310,8 +311,8 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightOriginError(String error) {
-		airlineNameField.setText(error);
-		airlineNameField.setForeground(new java.awt.Color(255, 0, 0));
+		airlineCodeField.setText(error);
+		airlineCodeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
@@ -319,8 +320,8 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightDestinationError(String error) {
-		flightDestinationField.setText(error);
-		flightDestinationField.setForeground(new java.awt.Color(255, 0, 0));
+		destinationLocationField.setText(error);
+		destinationLocationField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
@@ -345,15 +346,15 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightDepartureTimeError(String error) {
-		flightDepartureTimeField.setText(error);
-		flightDepartureTimeField.setForeground(new java.awt.Color(255, 0, 0));
+		departureTimeField.setText(error);
+		departureTimeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	/**
 	 * UI Error Handle for Flight Arrival Date VIA controller
 	 * @param error
 	 */
 	public void setFlightArrivalDateError() {
-		flightArrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
+		arrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
@@ -361,8 +362,8 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightArrivalDateError(String error) {
-		flightArrivalDateField.setText(error);
-		flightArrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
+		arrivalDateField.setText(error);
+		arrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
@@ -370,8 +371,8 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightArrivalTimeError(String error) {
-		flightArrivalTimeField.setText(error);
-		flightArrivalTimeField.setForeground(new java.awt.Color(255, 0, 0));
+		arrivalTimeField.setText(error);
+		arrivalTimeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
@@ -379,8 +380,8 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightBusinessFareError(String error) {
-		flightBusinessFareField.setText(error);
-		flightBusinessFareField.setForeground(new java.awt.Color(255, 0, 0));
+		businessFareField.setText(error);
+		businessFareField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
@@ -388,8 +389,8 @@ public class AddFlightJFrameView {
 	 * @param error
 	 */
 	public void setFlightEconomyFareError(String error) {
-		flightEconomyFareField.setText(error);
-		flightEconomyFareField.setForeground(new java.awt.Color(255, 0, 0));
+		economyFareField.setText(error);
+		economyFareField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 
 	/**
@@ -399,7 +400,6 @@ public class AddFlightJFrameView {
 	public Flight getFlightData() {
 
 		// Format and validate flight departure date entered by user.
-
 		String pattern = "MM/dd/yyyy";
 		String date = departureDateField.getText();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
@@ -410,10 +410,11 @@ public class AddFlightJFrameView {
 		}
 
 		// Format and validate flight arrival date entered by user.
+		
 		String pattern2 = "MM/dd/yyyy";
-		String date2 = flightArrivalDateField.getText();
+		String date2 = departureDateField.getText();
 		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern(pattern2);
-		if (flightArrivalDateField.getText().equals(pattern2)) {
+		if (arrivalDateField.getText().equals(pattern2)) {
 			arrivalDate = LocalDate.of(1900, Month.JUNE, 05);
 		} else {
 			arrivalDate = LocalDate.parse(date2, formatter2);
@@ -422,15 +423,15 @@ public class AddFlightJFrameView {
 		//Create Flight object based on user input
 		Flight flight = new Flight(
 				Integer.parseInt(flightIDField.getText()),
-				airlineNameField.getText(),
-				flightOriginField.getText(),
-				flightDestinationField.getText(),
+				airlineCodeField.getText(),
+				departureLocationField.getText(),
+				destinationLocationField.getText(),
 				departureDate,
-				flightDepartureTimeField.getText(),
+				departureTimeField.getText(),
 				arrivalDate,
-				flightArrivalTimeField.getText(),
-				Double.parseDouble(flightBusinessFareField.getText()),
-				Double.parseDouble(flightEconomyFareField.getText())
+				arrivalTimeField.getText(),
+				Double.parseDouble(businessFareField.getText()),
+				Double.parseDouble(economyFareField.getText())
 			);
 			return flight;	
 	}
