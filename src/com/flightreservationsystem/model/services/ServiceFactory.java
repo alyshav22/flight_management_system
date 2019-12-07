@@ -5,19 +5,17 @@ import com.flightreservationsystem.model.services.ServiceLoadException;
 
 /**
  * Implementation of Service Factory
- * 
- * @author alysha_velasquez
  *
  */
 
 public class ServiceFactory {
 
 	/**
-	 * Singleton pattern ensures that there is only one Service factory object
+	 * Default constructor
 	 */
-	private ServiceFactory() {
-
-	}
+	private ServiceFactory() {}
+	
+	// Singleton pattern to ensure only one Service factory object
 
 	/**
 	 * Static reference to a singleton factory object
@@ -26,8 +24,7 @@ public class ServiceFactory {
 
 	/**
 	 * Getter for a Factory object
-	 * 
-	 * @return serviceFactory
+	 * @return serviceFactory - Static reference to a singleton factory object
 	 */
 	public static ServiceFactory getInstance() {
 		return serviceFactory;
@@ -35,13 +32,10 @@ public class ServiceFactory {
 
 	/**
 	 * Abstract Factory to return any service
-	 * 
 	 * @param name
 	 * @return
-	 * 
 	 */
 	public IService getService(String name) throws ServiceLoadException {
-
 		try {
 			Class<?> serviceClass = Class.forName(getImplementation(name));
 			return (IService) serviceClass.getDeclaredConstructor().newInstance();
@@ -53,7 +47,6 @@ public class ServiceFactory {
 
 	/**
 	 * Method to get Names Services in properties
-	 * 
 	 * @param name - Name of the IService
 	 * @return Name - fully qualified package name
 	 * @throws Exception
@@ -64,4 +57,4 @@ public class ServiceFactory {
 
 	}
 
-} // end class ServiceFactory
+} //End class ServiceFactory

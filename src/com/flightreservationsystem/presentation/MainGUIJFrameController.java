@@ -3,7 +3,12 @@ package com.flightreservationsystem.presentation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * Controller
+ * Listens and handles actions generated from MainGUIJFrameView
+ * 
+ *
+ */
 
 public class MainGUIJFrameController implements ActionListener {
 	
@@ -16,7 +21,7 @@ public class MainGUIJFrameController implements ActionListener {
 
 	/**
 	 * Overload Constructor 
-	 * @param mainGUIFrameView
+	 * @param 
 	 */
 	public MainGUIJFrameController(MainGUIJFrameView mainGUIFrameView) {
 		this.mainGUIJFrameView = mainGUIFrameView;
@@ -54,7 +59,6 @@ public class MainGUIJFrameController implements ActionListener {
 		AdminFunctionsJFrameView adminFunctionsJFrameView = new AdminFunctionsJFrameView();
 		 AdminFunctionsJFrameController adminFunctionsJFrameController = new AdminFunctionsJFrameController(adminFunctionsJFrameView);
 		 mainGUIJFrameView.adminFunctionsToDesktop(adminFunctionsJFrameView);
-		
 	}
 	
 	/**

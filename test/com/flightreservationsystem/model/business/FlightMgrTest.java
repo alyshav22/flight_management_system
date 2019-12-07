@@ -9,8 +9,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.flightreservationsystem.model.domain.Flight;
-import com.flightreservationsystem.model.services.FlightSaveException;
-import com.flightreservationsystem.model.services.ServiceLoadException;
+
+/**
+ * 
+ * Business FlightMgrTest class that test methods in the Business layer Flight
+ *
+ */
 
 public class FlightMgrTest {
 
@@ -18,7 +22,11 @@ public class FlightMgrTest {
 	private Flight flight, foundFlight;
 	private LocalDate departureDate, arrivalDate;
 	private FlightMgr flightMgr;
-
+	
+	/**
+	 * Instantiates required object for all test, and configures test environment
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		departureDate = LocalDate.of(2019, Month.NOVEMBER, 30);
@@ -28,7 +36,9 @@ public class FlightMgrTest {
 		flightMgr = FlightMgr.getFlightMgr();
 
 	}
-
+	/**
+	 * Test to make sure singleton FlightMgr is not null. 
+	 */
 	@Test
 	public void testGetFlightManager() {
 		System.out.println("Starting testGetMuseumMgr() ");
@@ -37,8 +47,8 @@ public class FlightMgrTest {
 	}
 
 	/**
-	 * Test for creating and persisting a Flight.
-	 * 
+	 * Test for creating and persisting a Flight. 
+	 * Create method throws service load or save exception if there are errors
 	 */
 	@Test
 	public void testCreate() {

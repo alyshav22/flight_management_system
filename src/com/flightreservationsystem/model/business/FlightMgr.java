@@ -6,6 +6,13 @@ import com.flightreservationsystem.model.services.FlightFindException;
 import com.flightreservationsystem.model.services.FlightSaveException;
 import com.flightreservationsystem.model.services.ServiceLoadException;
 
+
+/**
+ * Business layer facade that aggregate a cohesive set of use cases for a Flight
+ * 
+ */
+
+
 public class FlightMgr extends ManagerSuperType {
 
 	/**
@@ -14,15 +21,17 @@ public class FlightMgr extends ManagerSuperType {
 	private FlightMgr() {
 
 	}
+	
+	//Singleton pattern to ensure only one FlightMgr object
 
 	/**
-	 * Static reference to a singleton FlightManager object
+	 * Static reference to a singleton FlightMgr object
 	 */
 	private static FlightMgr flightMgr = new FlightMgr();
 
+	
 	/**
 	 * Getter FlightMgr object
-	 * 
 	 * @return flightMgr - Static reference to a singleton FlightMgr object
 	 */
 	public static FlightMgr getFlightMgr() {
@@ -30,8 +39,7 @@ public class FlightMgr extends ManagerSuperType {
 	}
 
 	/**
-	 * Creates the Flight object based upon input values and persist objects through
-	 * Flight Service
+	 * Creates the Flight object based upon input values and persist objects via Flight Service
 	 * 
 	 * @param flight to be created and persisted
 	 * @throws ServiceLoadException

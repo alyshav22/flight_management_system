@@ -8,12 +8,12 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * Test Suite for domain layer components
  * 
- * @author alysha_velasquez
+ * 
  *
  */
 @RunWith(Suite.class)
-@SuiteClasses({ CustomerTest.class, FlightTest.class, 
-	AdminTest.class, UserTest.class, AirplaneTest.class })
+@SuiteClasses({ FlightTest.class, 
+	AdminTest.class, AirplaneTest.class })
 public class AllDomainTests {
 	
 	/**

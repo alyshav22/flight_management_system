@@ -3,11 +3,15 @@ package com.flightreservationsystem.model.domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Domain airplane class holds airplaneID, airplaneModel, economySeatsQuantity, and businessSeatQuantity
+ *
+ */
+
+
 public class Airplane implements Serializable{
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -4800878345040305688L;
 	
 	/**

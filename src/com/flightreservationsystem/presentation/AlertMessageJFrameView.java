@@ -4,6 +4,11 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 
+/**
+ * AlertMessageJFrameView UI to load alert message confirmation after action 
+ * 
+ *
+ */
 
 public class AlertMessageJFrameView extends JDialog {
 
@@ -22,9 +27,7 @@ public class AlertMessageJFrameView extends JDialog {
 		confirmButtonLabel.setText(message);
 		this.setTitle(title);
 		createGUIComponents();
-		this.setVisible(true);
-		
-		
+		this.setVisible(true);	
 	}
 
 	
@@ -43,8 +46,6 @@ public class AlertMessageJFrameView extends JDialog {
 		this.getContentPane().add(confirmButtonLabel);
 		this.getContentPane().add(confirmButton);
 		getContentPane().setLayout(null);
-		
-		
 	}
 
 	/**

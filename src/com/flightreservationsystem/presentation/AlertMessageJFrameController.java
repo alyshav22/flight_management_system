@@ -3,12 +3,15 @@ package com.flightreservationsystem.presentation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * AlertMessageJFrameController
+ * Listens and handles actions generated from AlertMessageJFrameController
+ * 
+ *
+ */
 
 public class AlertMessageJFrameController implements ActionListener{
 	
-	/**
-	 * 
-	 */
 	private AlertMessageJFrameView alertMessageJFrameView;
 	
 	/**

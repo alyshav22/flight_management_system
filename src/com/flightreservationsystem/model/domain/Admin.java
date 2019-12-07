@@ -3,12 +3,11 @@ package com.flightreservationsystem.model.domain;
 import java.io.Serializable;
 
 /**
- * Domain Admin class holds adminID, adminName, workPhone, workEmail, and
- * managerPassword
+ * Domain Admin class holds adminID, firstName, lastName, phone, email, username and
+ * password
  * 
- * @author alysha_velasquez
- *
  */
+
 public class Admin implements Serializable {
 	/**
 	 * facilitates versioning of serialized data for Domain Admin class
@@ -18,54 +17,70 @@ public class Admin implements Serializable {
 	/**
 	 * holds admin id
 	 */
-	private int adminID;
+	private Integer adminID;
 
 	/**
-	 * holds full name of admin
+	 * holds first name
 	 */
-	private String adminName;
+	private String firstName;
 
 	/**
-	 * holds work phone number of manager
+	 * holds first name
 	 */
-	private String workPhone;
+	private String lastName;
 
 	/**
-	 * holds work email of manager
+	 * holds phone number
 	 */
-	private String workEmail;
+	private String phone;
 
 	/**
-	 * holds login information
+	 * holds email
 	 */
-	private User user;
+	private String email;
 
 	/**
-	 * default constructor for Admin that calls overloaded constructor with
-	 * default values
+	 * holds username
+	 */
+	private String username;
+
+	/**
+	 * holds password
+	 */
+	private String password;
+
+	/**
+	 * default constructor for Admin that calls overloaded constructor with default
+	 * values
 	 */
 	public Admin() {
-		this(999, "name", "phone", "email", new User());
+		this(9999, "first name", "last name", "phone", "email", "username", "password");
 	}
 
 	/**
-	 * Override default constructor to create Admin object
+	 * Overloaded constructor for Admin
 	 * 
 	 * @param adminID
-	 * @param adminName
-	 * @param workPhone
-	 * @param workEmail
-	 * @param user
+	 * @param firstName
+	 * @param lastName
+	 * @param phone
+	 * @param email
+	 * @param username
+	 * @param password
 	 */
-	public Admin(int adminId, String adminName, String workPhone, String workEmail, User user) {
-		this.adminID = adminId;
-		this.adminName = adminName;
-		this.workPhone = workPhone;
-		this.workEmail = workEmail;
-		this.user = user;
+	public Admin(int adminID, String firstName, String lastName, String phone, String email, String username,
+			String password) {
+		this.adminID = adminID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.email = email;
+		this.username = username;
+		this.password = password;
 	}
 
 	/**
+	 * Get the id for an Admin
 	 * @return the adminID
 	 */
 	public int getAdminID() {
@@ -73,87 +88,156 @@ public class Admin implements Serializable {
 	}
 
 	/**
+	 * Set the adminID
 	 * @param adminID the adminID to set
 	 */
-	public void setAdminID(int managerId) {
-		this.adminID = managerId;
+	public void setAdminID(int adminID) {
+		this.adminID = adminID;
 	}
 
 	/**
-	 * @return the adminName
+	 * Get the first name
+	 * @return the firstName
 	 */
-	public String getAdminName() {
-		return adminName;
+	public String getFirstName() {
+		return firstName;
 	}
 
 	/**
-	 * @param adminName the adminName to set
+	 * Set the first name
+	 * @param firstName the firstName to set
 	 */
-	public void setAdminName(String managerName) {
-		this.adminName = managerName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	/**
-	 * @return the workPhone
+	 * Get the last name
+	 * @return the lastName
 	 */
-	public String getWorkPhone() {
-		return workPhone;
+	public String getLastName() {
+		return lastName;
 	}
 
 	/**
-	 * @param workPhone the workPhone to set
+	 * Set the last name
+	 * @param lastName the lastName to set
 	 */
-	public void setWorkPhone(String workPhone) {
-		this.workPhone = workPhone;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
-	 * @return the workEmail
+	 * Get the phone number
+	 * @return the phone
 	 */
-	public String getWorkEmail() {
-		return workEmail;
+	public String getPhone() {
+		return phone;
 	}
 
 	/**
-	 * @param workEmail the workEmail to set
+	 * Set the phone number
+	 * @param phone the phone to set
 	 */
-	public void setWorkEmail(String workEmail) {
-		this.workEmail = workEmail;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	/**
-	 * @return the user
+	 * Get the email
+	 * @return the email
 	 */
-	public User getUser() {
-		return user;
+	public String getEmail() {
+		return email;
 	}
 
 	/**
-	 * @param user the user to set
+	 * Set the email
+	 * @param email the email to set
 	 */
-	public void setUser(User user) {
-		this.user = user;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	/**
-	 * Override HashCode when overriding equals method
+	 * Get the username
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * Set the username
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
+	 * Get the password
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * Set the password 
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	/**
+	 * Validate if the instance variables are valid
+	 * @return boolean - true if instance variables are valid, else false
+	 */
+	public boolean validate() {
+
+		if (this.adminID == null)
+			return false;
+		if (this.firstName == null)
+			return false;
+		if (this.lastName == null)
+			return false;
+		if (this.phone == null)
+			return false;
+		if (this.email == null)
+			return false;
+		if (this.username == null)
+			return false;
+		if (this.password == null)
+			return false;
+
+		return true;
+	}
+
+	/**
+	 * Always Override Hashcode when overriding equals method
+	 * 
+	 * @return result - the hash value
 	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + adminID;
-		result = prime * result + ((adminName == null) ? 0 : adminName.hashCode());
-		result = prime * result + ((user == null) ? 0 : user.hashCode());
-		result = prime * result + ((workEmail == null) ? 0 : workEmail.hashCode());
-		result = prime * result + ((workPhone == null) ? 0 : workPhone.hashCode());
+		result = prime * result + ((adminID == null) ? 0 : adminID.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
 	/**
-	 * Overriding default equals method from Object Class
+	 * Overriding default equals method from Object class
 	 * 
-	 * @param obj is inherited from Object
+	 * @param obj - Inherited from object
 	 * @return boolean - False if any of the test fail equality default return true
 	 */
 	@Override
@@ -165,75 +249,51 @@ public class Admin implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Admin other = (Admin) obj;
-		if (adminID != other.adminID)
-			return false;
-		if (adminName == null) {
-			if (other.adminName != null)
+		if (adminID == null) {
+			if (other.adminID != null)
 				return false;
-		} else if (!adminName.equals(other.adminName))
+		} else if (!adminID.equals(other.adminID))
 			return false;
-		if (user == null) {
-			if (other.user != null)
+		if (email == null) {
+			if (other.email != null)
 				return false;
-		} else if (!user.equals(other.user))
+		} else if (!email.equals(other.email))
 			return false;
-		if (workEmail == null) {
-			if (other.workEmail != null)
+		if (firstName == null) {
+			if (other.firstName != null)
 				return false;
-		} else if (!workEmail.equals(other.workEmail))
+		} else if (!firstName.equals(other.firstName))
 			return false;
-		if (workPhone == null) {
-			if (other.workPhone != null)
+		if (lastName == null) {
+			if (other.lastName != null)
 				return false;
-		} else if (!workPhone.equals(other.workPhone))
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
 
 	/**
-	 * Validate if the instance variables are valid
-	 * 
-	 * @return boolean - true if instance variables are valid, else false
-	 */
-	public boolean validate() {
-
-		if (this.adminID == 0) {
-			return false;
-		}
-		if (this.adminName == null) {
-			return false;
-		}
-
-		if (this.workPhone == null) {
-			return false;
-		}
-		if (this.workEmail == null) {
-			return false;
-		}
-		if (this.user == null) {
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * @return Admin information in string format
+	 * toString() method useful for logging
 	 */
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Admin [adminID=");
-		builder.append(adminID);
-		builder.append(", adminName=");
-		builder.append(adminName);
-		builder.append(", workPhone=");
-		builder.append(workPhone);
-		builder.append(", workEmail=");
-		builder.append(workEmail);
-		builder.append(", user=");
-		builder.append(user);
-		builder.append("]");
-		return builder.toString();
+		return "Admin [adminID=" + adminID + ", firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phone
+				+ ", email=" + email + ", username=" + username + ", password=" + password + "]";
 	}
 
 }

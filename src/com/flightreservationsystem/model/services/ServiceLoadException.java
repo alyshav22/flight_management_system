@@ -1,8 +1,7 @@
 package com.flightreservationsystem.model.services;
 
 /**
- * Exception for loading factory objects
- * @author alysha_velasquez
+ * Custom Exception for loading factory objects
  *
  */
 
@@ -11,7 +10,7 @@ public class ServiceLoadException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Custom Service load exception for communicating between business and service layer
+	 * Custom Service Load Exception for communicating between business and service layer
 	 * @param inMessage
 	 * @param inNestedException
 	 */

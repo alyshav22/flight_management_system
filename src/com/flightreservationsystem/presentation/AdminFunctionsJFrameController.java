@@ -3,7 +3,10 @@ package com.flightreservationsystem.presentation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * Controller - Listens and handles actions generated from AdminFunctionsJFrameView
+ *
+ */
 
 public class AdminFunctionsJFrameController implements ActionListener{
 
@@ -18,7 +21,6 @@ public class AdminFunctionsJFrameController implements ActionListener{
 
 	/**
 	 * Overloaded Constructor
-	 * 
 	 * @param homeJFrameView
 	 */
 	public AdminFunctionsJFrameController(AdminFunctionsJFrameView homeJFrameView) {
@@ -32,14 +34,13 @@ public class AdminFunctionsJFrameController implements ActionListener{
 
 	/**
 	 * Overrides ActionListener
-	 * @Override
-	 */
-
+	 */ 
+	@Override
 	public void actionPerformed(ActionEvent event) {
+		
 		System.out.println("Inside HomeJFrameController::actionPerformed");
 		/**
-		 * Listens and checks the value of each actions and performs the correct logic
-		 * based on action
+		 * Listens and checks the value of each actions and performs the correct logic based on action
 		 */
 		if (event.getSource().equals(homeJFrameView.getAddButton())) {
 			System.out.println("Add Flight Button pressed");
@@ -57,19 +58,24 @@ public class AdminFunctionsJFrameController implements ActionListener{
 	 * Create View and Controller class for addFlightJFrame & addFlightJFrameController
 	 * @param event
 	 */
-	@SuppressWarnings("unused")
 	private void addFlight_actionPerformed(ActionEvent event) {
 		/**
 		 * Create view class
 		 */
 		AddFlightJFrameView addFlightJFrameView = new AddFlightJFrameView();
+		
 		/**
 		  * Create controller and the view 
 		  */
+		@SuppressWarnings("unused")
 		AddFlightJFrameController addFlightJFrameController = new AddFlightJFrameController(addFlightJFrameView);
 
 	}
 	
+	/**
+	 * Create View and Controller class for searchFlightJFrame & searchFlightJFrameController
+	 * @param event
+	 */
 	@SuppressWarnings("unused")
 	private void searchFlight_actionPerformed(ActionEvent event) {
 		/**

@@ -4,11 +4,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Domain AdminTest class that test methods in the Domain Admin
+ * 
+ *
+ */
+
 public class AdminTest {
 	
 	//Declare instance variables
 	private Admin m1,m2,m3;
-	private User user;
 	
 	/**
 	 * Instantiates required object for all test and configures test environment
@@ -17,10 +22,11 @@ public class AdminTest {
 	@Before
 	public void setup() throws Exception{
 		//Initialize instance variables
-		user = new User("alysha101","password");
 		m1 = new Admin();
-		m2 = new Admin(555,"Laura","555-555-5555","laura@gmail.com",user);
-		m3 = new Admin(555,"Laura","555-555-5555","laura@gmail.com",user);
+		m2 = new Admin(5555,"Michael","Jordan","555-555-5555","jordan007@gmail.com",
+				"jordan007","password");
+		m3 = new Admin(5555,"Michael","Jordan","555-555-5555","jordan007@gmail.com",
+				"jordan007","password");
 	}
 	
 	/**
@@ -54,6 +60,17 @@ public class AdminTest {
 		//assert should be equal
 		assertTrue("m2 equals m3", m2.equals(m3));
 		System.out.println("AdminTest: testEqualsAdmin PASSED");
+	}
+	
+	/**
+	 * Test if two Admin are not equal
+	 */
+	@Test
+	public final void testNotEqualsFlight() {
+		System.out.println("Starting testNotEqualsFlight()");
+		// assert should be false
+		assertFalse("m1 does not equal m3 ", m1.equals(m3));
+		System.out.println("AdminTest: testNotEqualsFlight() PASSED");
 	}
 
 }

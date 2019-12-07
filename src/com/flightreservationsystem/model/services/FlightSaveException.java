@@ -1,9 +1,7 @@
 package com.flightreservationsystem.model.services;
 
 /**
- * Exception for saving objects
- * 
- * @author alysha_velasquez
+ * Custom Exception for saving objects
  *
  */
 

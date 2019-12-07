@@ -5,8 +5,7 @@ import org.junit.Test;
 public class FlightSaveExceptionTest {
 
 	/**
-	 * Testing throwing Save Exception 
-	 * 
+	 * Test the expected Exception to be thrown from Service Layer Service Implementation flight save method
 	 *@throws FlightSaveException
 	 */
 

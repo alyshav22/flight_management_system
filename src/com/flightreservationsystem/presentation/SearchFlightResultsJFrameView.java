@@ -11,12 +11,16 @@ import javax.swing.JPanel;
 
 import com.flightreservationsystem.model.domain.Flight;
 
+/**
+ * This view displays the results returned by searching for a Flight
+ *
+ */
+
 public class SearchFlightResultsJFrameView extends JInternalFrame {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
+	
 	private Flight flight;
 	private JFrame flightResultsFrame;
 	private JPanel flightResultsPanel;
@@ -25,8 +29,7 @@ public class SearchFlightResultsJFrameView extends JInternalFrame {
 			businessFareLabel, economyFareLabel;
 
 	/**
-	 * Default constructor that calls method to create GUI components and render to
-	 * screen
+	 * Default constructor that calls method to create GUI components and render to screen
 	 */
 	public SearchFlightResultsJFrameView(Flight flight) {
 		this.flight = flight;

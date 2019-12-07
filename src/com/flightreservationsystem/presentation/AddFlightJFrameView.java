@@ -18,10 +18,12 @@ import javax.swing.JTextField;
 import com.flightreservationsystem.model.domain.Flight;
 
 /**
- * AddFlightJFrameView UI to load flight page and capture Admin inventory action
- * @author alysha_velasquez
+ * AddFlightJFrameView UI to load Flight page and capture Admin Inventory Action
+ * 
  *
  */
+
+
 public class AddFlightJFrameView {
 
 	private JFrame flightMainFrame;
@@ -46,7 +48,10 @@ public class AddFlightJFrameView {
 		flightMainFrame.setVisible(true);
 		flightMainFrame.setResizable(true);
 	}
-
+	
+	/**
+	 * Creates all the required components of the Add Flight page
+	 */
 	private void createGUIComponents() {
 		
 		flightMainFrame = new JFrame("Add Flight");
@@ -289,7 +294,7 @@ public class AddFlightJFrameView {
 	}
 	
 	/**
-	 * UI Error Handle for Flight ID VIA controller
+	 * UI Error Handle for FlightID VIA controller
 	 * @param error
 	 */
 	public void setFlightIDError(String error) {
@@ -298,34 +303,34 @@ public class AddFlightJFrameView {
 	}
 	
 	/**
-	 * UI Error Handle for Airline Name VIA controller
+	 * UI Error Handle for Airline Code VIA controller
 	 * @param error
 	 */
-	public void setAirlineNameError(String error) {
-		flightIDField.setText(error);
-		flightIDField.setForeground(new java.awt.Color(255, 0, 0));
+	public void setAirlineCodeError(String error) {
+		airlineCodeField.setText(error);
+		airlineCodeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
-	 * UI Error Handle for Flight Origin VIA controller
+	 * UI Error Handle for departure location VIA controller
 	 * @param error
 	 */
-	public void setFlightOriginError(String error) {
-		airlineCodeField.setText(error);
-		airlineCodeField.setForeground(new java.awt.Color(255, 0, 0));
+	public void setDepartureLocationError(String error) {
+		departureLocationField.setText(error);
+		departureLocationField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
 	 * UI Error Handle for Flight Destination VIA controller
 	 * @param error
 	 */
-	public void setFlightDestinationError(String error) {
+	public void setDestinationLocationError(String error) {
 		destinationLocationField.setText(error);
 		destinationLocationField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
-	 * UI Error Handle for Flight Departure Date VIA controller
+	 * UI Error Handle for Departure Date VIA controller
 	 * @param error
 	 */
 	public void setDepartureDateError() {
@@ -333,7 +338,7 @@ public class AddFlightJFrameView {
 	}
 	
 	/**
-	 * UI Error Handle for Flight Departure Date VIA controller
+	 * UI Error Handle for Departure Date VIA controller
 	 * @param error
 	 */
 	public void setDepartureDateError(String error) {
@@ -342,35 +347,35 @@ public class AddFlightJFrameView {
 	}
 	
 	/**
-	 * UI Error Handle for Flight Departure Time VIA controller
+	 * UI Error Handle for Departure Time VIA controller
 	 * @param error
 	 */
-	public void setFlightDepartureTimeError(String error) {
+	public void setDepartureTimeError(String error) {
 		departureTimeField.setText(error);
 		departureTimeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	/**
-	 * UI Error Handle for Flight Arrival Date VIA controller
+	 * UI Error Handle for Arrival Date VIA controller
 	 * @param error
 	 */
-	public void setFlightArrivalDateError() {
+	public void setArrivalDateError() {
 		arrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
-	 * UI Error Handle for Flight Arrival Date VIA controller
+	 * UI Error Handle for Arrival Date VIA controller
 	 * @param error
 	 */
-	public void setFlightArrivalDateError(String error) {
+	public void setArrivalDateError(String error) {
 		arrivalDateField.setText(error);
 		arrivalDateField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 	
 	/**
-	 * UI Error Handle for Flight Arrival Date VIA controller
+	 * UI Error Handle for Arrival Date VIA controller
 	 * @param error
 	 */
-	public void setFlightArrivalTimeError(String error) {
+	public void setArrivalTimeError(String error) {
 		arrivalTimeField.setText(error);
 		arrivalTimeField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -379,7 +384,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight business fare VIA controller
 	 * @param error
 	 */
-	public void setFlightBusinessFareError(String error) {
+	public void setBusinessFareError(String error) {
 		businessFareField.setText(error);
 		businessFareField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -388,7 +393,7 @@ public class AddFlightJFrameView {
 	 * UI Error Handle for Flight economy fare VIA controller
 	 * @param error
 	 */
-	public void setFlightEconomyFareError(String error) {
+	public void setEconomyFareError(String error) {
 		economyFareField.setText(error);
 		economyFareField.setForeground(new java.awt.Color(255, 0, 0));
 	}
@@ -401,8 +406,9 @@ public class AddFlightJFrameView {
 
 		// Format and validate flight departure date entered by user.
 		String pattern = "MM/dd/yyyy";
-		String date = departureDateField.getText();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+		
+		String date = departureDateField.getText();
 		if (departureDateField.getText().equals(pattern)) {
 			departureDate = LocalDate.of(1900, Month.JUNE, 05);
 		} else {
@@ -410,14 +416,11 @@ public class AddFlightJFrameView {
 		}
 
 		// Format and validate flight arrival date entered by user.
-		
-		String pattern2 = "MM/dd/yyyy";
-		String date2 = departureDateField.getText();
-		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern(pattern2);
-		if (arrivalDateField.getText().equals(pattern2)) {
+		String dateArrive = arrivalDateField.getText();
+		if (arrivalDateField.getText().equals(pattern)) {
 			arrivalDate = LocalDate.of(1900, Month.JUNE, 05);
 		} else {
-			arrivalDate = LocalDate.parse(date2, formatter2);
+			arrivalDate = LocalDate.parse(dateArrive, formatter);
 		}
 		
 		//Create Flight object based on user input

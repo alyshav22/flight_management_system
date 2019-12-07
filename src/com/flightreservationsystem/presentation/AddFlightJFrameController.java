@@ -6,13 +6,18 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.FlightMgr;
 import com.flightreservationsystem.model.domain.Flight;
 
+/**
+ * AddFlightJFrameController - Listens and handles actions generated from Add FlightJFrameView
+ *
+ */
+
+
 public class AddFlightJFrameController implements ActionListener {
 
 	private AddFlightJFrameView addFlightJFrameView;
 
 	/**
 	 * Default constructor
-	 * 
 	 * @param AddFlightJFrameController
 	 */
 	public AddFlightJFrameController() {
@@ -22,7 +27,7 @@ public class AddFlightJFrameController implements ActionListener {
 	/**
 	 * Overloaded Constructor
 	 * 
-	 * @param addFlightJFrameView
+	 * @param AddFlightJFrameView
 	 */
 	public AddFlightJFrameController(AddFlightJFrameView addFlightJFrameView) {
 		this.addFlightJFrameView = addFlightJFrameView;
@@ -38,20 +43,19 @@ public class AddFlightJFrameController implements ActionListener {
 	 * Override ActionListener
 	 * 
 	 */
-
 	@Override
 	public void actionPerformed(ActionEvent event) {
+		
 		System.out.println("Inside AddFlightJFrameController::actionPerformed");
-		// Listens and checks the value of each action and performs the correct logic
-		// based on action
+		// Listens and checks the value of each action and performs the correct logic based on action
 		if (event.getSource().equals(addFlightJFrameView.getFlightFileCloseItem())) {
 			System.out.println("Add Flight File menu exit button clicked !!");
 			flightFileCloseItem_actionPerformed(event);
 		} else if (event.getSource().equals(addFlightJFrameView.getCancelFlightButton())) {
-			System.out.println("Flight cancel button clicked !!");
+			System.out.println("Flight cancel button clicked!!");
 			flightCancelButton_actionPerformed(event);
 		} else if (event.getSource().equals(addFlightJFrameView.getSaveFlightButton())) {
-			System.out.println("Flight save button clicked !!");
+			System.out.println("Flight save button clicked!!");
 
 			// Validate User Input before flightSaveButton_actionPerfomed()
 			String datePattern = "MM/dd/yyy";
@@ -62,13 +66,13 @@ public class AddFlightJFrameController implements ActionListener {
 				addFlightJFrameView.setFlightIDError("Error: Flight ID must be entered!");
 			} else if (addFlightJFrameView.getAirlineCodeField().getText().isEmpty()) {
 				System.out.println("Airline Name cannot be empty !!");
-				addFlightJFrameView.setAirlineNameError("Error: Airline Name must be entered!");
+				addFlightJFrameView.setAirlineCodeError("Error: Airline Name must be entered!");
 			} else if (addFlightJFrameView.getDepartureLocationField().getText().isEmpty()) {
 				System.out.println("Flight Origin cannot be empty !!");
-				addFlightJFrameView.setFlightOriginError("Error: Airline Name must be entered!");
+				addFlightJFrameView.setDepartureLocationError("Error: Airline Name must be entered!");
 			} else if (addFlightJFrameView.getDestinationLocationField().getText().isEmpty()) {
 				System.out.println("Flight Destination cannot be empty !!");
-				addFlightJFrameView.setFlightDestinationError("Error: Airline Name must be entered!");
+				addFlightJFrameView.setDestinationLocationError("Error: Airline Name must be entered!");
 			} else if (addFlightJFrameView.getDepartureDateField().getText().equals(datePattern)) {
 				System.out.println("Departure date must be the following pattern MM/dd/yyyy!!");
 				addFlightJFrameView.setDepartureDateError();
@@ -77,20 +81,20 @@ public class AddFlightJFrameController implements ActionListener {
 				addFlightJFrameView.setDepartureDateError("MM/dd/yyyy");
 			} else if (addFlightJFrameView.getDepartureTimeField().getText().isEmpty()) {
 				System.out.println("Flight Departure Time cannot be empty !!");
-				addFlightJFrameView.setFlightDepartureTimeError("Error: Flight Time must be entered!");
+				addFlightJFrameView.setDepartureTimeError("Error: Flight Time must be entered!");
 			} else if (addFlightJFrameView.getArrivalDateField().getText().equals(datePattern)) {
 				System.out.println("Departure date must be the following pattern MM/dd/yyyy!!");
-				addFlightJFrameView.setFlightArrivalDateError();
+				addFlightJFrameView.setArrivalDateError();
 			} else if (addFlightJFrameView.getArrivalDateField().getText().isEmpty()) {
 				System.out.println("Arrival date must be the following pattern MM/dd/yyyy!!");
-				addFlightJFrameView.setFlightArrivalDateError("MM/dd/yyyy");
+				addFlightJFrameView.setArrivalDateError("MM/dd/yyyy");
 			} else if (addFlightJFrameView.getArrivalTimeField().getText().isEmpty()) {
 				System.out.println("Flight Arrival Time cannot be empty !!");
-				addFlightJFrameView.setFlightArrivalTimeError("Error: Flight Time must be entered!");
+				addFlightJFrameView.setArrivalTimeError("Error: Flight Time must be entered!");
 			} else if (addFlightJFrameView.getBusinessFareField().getText().isEmpty()) {
-				addFlightJFrameView.setFlightBusinessFareError("0.00");
+				addFlightJFrameView.setBusinessFareError("0.00");
 			} else if (addFlightJFrameView.getEconomyFareField().getText().isEmpty()) {
-				addFlightJFrameView.setFlightEconomyFareError("0.00");
+				addFlightJFrameView.setEconomyFareError("0.00");
 			} else {
 				flightSaveButton_actionPerformed(event);
 			}
@@ -99,15 +103,14 @@ public class AddFlightJFrameController implements ActionListener {
 
 	@SuppressWarnings("unused")
 	public void flightSaveButton_actionPerformed(ActionEvent event) {
+		
 		// Creates a Flight object based on user input view
 		Flight flight = addFlightJFrameView.getFlightData();
-
 		// Get an instance of the Exhibit Business Layer facade via the manager
 		FlightMgr flightMgr = FlightMgr.getFlightMgr();
 
 		if (flightMgr != null) {
-			// Test creates a flight using manager and if passes or true alerts the correct
-			// messages
+			// Test creates a flight using manager and if passes or true alerts the correct messages
 			if (flightMgr.create(flight)) {
 
 				AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("Save Confirmation",
@@ -134,11 +137,9 @@ public class AddFlightJFrameController implements ActionListener {
 
 	/**
 	 * Close window component and exit application
-	 * 
 	 * @param event
 	 */
 	private void flightCancelButton_actionPerformed(ActionEvent event) {
-		// TODO: Refactor to do something else
 		System.out.println("quitting application ");
 		System.exit(1);
 
@@ -146,7 +147,6 @@ public class AddFlightJFrameController implements ActionListener {
 
 	/**
 	 * Close window component and exit application
-	 * 
 	 * @param event
 	 */
 	private void flightFileCloseItem_actionPerformed(ActionEvent event) {

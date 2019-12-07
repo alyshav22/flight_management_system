@@ -9,11 +9,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+/**
+ * View for search for flight objects
+ *
+ *
+ */
+
 public class SearchFlightJFrameView extends JInternalFrame{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	private JFrame flightFrame;

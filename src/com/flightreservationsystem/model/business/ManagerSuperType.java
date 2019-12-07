@@ -7,6 +7,12 @@ import com.flightreservationsystem.model.services.PropertyManager;
 import com.flightreservationsystem.model.services.ServiceFactory;
 import com.flightreservationsystem.model.services.ServiceLoadException;
 
+/**
+ * Business layer super type to provide a common definition for all classes in the business layer
+ * 
+ */
+
+
 public abstract class ManagerSuperType {
 
 	static {
@@ -25,9 +31,7 @@ public abstract class ManagerSuperType {
 
 	/**
 	 * Get the correct service specified by the business layer use case
-	 * 
-	 * @param name - The name of the service needed provided by the Service
-	 *             Interface
+	 * @param name - The name of the service needed provided by the Service Interface
 	 * @return - A service provided by the factory
 	 * @throws ServiceLoadException
 	 */
@@ -37,7 +41,6 @@ public abstract class ManagerSuperType {
 
 	/**
 	 * Method to load application properties file
-	 * 
 	 * @throws FileNotFoundException
 	 */
 	public static void loadProperties() throws FileNotFoundException {

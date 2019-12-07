@@ -6,6 +6,13 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.FlightMgr;
 import com.flightreservationsystem.model.domain.Flight;
 
+/**
+ * Controller
+ * Listens and handles actions generated from SearchFlightJFrameView
+ * 
+ *
+ */
+
 public class SearchFlightJFrameController implements ActionListener{
 	
 	private SearchFlightJFrameView searchFlightJFrameView;
@@ -19,7 +26,7 @@ public class SearchFlightJFrameController implements ActionListener{
 
 	/**
 	 * Overloaded Constructor
-	 * @param searchFlightJFrameView
+	 * @param 
 	 */
 	public SearchFlightJFrameController(SearchFlightJFrameView searchFlightJFrameView) {
 		this.searchFlightJFrameView = searchFlightJFrameView;
@@ -34,6 +41,7 @@ public class SearchFlightJFrameController implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		System.out.println ("SearchFlightJFrameController:: actionPerformed");
+		
 		if(event.getSource().equals(searchFlightJFrameView.getSearchFlightButton())) {
 			System.out.println("Flight Search button clicked");
 			if((searchFlightJFrameView.getFlightIDField().getText().isEmpty()) || (searchFlightJFrameView.getFlightIDField().getText().equals("0000000000"))){
@@ -48,6 +56,7 @@ public class SearchFlightJFrameController implements ActionListener{
 		
 	}
 	
+	
 	/**
 	 * Pass search data to the business layer
 	 * @param event
@@ -55,8 +64,10 @@ public class SearchFlightJFrameController implements ActionListener{
 	@SuppressWarnings("unused")
 	private void flightSearchButton_actionPerformed(ActionEvent event) {
 		System.out.println ("Searching........");
+		
 		// Get an instance of the Flight Business layer facade via the manager
 		FlightMgr flightMgr = FlightMgr.getFlightMgr();
+		
 		if(flightMgr != null) {
 			Flight flight = flightMgr.queryFlights(searchFlightJFrameView.getSearchFlightData());
 			if (flight == null) {

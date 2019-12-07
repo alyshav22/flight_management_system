@@ -6,7 +6,6 @@ import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Service interface for a Flight
- * @author alysha_velasquez
  *
  */
 
@@ -16,17 +15,14 @@ public interface IFlightService extends IService{
 	
 	/**
 	 * Stub to save a flight
-	 * 
 	 * @param flight - contains flight information to be save
 	 * @return boolean - true if saved
 	 * @throws FlightSaveException 
 	 */
-	
 	public boolean saveFlight(Flight flight) throws FlightSaveException;
 	
 	/**
 	 * Stub to find a flight
-	 * 
 	 * @param flightID
 	 * @return flight if successful
 	 */

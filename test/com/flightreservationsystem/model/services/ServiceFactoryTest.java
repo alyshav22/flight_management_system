@@ -7,14 +7,13 @@ import org.junit.Test;
 
 import com.flightreservationsystem.model.services.ServiceFactory;
 import com.flightreservationsystem.model.services.ServiceLoadException;
+
 import com.flightreservationsystem.model.services.FlightServiceImpl;
 import com.flightreservationsystem.model.services.IFlightService;
 
 /**
  * 
  * Service Factory test for services
- * 
- * @author alysha_velasquez
  *
  */
 
@@ -26,19 +25,19 @@ public class ServiceFactoryTest {
 
 	/**
 	 * Configures test environment and instantiates required object for all test
-	 * 
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
 		// initialize instance variables
 		testServiceFactory = ServiceFactory.getInstance();
+		String fileLocation = System.getProperty("prop_location");
+		PropertyManager.loadProperties(fileLocation);
 	}
 
 	/**
 	 * Test Factory to return the Flight Service 
 	 * and check that it is a instance of FlightServiceImpl
-	 *
 	 */
 	@Test
 	public final void testGetFlightService() {

@@ -5,13 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * PropertyManager is responsible for loading the property file into memory
+ *
+ */
+
+
 public class PropertyManager {
 	
 	private static Properties properties;
 	 
 	/**
-	 * Loads property file from the file location
-	 * to make data available in application state 	
+	 * Loads property file to make data available in application state 	
 	 * 
 	 * @param FileLocation
 	 * @throws FileNotFoundException
@@ -42,8 +47,8 @@ public class PropertyManager {
 					e.printStackTrace();
 				   }
 			    }	
-			}//End finally    
-		} //End loadProperties
+			}   
+		} 
 
 		
 		/**

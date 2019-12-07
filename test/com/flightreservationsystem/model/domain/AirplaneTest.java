@@ -5,6 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * 
+ * Domain AirplaneTest class that test methods in the Domain Airplane
+ *
+ */
+
 public class AirplaneTest {
 
 	//Declare instance variables
@@ -58,7 +64,7 @@ public class AirplaneTest {
 		public final void testNotEqualsAirplane() {
 			System.out.println("Starting testEqualsAirplane()");
 			// assert should be true
-			assertFalse("airplane1  eqauls airplane3 ", airplane1.equals(airplane3));
+			assertFalse("airplane1 not equal airplane3 ", airplane1.equals(airplane3));
 			System.out.println("AirplaneTest: testEqualsAirplane() PASSED");
 		}
 

@@ -13,41 +13,38 @@ import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Flight Service Interface Implementation
- * 
- * @author alysha_velasquez
  *
  */
 
 public class FlightServiceImpl implements IFlightService {
 
 	/**
-	 * Persisting all Flight objects by ID with Hashtable
+	 * Persisting all Flight objects by unique ID in a Hashtable
 	 */
 	private static Hashtable<Integer, Flight> flightHashtable = new Hashtable<Integer, Flight>();
 
+	
 	/**
 	 * Reference variable for data stream
 	 */
 	ObjectOutputStream output;
 	ObjectInputStream input;
 
+	
 	/**
 	 * Get flightHashtable
-	 * 
 	 * @return flightHashtable for all saved flight by ID
 	 */
 	public static Hashtable<Integer, Flight> getFlightHashtable() {
 		return flightHashtable;
 	}
 
+	
 	/**
-	 * Save flight into our application
-	 * 
 	 * Implements saveFlight from the interface
 	 * 
 	 * @param flight - contains flight information to save
-	 * @throws FlightSaveException - If the flight cannot be saved because of null
-	 *                       reference or other exceptions
+	 * @throws FlightSaveException - If the flight cannot be saved because of null reference or other exceptions
 	 * @return boolean - true
 	 */
 	@SuppressWarnings("unchecked")
@@ -85,7 +82,12 @@ public class FlightServiceImpl implements IFlightService {
 			}
 		}
 	}
-
+	
+	/**
+	 * Implements findFlight from Interface
+	 * @param flight to find
+	 * @return Flight if successful
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public Flight findFlight(int flightId) throws FlightFindException {

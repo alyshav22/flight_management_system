@@ -6,12 +6,11 @@ import java.util.ArrayList;
 
 /**
  * Domain Flight class holds flightID, airlineCode, 
- * departureLocation, arrivalLocation departureTime,
- * arrivalTime, businessFare, arrivalFare
- * 
- * @author alysha_velasquez
- *
+ * departureLocation, arrivalLocation, departureTime,
+ * arrivalTime, businessFare, economyFare
  */
+
+
 public class Flight implements Serializable{
 	
 	/**
@@ -25,24 +24,48 @@ public class Flight implements Serializable{
 	private Integer flightID;
 	
 	/**
-	 * holds airline name
+	 * holds airline code
 	 */
 	private String airlineCode;
 	
+	/**
+	 * holds departure location
+	 */
 	private String departureLocation;
 	
+	/**
+	 * holds destination location
+	 */
 	private String destinationLocation;
 	
+	/**
+	 * holds departure date
+	 */
 	private LocalDate departureDate;
 	
+	/**
+	 * holds departure time
+	 */
 	private String departureTime;
 	
+	/**
+	 * holds arrival date
+	 */
 	private LocalDate arrivalDate;
 	
+	/**
+	 * holds arrival time
+	 */
 	private String arrivalTime;
 	
+	/**
+	 * holds business fare cost
+	 */
 	private Double businessFare;
 	
+	/**
+	 * holds economy fare cost
+	 */
 	private Double economyFare;
 	
 	/**
@@ -59,6 +82,8 @@ public class Flight implements Serializable{
 	}
 
 	/**
+	 * Overloaded constructor for Flight
+	 * 
 	 * @param flightID
 	 * @param airlineCode
 	 * @param departureLocation
@@ -245,7 +270,6 @@ public class Flight implements Serializable{
 	 * 
 	 * @return boolean - true if instance variables are valid, else false
 	 */
-
 	public boolean validate() {
 		
 		if( this.flightID == null ) return false;
@@ -262,7 +286,11 @@ public class Flight implements Serializable{
 		
 		return true;
 	}
-
+	
+	/**
+	 * Always Override HashCode when overriding equals method
+	 * @return result - the hash value
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -280,7 +308,12 @@ public class Flight implements Serializable{
 		result = prime * result + ((departureLocation == null) ? 0 : departureLocation.hashCode());
 		return result;
 	}
-
+	
+	/**
+	 * Overriding default equals method from Object Class
+	 * @param obj - Inherited from Object
+	 * @return boolean - False if any of the test fail equality default return true
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

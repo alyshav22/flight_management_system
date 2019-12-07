@@ -12,11 +12,14 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+/**
+ * HomeJFrameView UI to load Home page and capture Admin Inventory action
+ * 
+ *
+ */
+
 public class AdminFunctionsJFrameView extends JInternalFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private JFrame mainframe;
@@ -24,13 +27,12 @@ public class AdminFunctionsJFrameView extends JInternalFrame {
 	private JLabel label;
 	private JButton addButton, searchButton;
 	private JMenuBar menuBar;
-	private JMenu fileMenu, help;
+	private JMenu fileMenu;
 	private JMenuItem fileCloseItem;
 	private Box boxLayout;
 	
 	/**
 	 * Default constructor that calls methods to create GUI components and render to screen
-	 * 
 	 */
 	public AdminFunctionsJFrameView () {
 		
@@ -60,24 +62,18 @@ public class AdminFunctionsJFrameView extends JInternalFrame {
 		
 		menuBar = new JMenuBar();
 		fileMenu = new JMenu();
-		help = new JMenu();
 		fileCloseItem = new JMenuItem();
 		label = new JLabel();
 		
 		fileMenu.setText("File");
 		fileMenu.setFont(new java.awt.Font("Arial", 1, 11));
 		
-		help.setText("Help");
-		help.setFont(new java.awt.Font("Arial", 1, 11));
-		
 		fileCloseItem.setText("Exit");
 		fileCloseItem.setFont(new java.awt.Font("Arial", 1, 11));
 		
 		fileMenu.add(fileCloseItem);
 		menuBar.add(fileMenu);
-		menuBar.add(help);
 		mainframe.setJMenuBar(menuBar);
-		
 		
 		
 		panel.setBackground(new java.awt.Color(48, 48, 48));

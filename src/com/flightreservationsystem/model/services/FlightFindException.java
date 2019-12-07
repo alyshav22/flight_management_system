@@ -1,10 +1,13 @@
 package com.flightreservationsystem.model.services;
 
+
+/**
+ * Custom Exception for finding objects
+ *
+ */
+
 public class FlightFindException extends Exception{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	/**
