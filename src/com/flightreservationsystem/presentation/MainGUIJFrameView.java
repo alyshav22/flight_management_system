@@ -66,7 +66,7 @@ public class MainGUIJFrameView extends JFrame {
 
 		label = new JLabel();
 		label.setFont(new java.awt.Font("Georgia", 1, 16));
-		label.setText("(Under Construction - For now choose an Action in the Menu Bar)");
+		label.setText("(Choose an Action in the Menu Bar)");
 		label.setForeground(new java.awt.Color(255, 255, 255));
 		label.setBounds(150, 160, 800, 17);
 
