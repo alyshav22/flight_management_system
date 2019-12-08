@@ -18,14 +18,13 @@ import javax.swing.JPanel;
  *
  */
 
-public class AdminFunctionsJFrameView extends JInternalFrame {
+public class HomeJFrameView  {
 
-	private static final long serialVersionUID = 1L;
 
 	private JFrame mainframe;
 	private JPanel panel;
 	private JLabel label;
-	private JButton addButton, searchButton;
+	private JButton addButton;
 	private JMenuBar menuBar;
 	private JMenu fileMenu;
 	private JMenuItem fileCloseItem;
@@ -34,7 +33,7 @@ public class AdminFunctionsJFrameView extends JInternalFrame {
 	/**
 	 * Default constructor that calls methods to create GUI components and render to screen
 	 */
-	public AdminFunctionsJFrameView () {
+	public HomeJFrameView () {
 		
 		createGUIComponents();
 		
@@ -46,7 +45,7 @@ public class AdminFunctionsJFrameView extends JInternalFrame {
 	 * Creates all the required components of the Home page
 	 */
 	private void createGUIComponents() {
-		mainframe = new JFrame("Admin Functions");
+		mainframe = new JFrame("Flight Management System Admin functions");
 		FlowLayout layout = new FlowLayout();
 		panel = new JPanel(layout);
 		boxLayout = Box.createHorizontalBox();
@@ -54,11 +53,11 @@ public class AdminFunctionsJFrameView extends JInternalFrame {
 		addButton = new JButton("Add Flight");
 		addButton.setFont(new java.awt.Font("Arial", 1, 14));
 		
-		searchButton= new JButton("Search Flight");
-		searchButton.setFont(new java.awt.Font("Arial", 1, 14));
+		//searchButton= new JButton("Search Flight");
+		//searchButton.setFont(new java.awt.Font("Arial", 1, 14));
 		
 		boxLayout.add(addButton);
-		boxLayout.add(searchButton);
+		//boxLayout.add(searchButton);
 		
 		menuBar = new JMenuBar();
 		fileMenu = new JMenu();
@@ -103,9 +102,9 @@ public class AdminFunctionsJFrameView extends JInternalFrame {
 	 * Getter for searchButton
 	 * @return the searchButton
 	 */
-	public JButton getSearchButton() {
-		return searchButton;
-	}
+//	public JButton getSearchButton() {
+//		return searchButton;
+//	}
 
 	/**
 	 * Getter for fileCloseItem
