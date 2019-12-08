@@ -6,14 +6,27 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.UserMgr;
 import com.flightreservationsystem.model.domain.User;
 
+/**
+ * AddLoginFormJFrameController - Listens and handles actions generated from LoginFormJFrameView
+ * 
+ * @author Alysha 
+ *
+ */
 public class LoginFormJFrameController implements ActionListener {
 
 	private LoginFormJFrameView loginFormJFrameView;
-
+	
+	/**
+	 * Default constructor
+	 * 
+	 */
 	public LoginFormJFrameController() {
 
 	}
-
+	/**
+	 * Overloaded constructor
+	 * @param loginFormJFrameView
+	 */
 	LoginFormJFrameController(LoginFormJFrameView loginFormJFrameView) {
 
 		this.loginFormJFrameView = loginFormJFrameView;
@@ -22,7 +35,10 @@ public class LoginFormJFrameController implements ActionListener {
 		loginFormJFrameView.getLoginButton().addActionListener(this);
 		loginFormJFrameView.getLoginMenuCloseItem().addActionListener(this);
 	}
-
+	
+	/**
+	 * Override ActionListener
+	 */
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		System.out.println("Inside RegisterUserJFrameController::actionPerformed");

@@ -10,17 +10,33 @@ import java.util.Hashtable;
 
 import com.flightreservationsystem.model.domain.User;
 
+/**
+ * User Service Interface Implementation
+ * @author Alysha 
+ *
+ */
+
 public class UserServiceImpl implements IUserService {
 
 	private static Hashtable<String, User> userHashTable = new Hashtable<String, User>();
-
+	
+	/**
+	 * Reference variable for data stream
+	 */
 	ObjectOutputStream output;
 	ObjectInputStream input;
 
 	public static Hashtable<String, User> getUserHashtable() {
 		return userHashTable;
 	}
-
+	
+	/**
+	 * Implements saveUser from the interface
+	 * 
+	 * @param user - contains user information to save
+	 * @throws UserRegisterException - If the flight cannot be saved because of null reference or other exceptions
+	 * @return boolean - true
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean saveUser(User user) throws UserRegisterException {

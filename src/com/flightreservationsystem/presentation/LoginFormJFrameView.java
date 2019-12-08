@@ -13,6 +13,12 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+/**
+ * LoginFormJFrame UI to load Login page and capture User action
+ * 
+ * @author Alysha 
+ *
+ */
 public class LoginFormJFrameView {
 
 	private JFrame LoginFrame;
@@ -34,7 +40,10 @@ public class LoginFormJFrameView {
 		LoginFrame.setResizable(true);
 
 	}
-
+	
+	/**
+	 * Creates all the required components of the Login Form page 
+	 */
 	private void createGUIComponents() {
 		LoginFrame = new JFrame("LOGIN");
 		FlowLayout layout = new FlowLayout();
@@ -49,7 +58,7 @@ public class LoginFormJFrameView {
 
 		LoginBoxLayout.add(cancelLoginButton);
 		LoginBoxLayout.add(LoginButton);
-		LoginBoxLayout.setBounds(200, 400, 200, 50); // 600 450 200 50
+		LoginBoxLayout.setBounds(200, 400, 200, 50); 
 		LoginPanel.add(LoginBoxLayout);
 
 		LoginMenuBar = new JMenuBar();
@@ -66,7 +75,7 @@ public class LoginFormJFrameView {
 		LoginMenuBar.add(LoginMenu);
 		LoginFrame.setJMenuBar(LoginMenuBar);
 
-		LoginPanel.setBackground(new java.awt.Color(48, 48, 48));
+		LoginPanel.setBackground(new java.awt.Color(24, 108, 144));
 		LoginPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		LoginPanel.setLayout(null);
 
@@ -94,6 +103,7 @@ public class LoginFormJFrameView {
 
 		LoginFrame.getContentPane().add(LoginPanel);
 	}
+	
 	
 	public JMenuItem getLoginMenuCloseItem() {
         return LoginMenuCloseItem;
@@ -126,13 +136,20 @@ public class LoginFormJFrameView {
     public JButton getCancelLoginButton() {
         return cancelLoginButton;
     }
-
+    
+    /**
+	 * UI Error Handle for User Email VIA controller
+	 * @param error
+	 */
     void setEmailError(String error) {
 	EmailAddressField.setText(error);
 	EmailAddressField.setForeground(new java.awt.Color(255, 0, 0));
 	
     }
-
+    /**
+	 * UI Error Handle for User Password VIA controller
+	 * @param error
+	 */
     void setPasswordError(String error) {
         PasswordField.setText(error);
 	PasswordField.setForeground(new java.awt.Color(255, 0, 0));

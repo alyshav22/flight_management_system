@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.FlightMgr;
 import com.flightreservationsystem.model.domain.Flight;
 
+
+
 public class SearchFlightJFrameController implements ActionListener{
 	
 private SearchFlightJFrameView searchFlightJFrameView;

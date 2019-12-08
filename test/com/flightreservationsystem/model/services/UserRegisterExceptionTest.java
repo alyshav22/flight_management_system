@@ -14,9 +14,9 @@ public class UserRegisterExceptionTest {
 	public void testUserRegisterException(){
 		System.out.println("Starting testUserRegisterException()");
 		try {
-			throw new UserRegisterException("Testing throwing a Flight Save Exception", null);
+			throw new UserRegisterException("Testing throwing a User Register Exception", null);
 		}  catch (UserRegisterException e) {
-			System.out.println("SaveExceptionTest: testFlightSaveException() PASSED ");
+			System.out.println("UserRegisterExceptionTest: testUserRegisterException() PASSED ");
 			System.out.println(e);
 		}
 	}

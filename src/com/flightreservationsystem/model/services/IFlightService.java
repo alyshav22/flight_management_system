@@ -6,7 +6,7 @@ import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Service interface for a Flight
- *
+ * @author Alysha 
  */
 
 public interface IFlightService extends IService{

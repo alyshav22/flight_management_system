@@ -6,7 +6,8 @@ import java.awt.event.ActionListener;
 /**
  * Controller - Listens and handles actions generated from
  * AdminFunctionsJFrameView
- *
+ * 
+ * @author Alysha 
  */
 
 public class HomeJFrameController implements ActionListener {

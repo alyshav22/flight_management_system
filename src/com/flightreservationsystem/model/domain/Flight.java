@@ -8,6 +8,8 @@ import java.util.ArrayList;
  * Domain Flight class holds flightID, airlineCode, 
  * departureLocation, arrivalLocation, departureTime,
  * arrivalTime, businessFare, economyFare
+ * 
+ * @author Alysha
  */
 
 

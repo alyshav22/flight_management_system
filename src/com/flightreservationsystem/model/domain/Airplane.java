@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Domain airplane class holds airplaneID, airplaneModel, economySeatsQuantity, and businessSeatQuantity
- *
+ * @author Alysha
  */
 
 

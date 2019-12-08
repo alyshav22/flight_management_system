@@ -1,10 +1,14 @@
 package com.flightreservationsystem.model.services;
 
+/**
+ * Customer Exception for saving User objects
+ * @author Alysha 
+ *
+ */
+
 public class UserRegisterException extends Exception{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	/**

@@ -13,7 +13,7 @@ import com.flightreservationsystem.model.domain.Flight;
 /**
  * 
  * Business FlightMgrTest class that test methods in the Business layer Flight
- *
+ * @author Alysha
  */
 
 public class FlightMgrTest {
@@ -62,7 +62,7 @@ public class FlightMgrTest {
 	 * Throws service load exception if there are errors. 
 	 */
 	@Test
-	public void testQueryExhibits() {
+	public void testQueryFlights() {
 		System.out.println("Starting testQueryFlights()");
 		foundFlight = flightMgr.queryFlights(123456);
 		assertNotNull("found Flight Should not be null", foundFlight);

@@ -14,9 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * HomeJFrameView UI to load Home page and capture Admin Inventory action
+ * HomeJFrameView UI to load Home page and capture User action
  * 
- *
+ * @author Alysha 
  */
 
 public class HomeJFrameView {
@@ -46,7 +46,7 @@ public class HomeJFrameView {
 	 * Creates all the required components of the Home page
 	 */
 	private void createGUIComponents() {
-		mainframe = new JFrame("Flight Management System Admin functions");
+		mainframe = new JFrame("Flight Management System");
 		FlowLayout layout = new FlowLayout();
 		panel = new JPanel(layout);
 		boxLayout = Box.createHorizontalBox();
@@ -83,7 +83,7 @@ public class HomeJFrameView {
 		menuBar.add(fileMenu);
 		mainframe.setJMenuBar(menuBar);
 
-		panel.setBackground(new java.awt.Color(48, 48, 48));
+		panel.setBackground(new java.awt.Color(24, 108, 144));
 		panel.setFont(new java.awt.Font("Arial", 1, 11));
 
 		label.setFont(new java.awt.Font("Arial", 1, 16));

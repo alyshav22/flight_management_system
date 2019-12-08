@@ -6,15 +6,26 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.UserMgr;
 import com.flightreservationsystem.model.domain.User;
 
+/**
+ * RegisterUserJFrameController
+ * Listens and handles actions generated from REgisterJFrameView
+ * @author Alysha
+ *
+ */
 public class RegisterUserJFrameController implements ActionListener {
 
 	private RegisterUserJFrameView registerUserJFrameView;
-
+	
+	/**
+	 * Default constructor
+	 */
 	public RegisterUserJFrameController() {
 
 	}
-
-	// Overloaded Constructor
+	/**
+	 * Overloaded Constructor
+	 * @param registerUserJFrameView
+	 */
 	RegisterUserJFrameController(RegisterUserJFrameView registerUserJFrameView) {
 		this.registerUserJFrameView = registerUserJFrameView;
 
@@ -22,7 +33,9 @@ public class RegisterUserJFrameController implements ActionListener {
 		registerUserJFrameView.getRegisterUserButton().addActionListener(this);
 		registerUserJFrameView.getRegisterFileCloseItem().addActionListener(this);
 	}
-
+	/**
+	 * Overrides ActionListener
+	 */
 	@Override
 	public void actionPerformed(ActionEvent event) {
 

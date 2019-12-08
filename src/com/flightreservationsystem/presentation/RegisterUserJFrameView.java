@@ -16,6 +16,11 @@ import javax.swing.JTextField;
 
 import com.flightreservationsystem.model.domain.User;
 
+/**
+ * RegisterUserJFrameView UI to load User page and capture user action
+ * @author Alysha
+ *
+ */
 public class RegisterUserJFrameView {
 
 	private JFrame RegisterMainFrame;
@@ -37,7 +42,9 @@ public class RegisterUserJFrameView {
 		RegisterMainFrame.setResizable(true);
 
 	}
-
+	/**
+	 * Creates all the required components of the Register User page
+	 */
 	private void createGUIComponents() {
 		RegisterMainFrame = new JFrame("Add User");
 		FlowLayout layout = new FlowLayout();
@@ -69,7 +76,7 @@ public class RegisterUserJFrameView {
 		RegisterMenuBar.add(RegisterMenu);
 		RegisterMainFrame.setJMenuBar(RegisterMenuBar);
 
-		RegisterPanel.setBackground(new java.awt.Color(48, 48, 48));
+		RegisterPanel.setBackground(new java.awt.Color(24, 108, 144));
 		RegisterPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		RegisterPanel.setLayout(null);
 
@@ -169,7 +176,11 @@ public class RegisterUserJFrameView {
 		EmailAddressField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 
-	// check if entered string for email is valid format
+	/**
+	 * check if entered string for email is valid format
+	 * @param email
+	 * @return
+	 */
 	public static boolean isValid(String email) {
 		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"
 				+ "A-Z]{2,7}$";
@@ -191,7 +202,9 @@ public class RegisterUserJFrameView {
 			setEmailFormatError("Invalid Format");
 		}
 
-		// password confirmation
+		/**
+		 *  password confirmation
+		 */
 		String password = "";
 		if (ConfirmPasswordField.getText().equals(PasswordField.getText())) {
 			password = PasswordField.getText();
@@ -199,7 +212,9 @@ public class RegisterUserJFrameView {
 			setConfirmPasswordError("Passwords do not match");
 		}
 
-		// Create User object based on user input
+		/**
+		 * Create User object based on user input
+		 */
 		User users = new User(FullNameField.getText(), email, password);
 
 		return users;

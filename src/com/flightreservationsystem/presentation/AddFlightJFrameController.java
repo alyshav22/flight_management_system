@@ -8,7 +8,7 @@ import com.flightreservationsystem.model.domain.Flight;
 
 /**
  * AddFlightJFrameController - Listens and handles actions generated from Add FlightJFrameView
- *
+ * @author Alysha 
  */
 
 

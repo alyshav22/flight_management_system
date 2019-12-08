@@ -3,6 +3,12 @@ package com.flightreservationsystem.presentation;
 import javax.swing.UIManager;
 
 
+/**
+ * The Main Driver Class is responsible for starting the GUI of the Flight Management System
+ * @author Alysha
+ *
+ */
+
 public class MainDriver {
 	
 	/**

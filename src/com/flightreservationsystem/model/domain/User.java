@@ -2,20 +2,28 @@ package com.flightreservationsystem.model.domain;
 
 import java.io.Serializable;
 
+/**
+ * Domain User class holds name, email, password
+ * @author Alysha
+ *
+ */
 public class User implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6090091675974840036L;
 
-	// holds name location
+	/**
+	 * holds name location
+	 */
 	private String FullName;
 
-	// holds email location
+	/**
+	 * holds email location
+	 */
 	private String EmailAddress;
 
-	//hold password location
+	/**
+	 * hold password location
+	 */
 	private String Password;
 
 	public User() {
@@ -80,7 +88,11 @@ public class User implements Serializable {
 
 		return true;
 	}
-
+	
+	/**
+	 * Always Override HashCode when overriding equals method
+	 * @return result - the hash value
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -90,7 +102,11 @@ public class User implements Serializable {
 		result = prime * result + ((Password == null) ? 0 : Password.hashCode());
 		return result;
 	}
-
+	/**
+	 * Overriding default equals method from Object Class
+	 * @param obj - Inherited from Object
+	 * @return boolean - False if any of the test fail equality default return true
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

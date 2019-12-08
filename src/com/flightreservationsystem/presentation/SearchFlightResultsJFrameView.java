@@ -38,7 +38,7 @@ public class SearchFlightResultsJFrameView {
 		FlowLayout layout = new FlowLayout();
 		flightResultsPanel = new JPanel(layout);
 		
-		flightResultsPanel.setBackground(new java.awt.Color(48, 48, 48));
+		flightResultsPanel.setBackground(new java.awt.Color(24, 108, 144));
 		flightResultsPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		flightResultsPanel.setLayout(null);
 		

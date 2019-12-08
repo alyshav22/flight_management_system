@@ -1,11 +1,17 @@
 package com.flightreservationsystem.model.services;
 
+
+/**
+ * Custom Exception for finding User objects
+ * @author Alysha 
+ */
+
 public class FindUserException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Custom Flight Find Exception for services
+	 * Custom User Find Exception for services
 	 * @param inMessage
 	 * @param inNestedException
 	 */

@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * Business class test all Business classes and defined test methods in each of the business class
  * 
- *
+ * @author Alysha
  */
 
 @RunWith(Suite.class)

@@ -9,7 +9,7 @@ import com.flightreservationsystem.model.services.AllServiceTests;
 
 /**
  * Application test suite that test all layer test suite and class test
- * 
+ * @author Alysha
  */
 @RunWith(Suite.class)
 @SuiteClasses({
