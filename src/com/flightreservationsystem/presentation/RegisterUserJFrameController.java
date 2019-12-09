@@ -8,7 +8,7 @@ import com.flightreservationsystem.model.domain.User;
 
 /**
  * RegisterUserJFrameController
- * Listens and handles actions generated from REgisterJFrameView
+ * Listens and handles actions generated from RegisterJFrameView
  * @author Alysha
  *
  */

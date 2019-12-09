@@ -61,9 +61,7 @@ public class HomeJFrameController implements ActionListener {
 		} else if (event.getSource().equals(homeJFrameView.getLoginButton())) {
 			System.out.println("Login  Button pressed");
 			login_actionPerformed(event);
-		}
-
-		else if (event.getSource().equals(homeJFrameView.getFileCloseItem())) {
+		} else if (event.getSource().equals(homeJFrameView.getFileCloseItem())) {
 			System.out.println("File menu exit button clicked !!");
 			fileCloseItem_actionPerformed(event);
 		}

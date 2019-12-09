@@ -6,7 +6,7 @@ package com.flightreservationsystem.model.services;
  * @author Alysha 
  */
 
-public class FindUserException extends Exception {
+public class VerifyUserException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -15,7 +15,7 @@ public class FindUserException extends Exception {
 	 * @param inMessage
 	 * @param inNestedException
 	 */
-	public FindUserException(final String inMessage, final Throwable inNestedException) {
+	public VerifyUserException(final String inMessage, final Throwable inNestedException) {
             super(inMessage, inNestedException);
 
 	}

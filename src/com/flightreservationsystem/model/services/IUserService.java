@@ -24,6 +24,6 @@ public final String NAME = "IUserService";
 	 *
 	 * @return user if successful
 	 */
-	public User checkLogin(String Email) throws FindUserException;
+	public User checkLogin(String Email) throws VerifyUserException;
 
 }

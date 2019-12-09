@@ -75,7 +75,7 @@ public class UserServiceImpl implements IUserService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public User checkLogin(String Email) throws FindUserException {
+	public User checkLogin(String Email) throws VerifyUserException {
 		System.out.println("Entering method UserServiceImpl:: checkLogin");
 		try {
 			try {
@@ -90,13 +90,13 @@ public class UserServiceImpl implements IUserService {
 
 		} catch (FileNotFoundException e) {
 			System.out.println("File containing saved user not found!");
-			throw new FindUserException("File containing saved user not found!", e);
+			throw new VerifyUserException("File containing saved user not found!", e);
 		} catch (ClassNotFoundException e) {
 
 			System.out.println("IOException while accessing file containing saved user!");
-			throw new FindUserException("IOException while accessing file containing saved user!", e);
+			throw new VerifyUserException("IOException while accessing file containing saved user!", e);
 		} catch (IOException e) {
-			throw new FindUserException("ClassNotFoundException while reading file containing saved user", e);
+			throw new VerifyUserException("ClassNotFoundException while reading file containing saved user", e);
 		} finally {
 			if (input != null) {
 				try {
