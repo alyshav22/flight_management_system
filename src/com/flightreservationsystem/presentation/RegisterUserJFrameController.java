@@ -53,24 +53,26 @@ public class RegisterUserJFrameController implements ActionListener {
 
 		} else if (event.getSource().equals(registerUserJFrameView.getRegisterUserButton())) {
 			System.out.println("Register user button clicked!!");
-
-			if ((registerUserJFrameView.getFullNameField().getText().isEmpty())
-					|| (registerUserJFrameView.getFullNameField().getText().equals(""))) {
+			
+			//Validate User input before RegisterUserButton_actionPerformed
+			String emptyPattern = "";
+			if ((registerUserJFrameView.getFullNameField().getText().equals(emptyPattern))
+					|| (registerUserJFrameView.getFullNameField().getText().equals("ABC"))) {
 				System.out.println("Name Field cannot be empty !!");
 				registerUserJFrameView.setNameError("Error: Name must be entered!");
 
-			} else if (registerUserJFrameView.getEmailAddressField().getText().isEmpty()) {
+			} else if ((registerUserJFrameView.getEmailAddressField().getText().equals(emptyPattern)) ||
+			(registerUserJFrameView.getEmailAddressField().getText().equals("abc@gmail.com"))){
 				System.out.println("Email address cannot be empty !!");
 				registerUserJFrameView.setEmailFormatError("Error: Email Address must be entered!");
 
-			} else if (registerUserJFrameView.getPasswordField().getText().isEmpty()) {
+			} else if (registerUserJFrameView.getPasswordField().getText().equals(emptyPattern)) {
 				System.out.println("Password cannot be empty !!");
 				registerUserJFrameView.setPasswordError("Error: Password must be entered!");
 
-			} else if (registerUserJFrameView.getConfirmPasswordField().getText().isEmpty()) {
-				System.out.println("Confirm password field cannot be empty !!");
-				registerUserJFrameView.setConfirmPasswordError("Error: Confirm password must be entered!");
-			} else {
+			}   
+			
+			else {
 				RegisterUserButton_actionPerformed(event);
 			}
 		}
