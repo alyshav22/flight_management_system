@@ -75,28 +75,26 @@ public class LoginFormJFrameController implements ActionListener {
 	@SuppressWarnings("unused")
 	public void loginUserButton_actionPerformed(ActionEvent event) {
 		UserMgr userMgr = UserMgr.getUserMgr();
-		User user = userMgr.queryUser(loginFormJFrameView.getEmailAddressField().getText());
 
-		if (userMgr != null) {
-
-			AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("Login Confirmation",
-					"User Login Success");
-			AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(
-					alertMessageJFrameView);
-			System.out.println("User Login Success!!!");
-		} else if (user == null) {
-			AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("Search Error",
-					"User not found.");
-			AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(
-					alertMessageJFrameView);
-			System.out.println("Search error no user found!!!");
-		} else {
-			AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("System Error",
-					"Operation Error.");
-			AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(
-					alertMessageJFrameView);
-			System.out.println(" Error-Exhibit Manager Business Facade instance is null ");
-		}
+		if(userMgr != null) {
+			User user = userMgr.queryUser(loginFormJFrameView.getEmailAddressField().getText());
+			if (user == null) {
+				AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("Login Error", "User not found.");
+			 	AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(alertMessageJFrameView);
+				System.out.println("Search error no user found!!!");
+			}else {
+				AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("Login Confirmation", "User Login Success");
+			 	AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(alertMessageJFrameView);
+			 System.out.println("User Found!!!");
+			 System.out.println(user.toString());
+			 
+		 }
+			
+		}else {
+			 AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("System Error", "Operation Error.");
+		 	AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(alertMessageJFrameView);
+			 System.out.println(" Error-Exhibit Manager Business Facade instance is null ");
+		 }
 	} 
 
 	/**
