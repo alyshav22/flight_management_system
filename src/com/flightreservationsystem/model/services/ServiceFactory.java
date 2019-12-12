@@ -1,11 +1,8 @@
 package com.flightreservationsystem.model.services;
 
-import com.flightreservationsystem.model.services.IService;
-import com.flightreservationsystem.model.services.ServiceLoadException;
-
 /**
  * Implementation of Service Factory
- * @author Alysha 
+ *
  */
 
 public class ServiceFactory {

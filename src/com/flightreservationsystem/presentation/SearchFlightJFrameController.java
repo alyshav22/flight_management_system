@@ -6,11 +6,16 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.FlightMgr;
 import com.flightreservationsystem.model.domain.Flight;
 
-
+/**
+ * Controller
+ * Listens and handles actions generated from SearchFlightJFrameView
+ * 
+ *
+ */
 
 public class SearchFlightJFrameController implements ActionListener{
 	
-private SearchFlightJFrameView searchFlightJFrameView;
+	private SearchFlightJFrameView searchFlightJFrameView;
 	
 	/**
 	 * Default constructor
@@ -82,5 +87,6 @@ private SearchFlightJFrameView searchFlightJFrameView;
 		 }
 	
 		};
-
-}
+		
+		
+	}//End

@@ -9,11 +9,10 @@ import java.io.ObjectOutputStream;
 import java.util.Hashtable;
 
 import com.flightreservationsystem.model.domain.Flight;
-import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Flight Service Interface Implementation
- * @author Alysha 
+ *
  */
 
 public class FlightServiceImpl implements IFlightService {
@@ -22,8 +21,6 @@ public class FlightServiceImpl implements IFlightService {
 	 * Persisting all Flight objects by unique ID in a Hashtable
 	 */
 	private static Hashtable<Integer, Flight> flightHashtable = new Hashtable<Integer, Flight>();
-
-	
 	/**
 	 * Reference variable for data stream
 	 */

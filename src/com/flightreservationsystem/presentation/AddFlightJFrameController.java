@@ -8,7 +8,7 @@ import com.flightreservationsystem.model.domain.Flight;
 
 /**
  * AddFlightJFrameController - Listens and handles actions generated from Add FlightJFrameView
- * @author Alysha 
+ *
  */
 
 
@@ -23,7 +23,6 @@ public class AddFlightJFrameController implements ActionListener {
 	public AddFlightJFrameController() {
 
 	}
-
 	/**
 	 * Overloaded Constructor
 	 * 
@@ -132,7 +131,6 @@ public class AddFlightJFrameController implements ActionListener {
 					alertMessageJFrameView);
 			System.out.println(" Error-Flight Manager Business Facade instance is null ");
 		}
-
 	}
 
 	/**
@@ -142,7 +140,6 @@ public class AddFlightJFrameController implements ActionListener {
 	private void flightCancelButton_actionPerformed(ActionEvent event) {
 		System.out.println("quitting application ");
 		System.exit(1);
-
 	}
 
 	/**

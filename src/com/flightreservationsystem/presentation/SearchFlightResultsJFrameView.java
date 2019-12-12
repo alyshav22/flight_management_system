@@ -5,12 +5,21 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.flightreservationsystem.model.domain.Flight;
 
-public class SearchFlightResultsJFrameView {
+/**
+ * This view displays the results returned by searching for a Flight
+ *
+ */
+
+public class SearchFlightResultsJFrameView extends JInternalFrame {
+
+	
+	private static final long serialVersionUID = 1L;
 	
 	private Flight flight;
 	private JFrame flightResultsFrame;
@@ -38,7 +47,7 @@ public class SearchFlightResultsJFrameView {
 		FlowLayout layout = new FlowLayout();
 		flightResultsPanel = new JPanel(layout);
 		
-		flightResultsPanel.setBackground(new java.awt.Color(24, 108, 144));
+		flightResultsPanel.setBackground(new java.awt.Color(48, 48, 48));
 		flightResultsPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		flightResultsPanel.setLayout(null);
 		

@@ -1,12 +1,10 @@
 package com.flightreservationsystem.model.services;
 
 import com.flightreservationsystem.model.domain.Flight;
-import com.flightreservationsystem.model.services.IService;
-import com.flightreservationsystem.model.services.FlightSaveException;
 
 /**
  * Service interface for a Flight
- * @author Alysha 
+ *
  */
 
 public interface IFlightService extends IService{

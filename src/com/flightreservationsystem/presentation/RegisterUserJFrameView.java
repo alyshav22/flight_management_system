@@ -1,8 +1,13 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.flightreservationsystem.presentation;
 
+import com.flightreservationsystem.model.domain.User;
 import java.awt.FlowLayout;
 import java.util.regex.Pattern;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,39 +19,29 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import com.flightreservationsystem.model.domain.User;
-
-/**
- * RegisterUserJFrameView UI to load User page and capture user action
- * @author Alysha
- *
- */
 public class RegisterUserJFrameView {
-
-	private JFrame RegisterMainFrame;
+    
+        private JFrame RegisterMainFrame;
 	private JPanel RegisterPanel;
 	private JMenuBar RegisterMenuBar;
 	private JMenu RegisterMenu;
 	private JMenuItem RegisterFileCloseItem;
-	private JLabel FullName, EmailAddress, Password;
-
-	private JTextField FullNameField, EmailAddressField, PasswordField;
-
+	private JLabel FullName, EmailAddress, Password, ConfirmPassword;
+	private JTextField FullNameField, EmailAddressField;
+        private JPasswordField PasswordField, ConfirmPasswordField;
 	private JButton registerUserButton, cancelRegistrationButton;
 	private Box RegisterBoxLayout;
-
-	public RegisterUserJFrameView() {
+        
+        
+        public RegisterUserJFrameView() {
 
 		createGUIComponents();
 		RegisterMainFrame.setSize(700, 600);
 		RegisterMainFrame.setVisible(true);
 		RegisterMainFrame.setResizable(true);
-
 	}
-	/**
-	 * Creates all the required components of the Register User page
-	 */
-	private void createGUIComponents() {
+
+    private void createGUIComponents() {
 		RegisterMainFrame = new JFrame("Add User");
 		FlowLayout layout = new FlowLayout();
 		RegisterPanel = new JPanel(layout);
@@ -77,12 +72,12 @@ public class RegisterUserJFrameView {
 		RegisterMenuBar.add(RegisterMenu);
 		RegisterMainFrame.setJMenuBar(RegisterMenuBar);
 
-		RegisterPanel.setBackground(new java.awt.Color(24, 108, 144));
+		RegisterPanel.setBackground(new java.awt.Color(48, 48, 48));
 		RegisterPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		RegisterPanel.setLayout(null);
-
-		FullName = new JLabel();
-		FullName.setText("Full Name");
+                
+                FullName = new JLabel();
+		FullName.setText("ENTER NAME");
 		FullName.setFont(new java.awt.Font("Arial", 1, 14));
 		FullName.setForeground(new java.awt.Color(255, 255, 255));
 		FullName.setBounds(40, 80, 120, 17);
@@ -114,87 +109,108 @@ public class RegisterUserJFrameView {
 		PasswordField.setBounds(180, 240, 240, 20);
 		RegisterPanel.add(PasswordField);
 
-		RegisterMainFrame.getContentPane().add(RegisterPanel);
+		ConfirmPassword = new JLabel();
+		ConfirmPassword.setText("Confirm Password:");
+		ConfirmPassword.setFont(new java.awt.Font("Arial", 1, 14));
+		ConfirmPassword.setForeground(new java.awt.Color(255, 255, 255));
+		ConfirmPassword.setBounds(40, 320, 150, 17);
+		RegisterPanel.add(ConfirmPassword);
 
-	}
+		ConfirmPasswordField = new JPasswordField("abc", 40);
+		ConfirmPasswordField.setBounds(180, 320, 240, 20);
+		RegisterPanel.add(ConfirmPasswordField);
+                
+                RegisterMainFrame.getContentPane().add(RegisterPanel);
 
-	public JMenuItem getRegisterFileCloseItem() {
-		return RegisterFileCloseItem;
-	}
+    }
 
-	public JTextField getFullNameField() {
-		return FullNameField;
-	}
+    public JMenuItem getRegisterFileCloseItem() {
+        return RegisterFileCloseItem;
+    }
 
-	public JTextField getEmailAddressField() {
-		return EmailAddressField;
-	}
+    public JTextField getFullNameField() {
+        return FullNameField;
+    }
 
-	public JTextField getPasswordField() {
-		return PasswordField;
-	}
+    public JTextField getEmailAddressField() {
+        return EmailAddressField;
+    }
 
-//	public JTextField getConfirmPasswordField() {
-//		return ConfirmPasswordField;
-//	}
+    public JPasswordField getPasswordField() {
+        return PasswordField;
+    }
 
-	public JButton getRegisterUserButton() {
-		return registerUserButton;
-	}
+    public JPasswordField getConfirmPasswordField() {
+        return ConfirmPasswordField;
+    }
 
-	public JButton getCancelRegistrationButton() {
-		return cancelRegistrationButton;
-	}
+    public JButton getRegisterUserButton() {
+        return registerUserButton;
+    }
 
-	public void setNameError(String error) {
+    public JButton getCancelRegistrationButton() {
+        return cancelRegistrationButton;
+    }
+    public void setNameError(String error) {
 		FullName.setText(error);
 		FullName.setForeground(new java.awt.Color(255, 0, 0));
 	}
-
-	public void setPasswordError(String error) {
+     
+    public void setPasswordError(String error) {
 		Password.setText(error);
 		Password.setForeground(new java.awt.Color(255, 0, 0));
+	} 
+    
+    public void setConfirmPasswordError(String error) {
+		ConfirmPasswordField.setText(error);
+		ConfirmPasswordField.setForeground(new java.awt.Color(255, 0, 0));
 	}
 
-
-	public void setEmailFormatError(String error) {
+    public void setEmailFormatError(String error) {
 		EmailAddressField.setText(error);
 		EmailAddressField.setForeground(new java.awt.Color(255, 0, 0));
 	}
-
-	/**
-	 * check if entered string for email is valid format
-	 * @param email
-	 * @return
-	 */
-	public static boolean isValid(String email) {
-		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"
-				+ "A-Z]{2,7}$";
-
-		Pattern pat = Pattern.compile(emailRegex);
-		if (email == null)
-			return false;
-		return pat.matcher(email).matches();
-	}
-
+    
+    // check if entered string for email is valid format
+    public static boolean isValid(String email) 
+    { 
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+ 
+                            "[a-zA-Z0-9_+&*-]+)*@" + 
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
+                            "A-Z]{2,7}$"; 
+                              
+        Pattern pat = Pattern.compile(emailRegex); 
+        if (email == null) 
+            return false; 
+        return pat.matcher(email).matches(); 
+    } 
 	
-	public User getUserData() {
-
-		String email = "";
-		// validate email and save it to email
-		if (isValid(EmailAddressField.getText())) {
-			email = EmailAddressField.getText();
-		} else {
-			setEmailFormatError("Invalid Format");
-		}
-
-
-
-		/**
-		 * Create User object based on user input
-		 */
-		User users = new User(FullNameField.getText(), email, PasswordField.getText());
-
-		return users;
+    public User getUserData() {
+        
+            String email = "";
+            //validate email and save it to email
+            if(isValid(EmailAddressField.getText())){
+                email = EmailAddressField.getText();
+            }else{
+                setEmailFormatError("Invalid Format");
+            }
+            
+            //password confirmation
+            String password = "";
+            if(ConfirmPasswordField.getText().equals(PasswordField.getText())){
+                password = PasswordField.getText();
+            }else{
+                setConfirmPasswordError("Passwords do not match");
+                    }
+		
+		//Create User object based on user input
+		User users = new User(FullNameField.getText(), 
+                        email, password);
+                
+                
+			return users;	
 	}
+    
+        
+    
 }

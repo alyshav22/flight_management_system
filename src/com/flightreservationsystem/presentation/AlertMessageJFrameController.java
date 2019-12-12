@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
  * AlertMessageJFrameController
  * Listens and handles actions generated from AlertMessageJFrameController
  * 
- * @author Alysha 
+ *
  */
 
 public class AlertMessageJFrameController implements ActionListener{

@@ -18,11 +18,10 @@ import javax.swing.JTextField;
 import com.flightreservationsystem.model.domain.Flight;
 
 /**
- * AddFlightJFrameView UI to load Flight page and capture User Action
+ * AddFlightJFrameView UI to load Flight page and capture Admin Inventory Action
  * 
- * @author Alysha Velasquez
+ *
  */
-
 
 public class AddFlightJFrameView {
 
@@ -84,7 +83,7 @@ public class AddFlightJFrameView {
 		flightMenuBar.add(flightMenu);
 		flightMainFrame.setJMenuBar(flightMenuBar);
 
-		flightPanel.setBackground(new java.awt.Color(24, 108, 144));
+		flightPanel.setBackground(new java.awt.Color(48, 48, 48));
 		flightPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		flightPanel.setLayout(null);
 
