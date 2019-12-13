@@ -32,7 +32,6 @@ public class SearchFlightJFrameView extends JInternalFrame{
 	 */
 	public SearchFlightJFrameView() {
 		createGUIComponents();
-		
 		flightFrame.setSize(600, 175);
 		flightFrame.setVisible(true);
 		flightFrame.setResizable(true);

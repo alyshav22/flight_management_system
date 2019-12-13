@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -19,9 +20,13 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class RegisterUserJFrameView {
+public class RegisterUserJFrameView extends JInternalFrame{
     
-        private JFrame RegisterMainFrame;
+        /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+		private JFrame RegisterMainFrame;
 	private JPanel RegisterPanel;
 	private JMenuBar RegisterMenuBar;
 	private JMenu RegisterMenu;

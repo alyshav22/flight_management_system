@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -23,8 +24,11 @@ import com.flightreservationsystem.model.domain.Flight;
  *
  */
 
-public class AddFlightJFrameView {
+public class AddFlightJFrameView extends JInternalFrame{
 
+	
+	private static final long serialVersionUID = 1L;
+	
 	private JFrame flightMainFrame;
 	private JPanel flightPanel;
 	private JMenuBar flightMenuBar;
@@ -437,5 +441,16 @@ public class AddFlightJFrameView {
 			);
 			return flight;	
 	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	
+
+	
 
 }

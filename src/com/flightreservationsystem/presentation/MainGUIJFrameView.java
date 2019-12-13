@@ -8,6 +8,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 
+
 public class MainGUIJFrameView extends JFrame {
 
 	/**
@@ -17,9 +18,9 @@ public class MainGUIJFrameView extends JFrame {
 
 	private JDesktopPane theDesktop = new JDesktopPane();
 	private JMenuBar menuBar;
-	private JMenu fileMenu;
+	private JMenu loginMenu, addMenu, searchMenu;
 	private JLabel welcomeLabel, label;
-	private JMenuItem adminFunctionsItem, exitApplication;
+	private JMenuItem login, register, exitApplication, addFlight, searchFlight;
 
 	/**
 	 * Creates the first object of the application and instantiates the Main View
@@ -47,28 +48,49 @@ public class MainGUIJFrameView extends JFrame {
 	private void createGUIComponents() {
 		menuBar = new JMenuBar();
 		super.setJMenuBar(menuBar);
-		fileMenu = new JMenu("File");
-		fileMenu.setFont(new java.awt.Font("Arial", 1, 14));
-		adminFunctionsItem = new JMenuItem("Admin Functions");
-		adminFunctionsItem.setFont(new java.awt.Font("Arial", 1, 14));
+		loginMenu = new JMenu("Login");
+		loginMenu.setFont(new java.awt.Font("Arial", 1, 14));
+		register = new JMenuItem("Register");
+		register.setFont(new java.awt.Font("Arial", 1, 14));
+		login = new JMenuItem("Login");
+		login.setFont(new java.awt.Font("Arial", 1, 14));
 		exitApplication = new JMenuItem("Exit");
 		exitApplication.setFont(new java.awt.Font("Arial", 1, 14));
 
-		fileMenu.add(adminFunctionsItem);
-		fileMenu.add(exitApplication);
-		menuBar.add(fileMenu);
+		loginMenu.add(login);
+		loginMenu.add(register);
+		loginMenu.add(exitApplication);
+		menuBar.add(loginMenu);
+
+		addMenu = new JMenu("Add");
+		addMenu.setFont(new java.awt.Font("Arial", 1, 14));
+
+		addFlight = new JMenuItem("Add Flight");
+		addFlight.setFont(new java.awt.Font("Arial", 1, 14));
+		addMenu.add(addFlight);
+
+		menuBar.add(addMenu);
+
+		searchMenu = new JMenu("Search");
+		searchMenu.setFont(new java.awt.Font("Arial", 1, 14));
+
+		searchFlight = new JMenuItem("Search Flight");
+		searchFlight.setFont(new java.awt.Font("Arial", 1, 14));
+		searchMenu.add(searchFlight);
+
+		menuBar.add(searchMenu);
 
 		welcomeLabel = new JLabel();
 		welcomeLabel.setText("Welcome to the Flight Management System");
-		welcomeLabel.setFont(new java.awt.Font("Arial", 1, 16));
+		welcomeLabel.setFont(new java.awt.Font("Arial", 1, 20));
 		welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
-		welcomeLabel.setBounds(150, 80, 800, 17);
+		welcomeLabel.setBounds(150, 80, 800, 21);
 
 		label = new JLabel();
-		label.setFont(new java.awt.Font("Georgia", 1, 16));
-		label.setText("(Choose an Action in the Menu Bar)");
+		label.setFont(new java.awt.Font("Georgia", 1, 14));
+		label.setText("(Please choose an action from the menu options above.)");
 		label.setForeground(new java.awt.Color(255, 255, 255));
-		label.setBounds(150, 160, 800, 17);
+		label.setBounds(150, 120, 800, 17);
 
 		theDesktop.setBackground(new java.awt.Color(48, 48, 48));
 		theDesktop.add(welcomeLabel);
@@ -89,10 +111,17 @@ public class MainGUIJFrameView extends JFrame {
 	}
 
 	/**
-	 * @return the adminFunctionsItem
+	 * @return the login
 	 */
-	public JMenuItem getAdminFunctionsItem() {
-		return adminFunctionsItem;
+	public JMenuItem getLogin() {
+		return login;
+	}
+
+	/**
+	 * @return the register
+	 */
+	public JMenuItem getRegister() {
+		return register;
 	}
 
 	/**
@@ -103,14 +132,66 @@ public class MainGUIJFrameView extends JFrame {
 	}
 
 	/**
+	 * @return the addFlight
+	 */
+	public JMenuItem getAddFlight() {
+		return addFlight;
+	}
+
+	/**
+	 * @return the searchFlight
+	 */
+	public JMenuItem getSearchFlight() {
+		return searchFlight;
+	}
+
+	/**
 	 * Adds child view to parent view
 	 * 
-	 * @param adminFunctionsJFrameView
+	 * @param searchFlightJFrameView
 	 */
-	public void adminFunctionsToDesktop(AdminFunctionsJFrameView adminFunctionsJFrameView) {
-		adminFunctionsJFrameView.setVisible(true);
-		theDesktop.add(adminFunctionsJFrameView);
-
+	public void addToDesktop(SearchFlightJFrameView searchFlightJFrameView) {
+		searchFlightJFrameView.setVisible(true);
+		theDesktop.add(searchFlightJFrameView);
 	}
+	
+	/**
+	 * Adds child view to parent view
+	 * 
+	 * @param addFlightJFrameView
+	 */
+	public void addFlightToDesktop(AddFlightJFrameView addFlightJFrameView) {
+		// TODO Auto-generated method stub
+		addFlightJFrameView.setVisible(true);
+		theDesktop.add(addFlightJFrameView);
+		
+	}
+	/**
+	 * Adds child view to parent view
+	 * 
+	 * @param loginFlightJFrameView
+	 */
+	public void addLoginToDesktop(LoginFormJFrameView loginFormJFrameView) {
+		// TODO Auto-generated method stub
+		loginFormJFrameView.setVisible(true);
+		theDesktop.add(loginFormJFrameView);
+		
+	}
+	/**
+	 * Adds child view to parent view
+	 * 
+	 * @param registerFlightJFrameView
+	 */
+	public void addRegisterUserToDesktop(RegisterUserJFrameView registerUserJFrameView) {
+		// TODO Auto-generated method stub
+		registerUserJFrameView.setVisible(true);
+		theDesktop.add(registerUserJFrameView);
+		
+	}
+	
+	
+	
+	
+	
 
 }

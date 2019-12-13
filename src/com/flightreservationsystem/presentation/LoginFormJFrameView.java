@@ -9,6 +9,7 @@ import java.awt.FlowLayout;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -17,21 +18,25 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+public class LoginFormJFrameView extends JInternalFrame {
 
-public class LoginFormJFrameView {
-    
-        private JFrame LoginFrame;
+	/**
+	* 
+	*/
+	private static final long serialVersionUID = 1L;
+	
+	private JFrame LoginFrame;
 	private JPanel LoginPanel;
 	private JMenuBar LoginMenuBar;
 	private JMenu LoginMenu;
 	private JMenuItem LoginMenuCloseItem;
 	private JLabel EmailAddress, Password;
 	private JTextField EmailAddressField;
-        private JPasswordField PasswordField;
+	private JPasswordField PasswordField;
 	private JButton LoginButton, cancelLoginButton;
 	private Box LoginBoxLayout;
-        
-        public LoginFormJFrameView() {
+
+	public LoginFormJFrameView() {
 
 		createGUIComponents();
 		LoginFrame.setSize(600, 600);
@@ -39,8 +44,8 @@ public class LoginFormJFrameView {
 		LoginFrame.setResizable(true);
 	}
 
-    private void createGUIComponents() {
-                LoginFrame = new JFrame("LOGIN");
+	private void createGUIComponents() {
+		LoginFrame = new JFrame("LOGIN");
 		FlowLayout layout = new FlowLayout();
 		LoginPanel = new JPanel(layout);
 		LoginBoxLayout = Box.createHorizontalBox();
@@ -53,7 +58,7 @@ public class LoginFormJFrameView {
 
 		LoginBoxLayout.add(cancelLoginButton);
 		LoginBoxLayout.add(LoginButton);
-		LoginBoxLayout.setBounds(200, 400, 200, 50); //600 450 200 50
+		LoginBoxLayout.setBounds(200, 400, 200, 50); // 600 450 200 50
 		LoginPanel.add(LoginBoxLayout);
 
 		LoginMenuBar = new JMenuBar();
@@ -73,7 +78,6 @@ public class LoginFormJFrameView {
 		LoginPanel.setBackground(new java.awt.Color(48, 48, 48));
 		LoginPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		LoginPanel.setLayout(null);
-               
 
 		EmailAddress = new JLabel();
 		EmailAddress.setText("Email Address:");
@@ -96,53 +100,51 @@ public class LoginFormJFrameView {
 		PasswordField = new JPasswordField("", 40);
 		PasswordField.setBounds(180, 240, 240, 20);
 		LoginPanel.add(PasswordField);
-                
-                LoginFrame.getContentPane().add(LoginPanel);
-    }        
 
-    public JMenuItem getLoginMenuCloseItem() {
-        return LoginMenuCloseItem;
-    }
+		LoginFrame.getContentPane().add(LoginPanel);
+	}
 
-    public void setLoginMenuCloseItem(JMenuItem LoginMenuCloseItem) {
-        this.LoginMenuCloseItem = LoginMenuCloseItem;
-    }
+	public JMenuItem getLoginMenuCloseItem() {
+		return LoginMenuCloseItem;
+	}
 
-    public JTextField getEmailAddressField() {
-        return EmailAddressField;
-    }
+	public void setLoginMenuCloseItem(JMenuItem LoginMenuCloseItem) {
+		this.LoginMenuCloseItem = LoginMenuCloseItem;
+	}
 
-    public void setEmailAddressField(JTextField EmailAddressField) {
-        this.EmailAddressField = EmailAddressField;
-    }
+	public JTextField getEmailAddressField() {
+		return EmailAddressField;
+	}
 
-    public JPasswordField getPasswordField() {
-        return PasswordField;
-    }
+	public void setEmailAddressField(JTextField EmailAddressField) {
+		this.EmailAddressField = EmailAddressField;
+	}
 
-    public void setPasswordField(JPasswordField PasswordField) {
-        this.PasswordField = PasswordField;
-    }
+	public JPasswordField getPasswordField() {
+		return PasswordField;
+	}
 
-    public JButton getLoginButton() {
-        return LoginButton;
-    }
+	public void setPasswordField(JPasswordField PasswordField) {
+		this.PasswordField = PasswordField;
+	}
 
-    public JButton getCancelLoginButton() {
-        return cancelLoginButton;
-    }
+	public JButton getLoginButton() {
+		return LoginButton;
+	}
 
-    void setEmailError(String error) {
-	EmailAddressField.setText(error);
-	EmailAddressField.setForeground(new java.awt.Color(255, 0, 0));
-	
-    }
+	public JButton getCancelLoginButton() {
+		return cancelLoginButton;
+	}
 
-    void setPasswordError(String error) {
-        PasswordField.setText(error);
-	PasswordField.setForeground(new java.awt.Color(255, 0, 0));
-    }
-    
-    
-    
+	void setEmailError(String error) {
+		EmailAddressField.setText(error);
+		EmailAddressField.setForeground(new java.awt.Color(255, 0, 0));
+
+	}
+
+	void setPasswordError(String error) {
+		PasswordField.setText(error);
+		PasswordField.setForeground(new java.awt.Color(255, 0, 0));
+	}
+
 }
