@@ -9,12 +9,13 @@ import java.awt.event.ActionListener;
  * Controller
  * Listens and handles actions generated from MainGUIJFrameView
  * 
- *
+ * @author ALYSHA
  */
 
 public class MainGUIJFrameController implements ActionListener {
 	
 	private MainGUIJFrameView mainGUIJFrameView;
+	
 	/**
 	 * Default constructor
 	 */
@@ -32,14 +33,16 @@ public class MainGUIJFrameController implements ActionListener {
 		mainGUIJFrameView.getLogin().addActionListener(this);
 		mainGUIJFrameView.getExitApplication().addActionListener(this);
 		mainGUIJFrameView.getAddFlight().addActionListener(this);
-		mainGUIJFrameView.getSearchFlight().addActionListener(this);	
+		mainGUIJFrameView.getAddAirplane().addActionListener(this);
+		mainGUIJFrameView.getSearchFlight().addActionListener(this);
+		mainGUIJFrameView.getSearchAirplane().addActionListener(this);
+		
 	};
 	/**
 	 * Overrides the action listener
 	 */
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		// TODO Auto-generated method stub
 		
 		 System.out.println ("Inside MainGUIJFrameController::actionPerformed");
 		// Listens and checks the value of each actions and performs the correct logic based on action
@@ -56,23 +59,35 @@ public class MainGUIJFrameController implements ActionListener {
 		 }else if (event.getSource().equals(mainGUIJFrameView.getAddFlight())) {
 			 System.out.println("Add Flight button Pressed!!");
 			 addFlight_actionPerformed(event);
+		 } else if (event.getSource().equals(mainGUIJFrameView.getAddAirplane())) {
+			 System.out.println("Add Airplane button Pressed!!");
+			 addAirplane_actionPerformed(event);
 		 } else if (event.getSource().equals(mainGUIJFrameView.getSearchFlight())) {
 			 System.out.println("Search Flight button Pressed!!");
 			 searchFlight_actionPerformed(event);
-		 } 
+		 } else if (event.getSource().equals(mainGUIJFrameView.getSearchAirplane())) {
+			 System.out.println("Search Airplane button Pressed!!");
+			 searchAirplane_actionPerformed(event);
+		 }
 	}
 
 	/**
-	 * Search for Exhibit action to load new search window
+	 * Search for Flight action to load new search window
 	 * @param event
 	 */
 	@SuppressWarnings("unused")
 	private void searchFlight_actionPerformed(ActionEvent event) {
-		// TODO Implement Search View and controller
 		System.out.println("Opening Flight Search Frame!!");
 		SearchFlightJFrameView searchFlightJFrameView = new SearchFlightJFrameView();
 		SearchFlightJFrameController searchFlightJFrameController = new SearchFlightJFrameController(searchFlightJFrameView);
 		mainGUIJFrameView.addToDesktop(searchFlightJFrameView);
+	}
+	
+	@SuppressWarnings("unused")
+	private void searchAirplane_actionPerformed(ActionEvent event) {
+		SearchAirplaneJFrameView searchAirplaneJFrameView = new SearchAirplaneJFrameView();
+		SearchAirplaneJFrameController searchAirplaneJFrameController = new SearchAirplaneJFrameController(searchAirplaneJFrameView);
+		mainGUIJFrameView.searchAirplaneToDesktop(searchAirplaneJFrameView);
 	}
 
 	@SuppressWarnings("unused")
@@ -81,6 +96,14 @@ public class MainGUIJFrameController implements ActionListener {
 		AddFlightJFrameView addFlightJFrameView = new AddFlightJFrameView();
 		AddFlightJFrameController addFlightJFrameController = new AddFlightJFrameController(addFlightJFrameView);
 		mainGUIJFrameView.addFlightToDesktop(addFlightJFrameView);
+	}
+	
+	@SuppressWarnings("unused")
+	private void addAirplane_actionPerformed(ActionEvent event) {
+		System.out.println("Opening Flight Add Frame!!");
+		AddAirplaneJFrameView addAirplaneJFrameView = new AddAirplaneJFrameView();
+		AddAirplaneJFrameController addAirplaneJFrameController = new AddAirplaneJFrameController(addAirplaneJFrameView);
+		mainGUIJFrameView.addAirplaneToDesktop(addAirplaneJFrameView);
 	}
 
 	private void exitApplication_actionPerformed(ActionEvent event) {

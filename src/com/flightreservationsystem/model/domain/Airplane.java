@@ -31,6 +31,11 @@ public class Airplane implements Serializable{
 	 */
 	private Integer businessSeatsQuantity;
 	
+	/**
+	 * holds description for airplane
+	 */
+	private String description;
+	
 	/*
 	 * Holds a list of flights for an airplane
 	 */
@@ -41,7 +46,7 @@ public class Airplane implements Serializable{
 	 * default values
 	 */
 	public Airplane() {
-		this(99999,"airplaneModel",0,0);
+		this(99999,"airplaneModel",0,0, "description");
 	}
 
 	
@@ -51,16 +56,18 @@ public class Airplane implements Serializable{
 	 * @param airplaneModel
 	 * @param economySeatsQuantity
 	 * @param businessSeatsQuantity
+	 * @param description
+	 * @param flights
 	 */
 	public Airplane(Integer airplaneID, String airplaneModel, Integer economySeatsQuantity,
-			Integer businessSeatsQuantity) {
+			Integer businessSeatsQuantity, String description) {
 		this.airplaneID = airplaneID;
 		this.airplaneModel = airplaneModel;
 		this.economySeatsQuantity = economySeatsQuantity;
 		this.businessSeatsQuantity = businessSeatsQuantity;
-		this.flights = new ArrayList<Flight>(1);
+		this.description = description;
+		this.flights = new ArrayList<>(1);
 	}
-
 
 	/**
 	 * @return the airplaneID
@@ -124,6 +131,21 @@ public class Airplane implements Serializable{
 	public void setBusinessSeatsQuantity(Integer businessSeatsQuantity) {
 		this.businessSeatsQuantity = businessSeatsQuantity;
 	}
+	
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 
 	/**
@@ -153,14 +175,13 @@ public class Airplane implements Serializable{
 		if( this.airplaneModel == null ) return false;
 		if( this.economySeatsQuantity == null ) return false;
 		if( this.businessSeatsQuantity == null ) return false;
+		if( this.description == null ) return false;
 		if( this.flights == null ) return false;
 		
 		return true;
 	}
 
-	/**
-	 * Override HashCode when overriding equals method
-	 */
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -168,17 +189,13 @@ public class Airplane implements Serializable{
 		result = prime * result + ((airplaneID == null) ? 0 : airplaneID.hashCode());
 		result = prime * result + ((airplaneModel == null) ? 0 : airplaneModel.hashCode());
 		result = prime * result + ((businessSeatsQuantity == null) ? 0 : businessSeatsQuantity.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((economySeatsQuantity == null) ? 0 : economySeatsQuantity.hashCode());
 		result = prime * result + ((flights == null) ? 0 : flights.hashCode());
 		return result;
 	}
 
-	/**
-	 * Overriding default equals method from Object Class
-	 * 
-	 * @param obj is inherited from Object
-	 * @return boolean - False if any of the test fail equality default return true
-	 */
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -203,6 +220,11 @@ public class Airplane implements Serializable{
 				return false;
 		} else if (!businessSeatsQuantity.equals(other.businessSeatsQuantity))
 			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
 		if (economySeatsQuantity == null) {
 			if (other.economySeatsQuantity != null)
 				return false;
@@ -215,15 +237,15 @@ public class Airplane implements Serializable{
 			return false;
 		return true;
 	}
-	
-	/**
-	 * Airplane information in string format
-	 */
+
+
 	@Override
 	public String toString() {
 		return "Airplane [airplaneID=" + airplaneID + ", airplaneModel=" + airplaneModel + ", economySeatsQuantity="
-				+ economySeatsQuantity + ", businessSeatsQuantity=" + businessSeatsQuantity + ", flights=" + flights
-				+ "]";
+				+ economySeatsQuantity + ", businessSeatsQuantity=" + businessSeatsQuantity + ", description="
+				+ description + ", flights=" + flights + "]";
 	}
+
+	
 
 }

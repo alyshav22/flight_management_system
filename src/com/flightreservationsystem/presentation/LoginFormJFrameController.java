@@ -73,6 +73,7 @@ class LoginFormJFrameController implements ActionListener{
 			}else {
 			 System.out.println("User Found!!!");
 			 System.out.println(user.toString());
+			 HomeJFrameView homeJFrameView = new HomeJFrameView();
 			 
 		 }
 			

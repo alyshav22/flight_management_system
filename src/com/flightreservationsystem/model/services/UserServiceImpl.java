@@ -5,7 +5,7 @@
  */
 package com.flightreservationsystem.model.services;
 
-import com.flightreservationsystem.model.domain.Flight;
+
 import com.flightreservationsystem.model.domain.User;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

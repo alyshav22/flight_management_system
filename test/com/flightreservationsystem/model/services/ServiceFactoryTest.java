@@ -23,6 +23,7 @@ public class ServiceFactoryTest {
 	private ServiceFactory testServiceFactory;
 	private IFlightService flightService;
 	private IUserService userService;
+	private IAirplaneService airplaneService;
 
 	/**
 	 * Configures test environment and instantiates required object for all test
@@ -63,6 +64,23 @@ public class ServiceFactoryTest {
 		try {
 			userService = (IUserService) testServiceFactory.getService(IUserService.NAME);
 			assertTrue(userService instanceof UserServiceImpl);
+			System.out.println("ServiceFactoryTest: testGetUserService() PASSED");
+		} catch (ServiceLoadException e) {
+			e.printStackTrace();
+			fail("ServiceLoadException");
+		}
+	}
+	
+	/**
+	 * Test Factory to return the Airplane Service 
+	 * and check that it is a instance of UserServiceImpl
+	 */
+	@Test
+	public final void testGetAirplaneService() {
+		System.out.println("Starting testGetAirplaneService()");
+		try {
+			airplaneService = (IAirplaneService) testServiceFactory.getService(IAirplaneService.NAME);
+			assertTrue(airplaneService instanceof AirplaneServiceImpl);
 			System.out.println("ServiceFactoryTest: testGetUserService() PASSED");
 		} catch (ServiceLoadException e) {
 			e.printStackTrace();

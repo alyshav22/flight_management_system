@@ -12,7 +12,8 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ FlightSaveExceptionTest.class, FlightServiceImplTest.class, ServiceFactoryTest.class,
-		ServiceLoadExceptionTest.class, UserServiceImplTest.class, UserRegisterExceptionTest.class })
+		ServiceLoadExceptionTest.class, UserServiceImplTest.class, UserRegisterExceptionTest.class,
+		AirplaneSaveExceptionTest.class, AirplaneServiceImplTest.class})
 
 /**
  * JUnit Test Suite for aggregating Services Layer test(s)

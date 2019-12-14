@@ -25,8 +25,8 @@ public class AirplaneTest {
 	@Before
 	public void setUp() throws Exception {
 		airplane1 = new Airplane();
-		airplane2 = new Airplane(999, "Boeing700", 5, 25);
-		airplane3 = new Airplane(999, "Boeing700", 5, 25);
+		airplane2 = new Airplane(123456, "Boeing700", 5, 25, "description");
+		airplane3 = new Airplane(123456, "Boeing700", 5, 25, "description");
 	}
 
 	/**

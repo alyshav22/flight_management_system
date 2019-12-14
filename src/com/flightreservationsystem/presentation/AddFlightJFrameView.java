@@ -442,10 +442,7 @@ public class AddFlightJFrameView extends JInternalFrame{
 			return flight;	
 	}
 
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	
 

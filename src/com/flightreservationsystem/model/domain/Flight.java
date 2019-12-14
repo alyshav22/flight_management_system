@@ -260,7 +260,7 @@ public class Flight implements Serializable{
 	}
 
 	/**
-	 * Add a flight to List of airplane scheduled for flight
+	 * Add a flight to a List of airplane scheduled for flight
 	 * @param flightAirplanes the flightAirplanes to set
 	 */
 	public void setFlightAirplanes(Airplane flightAirplanes) {

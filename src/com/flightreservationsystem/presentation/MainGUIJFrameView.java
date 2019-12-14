@@ -8,19 +8,21 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 
-
+/**
+ * The Main Driver Class is responsible for starting the GUI for the Flight Management System
+ * @author ALYSHA
+ *
+ */
 public class MainGUIJFrameView extends JFrame {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	private JDesktopPane theDesktop = new JDesktopPane();
 	private JMenuBar menuBar;
 	private JMenu loginMenu, addMenu, searchMenu;
 	private JLabel welcomeLabel, label;
-	private JMenuItem login, register, exitApplication, addFlight, searchFlight;
+	private JMenuItem login, register, exitApplication, addFlight, addAirplane, searchFlight, searchAirplane;
 
 	/**
 	 * Creates the first object of the application and instantiates the Main View
@@ -46,6 +48,7 @@ public class MainGUIJFrameView extends JFrame {
 	 * Creates all the required components of the Main GUI page
 	 */
 	private void createGUIComponents() {
+		
 		menuBar = new JMenuBar();
 		super.setJMenuBar(menuBar);
 		loginMenu = new JMenu("Login");
@@ -68,6 +71,10 @@ public class MainGUIJFrameView extends JFrame {
 		addFlight = new JMenuItem("Add Flight");
 		addFlight.setFont(new java.awt.Font("Arial", 1, 14));
 		addMenu.add(addFlight);
+		
+		addAirplane = new JMenuItem("Add Airplane");
+		addAirplane.setFont(new java.awt.Font("Arial", 1, 14));
+		addMenu.add(addAirplane);
 
 		menuBar.add(addMenu);
 
@@ -77,6 +84,10 @@ public class MainGUIJFrameView extends JFrame {
 		searchFlight = new JMenuItem("Search Flight");
 		searchFlight.setFont(new java.awt.Font("Arial", 1, 14));
 		searchMenu.add(searchFlight);
+		
+		searchAirplane = new JMenuItem("Search Airplane");
+		searchAirplane.setFont(new java.awt.Font("Arial", 1, 14));
+		searchMenu.add(searchAirplane);
 
 		menuBar.add(searchMenu);
 
@@ -87,7 +98,7 @@ public class MainGUIJFrameView extends JFrame {
 		welcomeLabel.setBounds(150, 80, 800, 21);
 
 		label = new JLabel();
-		label.setFont(new java.awt.Font("Georgia", 1, 14));
+		label.setFont(new java.awt.Font("Arial", 1, 14));
 		label.setText("(Please choose an action from the menu options above.)");
 		label.setForeground(new java.awt.Color(255, 255, 255));
 		label.setBounds(150, 120, 800, 17);
@@ -137,12 +148,26 @@ public class MainGUIJFrameView extends JFrame {
 	public JMenuItem getAddFlight() {
 		return addFlight;
 	}
+	
+	/**
+	 * @return the addFlight
+	 */
+	public JMenuItem getAddAirplane() {
+		return addAirplane;
+	}
 
 	/**
 	 * @return the searchFlight
 	 */
 	public JMenuItem getSearchFlight() {
 		return searchFlight;
+	}
+	
+	/**
+	 * @return the searchAirplane
+	 */
+	public JMenuItem getSearchAirplane() {
+		return searchAirplane;
 	}
 
 	/**
@@ -158,14 +183,33 @@ public class MainGUIJFrameView extends JFrame {
 	/**
 	 * Adds child view to parent view
 	 * 
+	 * @param searchAirplaneJFrameView
+	 */
+	public void searchAirplaneToDesktop(SearchAirplaneJFrameView searchAirplaneJFrameView) {
+		searchAirplaneJFrameView.setVisible(true);
+		theDesktop.add(searchAirplaneJFrameView);
+	}
+	
+	/**
+	 * Adds child view to parent view
+	 * 
 	 * @param addFlightJFrameView
 	 */
 	public void addFlightToDesktop(AddFlightJFrameView addFlightJFrameView) {
-		// TODO Auto-generated method stub
 		addFlightJFrameView.setVisible(true);
 		theDesktop.add(addFlightJFrameView);
-		
 	}
+	/**
+	 * Adds child view to parent view
+	 * 
+	 * @param addAirplaneJFrameView
+	 */
+	public void addAirplaneToDesktop(AddAirplaneJFrameView addAirplaneJFrameView) {
+		// TODO Auto-generated method stub
+		addAirplaneJFrameView.setVisible(true);
+		theDesktop.add(addAirplaneJFrameView);
+	}
+	
 	/**
 	 * Adds child view to parent view
 	 * 

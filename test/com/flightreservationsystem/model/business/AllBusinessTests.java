@@ -11,7 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 
 @RunWith(Suite.class)
-@SuiteClasses({ FlightMgrTest.class, UserMgrTest.class })
+@SuiteClasses({ FlightMgrTest.class, UserMgrTest.class, AirplaneMgrTest.class })
 public class AllBusinessTests {
 	
 	/**
