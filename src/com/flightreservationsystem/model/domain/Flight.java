@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * departureLocation, arrivalLocation, departureTime,
  * arrivalTime, businessFare, economyFare
  * 
- * @author Alysha
+ * @author ALYSHA
  */
 
 

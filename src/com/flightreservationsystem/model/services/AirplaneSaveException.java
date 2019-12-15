@@ -1,10 +1,13 @@
 package com.flightreservationsystem.model.services;
 
+/**
+ * Custom Exception for saving Airplane
+ * @author ALY
+ *
+ */
 public class AirplaneSaveException extends Exception{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	/**

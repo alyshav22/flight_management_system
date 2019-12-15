@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Domain User class holds name, email, password
- * @author Alysha
+ * @author ALYSHA
  *
  */
 public class User implements Serializable {
