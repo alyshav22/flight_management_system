@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 /**
  * View for search for flight objects
  *
- *
+ * @author ALYSHA
  */
 
 public class SearchFlightJFrameView extends JInternalFrame{

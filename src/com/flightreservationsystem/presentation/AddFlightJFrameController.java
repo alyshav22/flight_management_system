@@ -8,7 +8,7 @@ import com.flightreservationsystem.model.domain.Flight;
 
 /**
  * AddFlightJFrameController - Listens and handles actions generated from Add FlightJFrameView
- *
+ * @author ALYSHA
  */
 
 
@@ -105,7 +105,7 @@ public class AddFlightJFrameController implements ActionListener {
 		
 		// Creates a Flight object based on user input view
 		Flight flight = addFlightJFrameView.getFlightData();
-		// Get an instance of the Exhibit Business Layer facade via the manager
+		// Get an instance of the Flight Business Layer facade via the manager
 		FlightMgr flightMgr = FlightMgr.getFlightMgr();
 
 		if (flightMgr != null) {

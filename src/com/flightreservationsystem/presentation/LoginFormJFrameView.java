@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.flightreservationsystem.presentation;
 
 import java.awt.FlowLayout;
@@ -18,11 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+
 public class LoginFormJFrameView extends JInternalFrame {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 	
 	private JFrame LoginFrame;
@@ -31,11 +24,13 @@ public class LoginFormJFrameView extends JInternalFrame {
 	private JMenu LoginMenu;
 	private JMenuItem LoginMenuCloseItem;
 	private JLabel EmailAddress, Password;
-	private JTextField EmailAddressField;
-	private JPasswordField PasswordField;
+	private JTextField EmailAddressField, PasswordField;
 	private JButton LoginButton, cancelLoginButton;
 	private Box LoginBoxLayout;
-
+	
+	/**
+	 * Default constructor
+	 */
 	public LoginFormJFrameView() {
 
 		createGUIComponents();
@@ -43,9 +38,12 @@ public class LoginFormJFrameView extends JInternalFrame {
 		LoginFrame.setVisible(true);
 		LoginFrame.setResizable(true);
 	}
-
+	
+	/**
+	 * Creates all the required components of the Login Form page
+	 */
 	private void createGUIComponents() {
-		LoginFrame = new JFrame("LOGIN");
+		LoginFrame = new JFrame("Login");
 		FlowLayout layout = new FlowLayout();
 		LoginPanel = new JPanel(layout);
 		LoginBoxLayout = Box.createHorizontalBox();
@@ -120,11 +118,11 @@ public class LoginFormJFrameView extends JInternalFrame {
 		this.EmailAddressField = EmailAddressField;
 	}
 
-	public JPasswordField getPasswordField() {
+	public JTextField getPasswordField() {
 		return PasswordField;
 	}
 
-	public void setPasswordField(JPasswordField PasswordField) {
+	public void setPasswordField(JTextField PasswordField) {
 		this.PasswordField = PasswordField;
 	}
 

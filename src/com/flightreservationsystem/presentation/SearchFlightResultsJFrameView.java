@@ -13,7 +13,7 @@ import com.flightreservationsystem.model.domain.Flight;
 
 /**
  * This view displays the results returned by searching for a Flight
- *
+ * @author ALYSHA
  */
 
 public class SearchFlightResultsJFrameView extends JInternalFrame {

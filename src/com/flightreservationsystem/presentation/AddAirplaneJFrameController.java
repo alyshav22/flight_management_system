@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 import com.flightreservationsystem.model.business.AirplaneMgr;
 import com.flightreservationsystem.model.domain.Airplane;
 
+/**
+ * Controller - listens and handles actions generated from AddAirplaneJFrameController
+ * @author ALYSHA
+ *
+ */
 public class AddAirplaneJFrameController implements ActionListener {
 
 	private AddAirplaneJFrameView addAirplaneJFrameView;
@@ -14,17 +19,13 @@ public class AddAirplaneJFrameController implements ActionListener {
 	 * Default constructor
 	 */
 	public AddAirplaneJFrameController() {
-
 	}
 
 	/**
 	 * Overloaded Constructor
 	 */
 	public AddAirplaneJFrameController(AddAirplaneJFrameView addAirplaneJFrameView) {
-
 		this.addAirplaneJFrameView = addAirplaneJFrameView;
-
-		// Creating the required action listeners
 		addAirplaneJFrameView.getAirplaneFileCloseItem().addActionListener(this);
 		addAirplaneJFrameView.getCancelAirplaneButton().addActionListener(this);
 		addAirplaneJFrameView.getSaveAirplaneButton().addActionListener(this);
@@ -47,21 +48,21 @@ public class AddAirplaneJFrameController implements ActionListener {
 		} else if (event.getSource().equals(addAirplaneJFrameView.getSaveAirplaneButton())) {
 			System.out.println("Airplane save button clicked !!");
 
-			// Validate User Input before exhibitSaveButton_actionPerfomed()
+			// Validate User Input before airplaneSaveButton_actionPerfomed()
 			if ((addAirplaneJFrameView.getAirplaneIDField().getText().isEmpty())
 					|| (addAirplaneJFrameView.getAirplaneIDField().getText().equals("123456"))) {
-				System.out.println("Airplane Id cannot be empty !!");
+				System.out.println("Airplane Id cannot be empty!");
 				addAirplaneJFrameView.setAirplaneIDError("Error: Exhibit ID must be entered!");
 			} else if ((addAirplaneJFrameView.getAirplaneModelField().getText().isEmpty())
 					|| (addAirplaneJFrameView.getAirplaneModelField().getText().equals("Airplane Model"))) {
-				System.out.println("Airplane Model cannot be empty !!");
-				addAirplaneJFrameView.setAirplaneModelError("Error: Exhibit Name must be entered!");
+				System.out.println("Airplane Model cannot be empty!");
+				addAirplaneJFrameView.setAirplaneModelError("Error: Airplane Model must be entered!");
 			} else if ((addAirplaneJFrameView.getEconomyQuantityField().getText().isEmpty())) {
-				System.out.println("Economy Quantity cannot be empty !!");
+				System.out.println("Economy Quantity cannot be empty!");
 				addAirplaneJFrameView.setAirplaneEconomyQuantityError("Error: Economy Quantity must be entered!");
 			} else if ((addAirplaneJFrameView.getBusinessQuantityField().getText().isEmpty())) {
-				System.out.println("Business Quantity cannot be empty !!");
-				addAirplaneJFrameView.setAirplaneBusinessQuantityError("Error: Economy Quantity must be entered!");
+				System.out.println("Business Quantity cannot be empty!");
+				addAirplaneJFrameView.setAirplaneBusinessQuantityError("Error: Business Quantity must be entered!");
 			} else {
 				airplaneSaveButton_actionPerfomed(event);
 			}
@@ -79,7 +80,7 @@ public class AddAirplaneJFrameController implements ActionListener {
 		AirplaneMgr airplaneMgr = AirplaneMgr.getAirplaneMgr();
 
 		if (airplaneMgr != null) {
-			// Test creates a artwork using manager and if passes or true alerts the correct
+			// Test creates a Airplane using manager and if passes or true alerts the correct
 			// messages
 			if (airplaneMgr.create(airplane)) {
 
@@ -100,7 +101,7 @@ public class AddAirplaneJFrameController implements ActionListener {
 					"Operation Error.");
 			AlertMessageJFrameController alertMessageJFrameController = new AlertMessageJFrameController(
 					alertMessageJFrameView);
-			System.out.println(" Error-Exhibit Manager Business Facade instance is null ");
+			System.out.println(" Error-Airplane Mgr Business Facade instance is null ");
 		}
 
 	}
@@ -110,7 +111,10 @@ public class AddAirplaneJFrameController implements ActionListener {
 		System.exit(1);
 
 	}
-
+	/**
+	 * Close window component and exit application
+	 * @param event
+	 */
 	private void airplaneFileCloseItem_actionPerformed(ActionEvent event) {
 		System.out.println("quiting appliction ");
 		System.exit(1);

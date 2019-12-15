@@ -69,7 +69,7 @@ public class UserServiceImplTest {
 		} catch (ServiceLoadException e) {
 			e.printStackTrace();
 			fail("ServiceLoadException");
-		} catch (FindUserException e) {
+		} catch (VerifyUserException e) {
 			e.printStackTrace();
 			fail("VerifyUserException");
 		}

@@ -83,13 +83,21 @@ public class MainGUIJFrameController implements ActionListener {
 		mainGUIJFrameView.addToDesktop(searchFlightJFrameView);
 	}
 	
+	/**
+	 * Search for Airplane action to load new search window
+	 * @param event
+	 */
 	@SuppressWarnings("unused")
 	private void searchAirplane_actionPerformed(ActionEvent event) {
 		SearchAirplaneJFrameView searchAirplaneJFrameView = new SearchAirplaneJFrameView();
 		SearchAirplaneJFrameController searchAirplaneJFrameController = new SearchAirplaneJFrameController(searchAirplaneJFrameView);
 		mainGUIJFrameView.searchAirplaneToDesktop(searchAirplaneJFrameView);
 	}
-
+	
+	/**
+	 * Add Flight action to load new add window
+	 * @param event
+	 */
 	@SuppressWarnings("unused")
 	private void addFlight_actionPerformed(ActionEvent event) {
 		System.out.println("Opening Flight Add Frame!!");
@@ -97,7 +105,10 @@ public class MainGUIJFrameController implements ActionListener {
 		AddFlightJFrameController addFlightJFrameController = new AddFlightJFrameController(addFlightJFrameView);
 		mainGUIJFrameView.addFlightToDesktop(addFlightJFrameView);
 	}
-	
+	/**
+	 * Add Airplane action to load new add window
+	 * @param event
+	 */
 	@SuppressWarnings("unused")
 	private void addAirplane_actionPerformed(ActionEvent event) {
 		System.out.println("Opening Flight Add Frame!!");
@@ -105,12 +116,18 @@ public class MainGUIJFrameController implements ActionListener {
 		AddAirplaneJFrameController addAirplaneJFrameController = new AddAirplaneJFrameController(addAirplaneJFrameView);
 		mainGUIJFrameView.addAirplaneToDesktop(addAirplaneJFrameView);
 	}
-
+	/**
+	 * Exit Application
+	 * @param event
+	 */
 	private void exitApplication_actionPerformed(ActionEvent event) {
 		System.out.println("quitting application");
 		System.exit(1);
 	}
-
+	/**
+	 * Login action to load new login window
+	 * @param event
+	 */
 	@SuppressWarnings("unused")
 	private void login_actionPerformed(ActionEvent event) {
 		System.out.println("Opening Login Frame!!");
@@ -119,7 +136,10 @@ public class MainGUIJFrameController implements ActionListener {
 		mainGUIJFrameView.addLoginToDesktop(loginFormJFrameView);
 		
 	}
-
+	/**
+	 * Register action to load new register window
+	 * @param event
+	 */
 	@SuppressWarnings("unused")
 	private void register_actionPerformed(ActionEvent event) {
 		System.out.println("Opening Register Frame!!");

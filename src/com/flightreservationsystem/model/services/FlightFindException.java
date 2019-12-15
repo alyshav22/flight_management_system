@@ -2,8 +2,8 @@ package com.flightreservationsystem.model.services;
 
 
 /**
- * Custom Exception for finding objects
- *
+ * Custom Exception for finding Flight
+ * @author ALYSHA
  */
 
 public class FlightFindException extends Exception{

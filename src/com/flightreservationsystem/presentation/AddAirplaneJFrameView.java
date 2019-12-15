@@ -1,8 +1,6 @@
 package com.flightreservationsystem.presentation;
 
 import java.awt.FlowLayout;
-import java.awt.Font;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +18,12 @@ import javax.swing.ScrollPaneConstants;
 
 import com.flightreservationsystem.model.domain.Airplane;
 
+/**
+ * AddAirplaneJFrame UI to load airplane page and get User action
+ * 
+ * @author ALYSHA
+ *
+ */
 public class AddAirplaneJFrameView extends JInternalFrame{
 
 	private static final long serialVersionUID = 1L;

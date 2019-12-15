@@ -25,7 +25,7 @@ public class SearchAirplaneResultsJFrameView extends JInternalFrame {
 	
 
 	/**
-	 * Creates The view for search for exhibit 
+	 * Creates The view for search for Airplane
 	 */
 	public SearchAirplaneResultsJFrameView(Airplane airplane) {
 		this.airplane = airplane;

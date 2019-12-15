@@ -31,9 +31,8 @@ public class RegisterUserJFrameView extends JInternalFrame{
 	private JMenuBar RegisterMenuBar;
 	private JMenu RegisterMenu;
 	private JMenuItem RegisterFileCloseItem;
-	private JLabel FullName, EmailAddress, Password, ConfirmPassword;
-	private JTextField FullNameField, EmailAddressField;
-        private JPasswordField PasswordField, ConfirmPasswordField;
+	private JLabel FullName, EmailAddress, Password;
+	private JTextField FullNameField, EmailAddressField, PasswordField;
 	private JButton registerUserButton, cancelRegistrationButton;
 	private Box RegisterBoxLayout;
         
@@ -114,18 +113,8 @@ public class RegisterUserJFrameView extends JInternalFrame{
 		PasswordField.setBounds(180, 240, 240, 20);
 		RegisterPanel.add(PasswordField);
 
-		ConfirmPassword = new JLabel();
-		ConfirmPassword.setText("Confirm Password:");
-		ConfirmPassword.setFont(new java.awt.Font("Arial", 1, 14));
-		ConfirmPassword.setForeground(new java.awt.Color(255, 255, 255));
-		ConfirmPassword.setBounds(40, 320, 150, 17);
-		RegisterPanel.add(ConfirmPassword);
-
-		ConfirmPasswordField = new JPasswordField("abc", 40);
-		ConfirmPasswordField.setBounds(180, 320, 240, 20);
-		RegisterPanel.add(ConfirmPasswordField);
                 
-                RegisterMainFrame.getContentPane().add(RegisterPanel);
+        RegisterMainFrame.getContentPane().add(RegisterPanel);
 
     }
 
@@ -141,12 +130,8 @@ public class RegisterUserJFrameView extends JInternalFrame{
         return EmailAddressField;
     }
 
-    public JPasswordField getPasswordField() {
+    public JTextField getPasswordField() {
         return PasswordField;
-    }
-
-    public JPasswordField getConfirmPasswordField() {
-        return ConfirmPasswordField;
     }
 
     public JButton getRegisterUserButton() {
@@ -166,10 +151,6 @@ public class RegisterUserJFrameView extends JInternalFrame{
 		Password.setForeground(new java.awt.Color(255, 0, 0));
 	} 
     
-    public void setConfirmPasswordError(String error) {
-		ConfirmPasswordField.setText(error);
-		ConfirmPasswordField.setForeground(new java.awt.Color(255, 0, 0));
-	}
 
     public void setEmailFormatError(String error) {
 		EmailAddressField.setText(error);
@@ -200,20 +181,12 @@ public class RegisterUserJFrameView extends JInternalFrame{
                 setEmailFormatError("Invalid Format");
             }
             
-            //password confirmation
-            String password = "";
-            if(ConfirmPasswordField.getText().equals(PasswordField.getText())){
-                password = PasswordField.getText();
-            }else{
-                setConfirmPasswordError("Passwords do not match");
-                    }
-		
-		//Create User object based on user input
-		User users = new User(FullNameField.getText(), 
-                        email, password);
-                
-                
-			return users;	
+            /**
+    		 * Create User object based on user input
+    		 */
+    		User users = new User(FullNameField.getText(), email, PasswordField.getText());
+
+    		return users;	
 	}
     
         

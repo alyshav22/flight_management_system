@@ -19,8 +19,8 @@ import javax.swing.JTextField;
 import com.flightreservationsystem.model.domain.Flight;
 
 /**
- * AddFlightJFrameView UI to load Flight page and capture Admin Inventory Action
- * 
+ * AddFlightJFrameView UI to load Flight page and capture User Action
+ * @author ALYSHA
  *
  */
 

@@ -3,7 +3,6 @@ package com.flightreservationsystem.model.services;
 /**
  * Custom Exception for finding Airplane
  * @author ALYSHA
- *
  */
 public class AirplaneFindException extends Exception{
 

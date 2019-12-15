@@ -7,14 +7,11 @@ import javax.swing.JLabel;
 /**
  * AlertMessageJFrameView UI to load alert message confirmation after action 
  * 
- *
+ * @author ALYSHA
  */
 
 public class AlertMessageJFrameView extends JDialog {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	

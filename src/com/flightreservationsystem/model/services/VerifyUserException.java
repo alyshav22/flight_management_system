@@ -1,19 +1,19 @@
 package com.flightreservationsystem.model.services;
 
 /**
- * Custom exception for finding User
- * @author ALY
+ * Custom exception for verifying User
+ * @author ALYSHA
  *
  */
-public class FindUserException extends Exception{
+public class VerifyUserException extends Exception{
     private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Custom Flight Find Exception for services
+	 * Custom Verify User Exception for services
 	 * @param inMessage
 	 * @param inNestedException
 	 */
-	public FindUserException(final String inMessage, final Throwable inNestedException) {
+	public VerifyUserException(final String inMessage, final Throwable inNestedException) {
             super(inMessage, inNestedException);
 
 	}

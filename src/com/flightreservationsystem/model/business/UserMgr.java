@@ -6,7 +6,7 @@
 package com.flightreservationsystem.model.business;
 
 import com.flightreservationsystem.model.domain.User;
-import com.flightreservationsystem.model.services.FindUserException;
+import com.flightreservationsystem.model.services.VerifyUserException;
 import com.flightreservationsystem.model.services.IUserService;
 import com.flightreservationsystem.model.services.ServiceLoadException;
 import com.flightreservationsystem.model.services.UserRegisterException;
@@ -44,7 +44,7 @@ public class UserMgr extends ManagerSuperType{
 			return userService.checkLogin(userEmail);
 		}catch (ServiceLoadException e) { 
 			return null;
-		} catch(FindUserException e){
+		} catch(VerifyUserException e){
                         return null;
                         }
 	}

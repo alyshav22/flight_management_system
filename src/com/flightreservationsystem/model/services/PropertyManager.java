@@ -7,7 +7,7 @@ import java.util.Properties;
 
 /**
  * PropertyManager is responsible for loading the property file into memory
- *
+ * @author ALYSHA
  */
 
 

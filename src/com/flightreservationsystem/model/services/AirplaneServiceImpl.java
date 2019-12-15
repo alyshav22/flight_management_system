@@ -11,8 +11,7 @@ import java.util.Hashtable;
 import com.flightreservationsystem.model.domain.Airplane;
 
 /**
- * Flight Service Interface Implementation
- * 
+ * Airplane Service Interface Implementation
  * @author ALYSHA
  *
  */
@@ -22,6 +21,7 @@ public class AirplaneServiceImpl implements IAirplaneService {
 	 * Persisting all Airplane objects by unique ID in a Hashtable
 	 */
 	private static Hashtable<Integer, Airplane> airplaneHashtable = new Hashtable<Integer, Airplane>();
+	
 	/**
 	 * Reference variable for data stream
 	 */

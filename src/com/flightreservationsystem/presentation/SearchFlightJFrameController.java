@@ -10,7 +10,7 @@ import com.flightreservationsystem.model.domain.Flight;
  * Controller
  * Listens and handles actions generated from SearchFlightJFrameView
  * 
- *
+ * @author ALYSHA
  */
 
 public class SearchFlightJFrameController implements ActionListener{

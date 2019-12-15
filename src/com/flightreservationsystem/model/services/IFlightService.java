@@ -3,8 +3,8 @@ package com.flightreservationsystem.model.services;
 import com.flightreservationsystem.model.domain.Flight;
 
 /**
- * Service interface for a Flight
- *
+ * Service Interface for a Flight
+ * @author ALYSHA
  */
 
 public interface IFlightService extends IService{

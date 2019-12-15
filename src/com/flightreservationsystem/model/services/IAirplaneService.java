@@ -4,7 +4,7 @@ import com.flightreservationsystem.model.domain.Airplane;
 
 /**
  * Service Interface for a Airplane
- * @author Alysha
+ * @author ALYSHA
  *
  */
 public interface IAirplaneService extends IService {
