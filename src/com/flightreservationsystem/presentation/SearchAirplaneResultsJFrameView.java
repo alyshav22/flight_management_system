@@ -20,8 +20,8 @@ public class SearchAirplaneResultsJFrameView extends JInternalFrame {
 	private Airplane airplane;
 	private JFrame airplaneMainFrame;
 	private JPanel airplanePanel;
-	private JLabel airplaneIDLabel, airplaneModelLabel, economyQuantityLabel, businessQuantityLabel;
-	private JTextArea airplaneDescriptionField;
+	private JLabel airplaneIDLabel, airplaneModelLabel, economyQuantityLabel, businessQuantityLabel, airplaneNotesLabel;
+	private JTextArea airplaneNotesField;
 	
 
 	/**
@@ -40,7 +40,7 @@ public class SearchAirplaneResultsJFrameView extends JInternalFrame {
 		FlowLayout layout = new FlowLayout();
 		airplanePanel = new JPanel(layout);
 		
-		airplanePanel.setBackground(new java.awt.Color(48, 48, 48));
+		airplanePanel.setBackground(new java.awt.Color(24, 108, 144));
 		airplanePanel.setFont(new java.awt.Font("Georgia", 1, 11));
 		airplanePanel.setLayout(null);
 		
@@ -66,20 +66,26 @@ public class SearchAirplaneResultsJFrameView extends JInternalFrame {
 		airplanePanel.add(economyQuantityLabel);
 		
 		businessQuantityLabel = new JLabel();
-		businessQuantityLabel .setText("Economy Seats Quantity: " + airplane.getEconomySeatsQuantity());
-		businessQuantityLabel .setFont(new java.awt.Font("Georgia", 1, 14));
-		businessQuantityLabel .setForeground(new java.awt.Color(255, 255, 255));
-		businessQuantityLabel .setBounds(40, 320, 360, 17);
+		businessQuantityLabel.setText("Economy Seats Quantity: " + airplane.getEconomySeatsQuantity());
+		businessQuantityLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		businessQuantityLabel.setForeground(new java.awt.Color(255, 255, 255));
+		businessQuantityLabel.setBounds(40, 320, 360, 17);
 		airplanePanel.add(businessQuantityLabel);
 		
+		airplaneNotesLabel = new JLabel();
+		airplaneNotesLabel.setText("Additional Notes: ");
+		airplaneNotesLabel.setFont(new java.awt.Font("Arial", 1, 14));
+		airplaneNotesLabel.setForeground(new java.awt.Color(255, 255, 255));
+		airplaneNotesLabel.setBounds(40, 400, 360, 17);
+		airplanePanel.add(airplaneNotesLabel);
 		
-		airplaneDescriptionField = new JTextArea(10,40);
-		airplaneDescriptionField.setLineWrap(true);
-		airplaneDescriptionField.setText(airplane.getDescription());
-		JScrollPane scroller = new JScrollPane(airplaneDescriptionField);
+		airplaneNotesField = new JTextArea(10,40);
+		airplaneNotesField.setLineWrap(true);
+		airplaneNotesField.setText(airplane.getNotes());
+		JScrollPane scroller = new JScrollPane(airplaneNotesField);
 		scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scroller.setBounds(585, 80,600, 600);
+		scroller.setBounds(220, 400,600, 200);
 		airplanePanel.add(scroller);
 		
 		airplaneMainFrame.getContentPane().add(airplanePanel);

@@ -32,9 +32,9 @@ public class Airplane implements Serializable{
 	private Integer businessSeatsQuantity;
 	
 	/**
-	 * holds description for airplane
+	 * holds notes for airplane
 	 */
-	private String description;
+	private String notes;
 	
 	/*
 	 * Holds a list of flights for an airplane
@@ -46,7 +46,7 @@ public class Airplane implements Serializable{
 	 * default values
 	 */
 	public Airplane() {
-		this(99999,"airplaneModel",0,0, "description");
+		this(99999,"airplaneModel",0,0, "notes");
 	}
 
 	
@@ -56,7 +56,7 @@ public class Airplane implements Serializable{
 	 * @param airplaneModel
 	 * @param economySeatsQuantity
 	 * @param businessSeatsQuantity
-	 * @param description
+	 * @param notes
 	 * @param flights
 	 */
 	public Airplane(Integer airplaneID, String airplaneModel, Integer economySeatsQuantity,
@@ -65,7 +65,7 @@ public class Airplane implements Serializable{
 		this.airplaneModel = airplaneModel;
 		this.economySeatsQuantity = economySeatsQuantity;
 		this.businessSeatsQuantity = businessSeatsQuantity;
-		this.description = description;
+		this.notes = description;
 		this.flights = new ArrayList<>(1);
 	}
 
@@ -133,18 +133,18 @@ public class Airplane implements Serializable{
 	}
 	
 	/**
-	 * @return the description
+	 * @return the notes
 	 */
-	public String getDescription() {
-		return description;
+	public String getNotes() {
+		return notes;
 	}
 
 
 	/**
-	 * @param description the description to set
+	 * @param notes the notes to set
 	 */
-	public void setDescription(String description) {
-		this.description = description;
+	public void setNotes(String description) {
+		this.notes = description;
 	}
 
 
@@ -175,7 +175,7 @@ public class Airplane implements Serializable{
 		if( this.airplaneModel == null ) return false;
 		if( this.economySeatsQuantity == null ) return false;
 		if( this.businessSeatsQuantity == null ) return false;
-		if( this.description == null ) return false;
+		if( this.notes == null ) return false;
 		if( this.flights == null ) return false;
 		
 		return true;
@@ -189,7 +189,7 @@ public class Airplane implements Serializable{
 		result = prime * result + ((airplaneID == null) ? 0 : airplaneID.hashCode());
 		result = prime * result + ((airplaneModel == null) ? 0 : airplaneModel.hashCode());
 		result = prime * result + ((businessSeatsQuantity == null) ? 0 : businessSeatsQuantity.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((notes == null) ? 0 : notes.hashCode());
 		result = prime * result + ((economySeatsQuantity == null) ? 0 : economySeatsQuantity.hashCode());
 		result = prime * result + ((flights == null) ? 0 : flights.hashCode());
 		return result;
@@ -220,10 +220,10 @@ public class Airplane implements Serializable{
 				return false;
 		} else if (!businessSeatsQuantity.equals(other.businessSeatsQuantity))
 			return false;
-		if (description == null) {
-			if (other.description != null)
+		if (notes == null) {
+			if (other.notes != null)
 				return false;
-		} else if (!description.equals(other.description))
+		} else if (!notes.equals(other.notes))
 			return false;
 		if (economySeatsQuantity == null) {
 			if (other.economySeatsQuantity != null)
@@ -242,8 +242,8 @@ public class Airplane implements Serializable{
 	@Override
 	public String toString() {
 		return "Airplane [airplaneID=" + airplaneID + ", airplaneModel=" + airplaneModel + ", economySeatsQuantity="
-				+ economySeatsQuantity + ", businessSeatsQuantity=" + businessSeatsQuantity + ", description="
-				+ description + ", flights=" + flights + "]";
+				+ economySeatsQuantity + ", businessSeatsQuantity=" + businessSeatsQuantity + ", notes="
+				+ notes + ", flights=" + flights + "]";
 	}
 
 	

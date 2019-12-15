@@ -57,7 +57,7 @@ public class SearchFlightJFrameView extends JInternalFrame{
 		searchFlightButton.setFont(new java.awt.Font("Arial", 1, 14));
 		flightPanel.add(searchFlightButton);
 		
-		flightPanel.setBackground(new java.awt.Color(48, 48, 48));
+		flightPanel.setBackground(new java.awt.Color(24, 108, 144));
 		flightPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		flightFrame.getContentPane().add(flightPanel);
 		

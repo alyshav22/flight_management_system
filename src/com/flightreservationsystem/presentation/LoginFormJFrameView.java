@@ -34,7 +34,7 @@ public class LoginFormJFrameView extends JInternalFrame {
 	public LoginFormJFrameView() {
 
 		createGUIComponents();
-		LoginFrame.setSize(600, 600);
+		LoginFrame.setSize(600, 500);
 		LoginFrame.setVisible(true);
 		LoginFrame.setResizable(true);
 	}
@@ -56,7 +56,7 @@ public class LoginFormJFrameView extends JInternalFrame {
 
 		LoginBoxLayout.add(cancelLoginButton);
 		LoginBoxLayout.add(LoginButton);
-		LoginBoxLayout.setBounds(200, 400, 200, 50); // 600 450 200 50
+		LoginBoxLayout.setBounds(250, 350, 200, 50); 
 		LoginPanel.add(LoginBoxLayout);
 
 		LoginMenuBar = new JMenuBar();
@@ -73,7 +73,7 @@ public class LoginFormJFrameView extends JInternalFrame {
 		LoginMenuBar.add(LoginMenu);
 		LoginFrame.setJMenuBar(LoginMenuBar);
 
-		LoginPanel.setBackground(new java.awt.Color(48, 48, 48));
+		LoginPanel.setBackground(new java.awt.Color(24, 108, 144));
 		LoginPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		LoginPanel.setLayout(null);
 

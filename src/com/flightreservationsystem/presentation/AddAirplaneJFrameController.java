@@ -52,7 +52,7 @@ public class AddAirplaneJFrameController implements ActionListener {
 			if ((addAirplaneJFrameView.getAirplaneIDField().getText().isEmpty())
 					|| (addAirplaneJFrameView.getAirplaneIDField().getText().equals("123456"))) {
 				System.out.println("Airplane Id cannot be empty!");
-				addAirplaneJFrameView.setAirplaneIDError("Error: Exhibit ID must be entered!");
+				addAirplaneJFrameView.setAirplaneIDError("Error: Airline ID must be entered!");
 			} else if ((addAirplaneJFrameView.getAirplaneModelField().getText().isEmpty())
 					|| (addAirplaneJFrameView.getAirplaneModelField().getText().equals("Airplane Model"))) {
 				System.out.println("Airplane Model cannot be empty!");

@@ -3,16 +3,11 @@ package com.flightreservationsystem.presentation;
 import java.awt.FlowLayout;
 
 import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-public class HomeJFrameView {
+public class LoginFormResultJFrameView {
 	
 	private JFrame mainframe;
 	private JPanel panel;
@@ -23,7 +18,7 @@ public class HomeJFrameView {
 	 * Default constructor that calls methods to create GUI components and render to
 	 * screen
 	 */
-	public HomeJFrameView() {
+	public LoginFormResultJFrameView() {
 
 		createGUIComponents();
 
@@ -44,9 +39,9 @@ public class HomeJFrameView {
 		
 		label = new JLabel();
 		label.setFont(new java.awt.Font("Arial", 1, 16));
-		label.setText("Success! You are logged in!");
+		label.setText("You are logged in!");
 		label.setForeground(new java.awt.Color(255, 255, 255));
-		
+		label.setBounds(40, 160, 360, 17);
 		panel.add(label);
 		panel.add(boxLayout);
 		

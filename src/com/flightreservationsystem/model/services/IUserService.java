@@ -25,6 +25,6 @@ public interface IUserService extends IService{
      * @param Password
 	 * @return user if successful
 	 */
-	public User checkLogin(String Email) throws VerifyUserException;
+	public User checkLogin(String Email, String Password) throws VerifyUserException;
     
 }

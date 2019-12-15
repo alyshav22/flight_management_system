@@ -58,7 +58,7 @@ public class UserMgrTest {
 	@Test
 	public void testQueryUser() {
 		System.out.println("Starting testQueryUser()");
-		foundUser = userMgr.queryUser("alysha@gmail.com");
+		foundUser = userMgr.queryUser("alysha@gmail.com", "password");
 		assertNotNull("found User Should not be null", foundUser);
 		assertTrue(foundUser instanceof User);
 		System.out.println("UserMgrTest: testQueryUser() PASSED");

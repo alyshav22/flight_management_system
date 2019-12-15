@@ -38,10 +38,10 @@ public class UserMgr extends ManagerSuperType{
 
 	}
     
-    public User queryUser(String userEmail){
+    public User queryUser(String userEmail, String userPassword){
 		try {
 			IUserService userService = (IUserService) super.getService(IUserService.NAME);
-			return userService.checkLogin(userEmail);
+			return userService.checkLogin(userEmail, userPassword);
 		}catch (ServiceLoadException e) { 
 			return null;
 		} catch(VerifyUserException e){

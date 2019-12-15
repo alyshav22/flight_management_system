@@ -47,7 +47,7 @@ public class AddFlightJFrameView extends JInternalFrame{
 	public AddFlightJFrameView() {
 
 		createGUIComponents();
-		flightMainFrame.setSize(1366, 868);
+		flightMainFrame.setSize(900, 600);
 		flightMainFrame.setVisible(true);
 		flightMainFrame.setResizable(true);
 	}
@@ -70,7 +70,7 @@ public class AddFlightJFrameView extends JInternalFrame{
 
 		flightBoxLayout.add(cancelFlightButton);
 		flightBoxLayout.add(saveFlightButton);
-		flightBoxLayout.setBounds(600, 450, 200, 50);
+		flightBoxLayout.setBounds(600, 300, 200, 50);
 		flightPanel.add(flightBoxLayout);
 
 		flightMenuBar = new JMenuBar();
@@ -87,7 +87,7 @@ public class AddFlightJFrameView extends JInternalFrame{
 		flightMenuBar.add(flightMenu);
 		flightMainFrame.setJMenuBar(flightMenuBar);
 
-		flightPanel.setBackground(new java.awt.Color(48, 48, 48));
+		flightPanel.setBackground(new java.awt.Color(24, 108, 144));
 		flightPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		flightPanel.setLayout(null);
 

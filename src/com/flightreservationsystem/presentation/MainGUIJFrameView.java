@@ -33,7 +33,7 @@ public class MainGUIJFrameView extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		createGUIComponents();
 
-		setSize(800, 800);
+		setSize(800, 400);
 		setVisible(true);
 
 		try {
@@ -103,7 +103,7 @@ public class MainGUIJFrameView extends JFrame {
 		label.setForeground(new java.awt.Color(255, 255, 255));
 		label.setBounds(150, 120, 800, 17);
 
-		theDesktop.setBackground(new java.awt.Color(48, 48, 48));
+		theDesktop.setBackground(new java.awt.Color(24, 108, 144));
 		theDesktop.add(welcomeLabel);
 		theDesktop.add(label);
 		theDesktop.setLayout(null);

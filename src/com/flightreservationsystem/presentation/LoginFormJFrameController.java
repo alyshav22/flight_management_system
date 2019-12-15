@@ -68,7 +68,7 @@ class LoginFormJFrameController implements ActionListener {
 		UserMgr userMgr = UserMgr.getUserMgr();
 
 		if (userMgr != null) {
-			User user = userMgr.queryUser(loginFormJFrameView.getEmailAddressField().getText());
+			User user = userMgr.queryUser(loginFormJFrameView.getEmailAddressField().getText(), loginFormJFrameView.getPasswordField().getText());
 			if (user == null) {
 				AlertMessageJFrameView alertMessageJFrameView = new AlertMessageJFrameView("Search Error",
 						"User not found.");
@@ -78,7 +78,7 @@ class LoginFormJFrameController implements ActionListener {
 			} else {
 				System.out.println("User Found!!!");
 				System.out.println(user.toString());
-				HomeJFrameView homeJFrameView = new HomeJFrameView();
+				LoginFormResultJFrameView loginFormResultJFrameView = new LoginFormResultJFrameView();
 
 			}
 

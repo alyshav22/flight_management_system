@@ -35,9 +35,9 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	private JMenuItem airplaneFileCloseItem;
 	private Box airplaneBoxLayout;
 	private JButton cancelAirplaneButton, saveAirplaneButton;
-	private JLabel airplaneIDLabel, airplaneModelLabel, economyQuantityLabel, businessQuantityLabel, airplaneDescriptionLabel;
+	private JLabel airplaneIDLabel, airplaneModelLabel, economyQuantityLabel, businessQuantityLabel, airplaneNotesLabel;
 	private JTextField airplaneIDField, airplaneModelField, economyQuantityField, businessQuantityField;
-	private JTextArea airplaneDescriptionField;
+	private JTextArea airplaneNotesField;
 	
 	
 	/**
@@ -45,7 +45,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	 */
 	public AddAirplaneJFrameView() {
 		createGUIComponents();
-		airplaneMainFrame.setSize(1366,868);
+		airplaneMainFrame.setSize(900,868);
 		airplaneMainFrame.setVisible(true);
 	}
 	
@@ -62,11 +62,11 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 		saveAirplaneButton.setFont(new java.awt.Font("Arial", 1,14));
 		
 		cancelAirplaneButton  = new JButton("Cancel");
-		cancelAirplaneButton.setFont(new java.awt.Font("Georgia", 1, 14));
+		cancelAirplaneButton.setFont(new java.awt.Font("Arial", 1, 14));
 		
 		airplaneBoxLayout.add(cancelAirplaneButton);
 		airplaneBoxLayout.add(saveAirplaneButton);
-		airplaneBoxLayout.setBounds(885, 740,200, 50);
+		airplaneBoxLayout.setBounds(650, 630,200, 50);
 		airplanePanel.add(airplaneBoxLayout);
 		
 		airplaneMenuBar = new JMenuBar();
@@ -83,8 +83,8 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 		airplaneMenuBar.add(airplaneMenu);
 		airplaneMainFrame.setJMenuBar(airplaneMenuBar);
 		
-		airplanePanel.setBackground(new java.awt.Color(48, 48, 48));
-		airplanePanel.setFont(new java.awt.Font("Georgia", 1, 11));
+		airplanePanel.setBackground(new java.awt.Color(24, 108, 144));
+		airplanePanel.setFont(new java.awt.Font("Arial", 1, 11));
 		airplanePanel.setLayout(null);
 		
 		airplaneIDLabel = new JLabel();
@@ -95,57 +95,55 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 		airplanePanel.add(airplaneIDLabel);
 		
 		airplaneIDField = new JTextField("123456", 40);
-		airplaneIDField.setBounds(160, 80, 240, 20);
+		airplaneIDField.setBounds(220, 80, 240, 20);
 		airplanePanel.add(airplaneIDField);
 		
 		airplaneModelLabel = new JLabel();
 		airplaneModelLabel.setText("Airplane Model:");
-		airplaneModelLabel.setFont(new java.awt.Font("Georgia", 1, 14));
+		airplaneModelLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		airplaneModelLabel.setForeground(new java.awt.Color(255, 255, 255));
 		airplaneModelLabel.setBounds(40, 160, 120, 17);
 		airplanePanel.add(airplaneModelLabel);
 		
 		airplaneModelField = new JTextField("Airplane Model", 40);
-		airplaneModelField.setBounds(160, 160, 240, 20);
+		airplaneModelField.setBounds(220, 160, 240, 20);
 		airplanePanel.add(airplaneModelField);
 		
 		economyQuantityLabel = new JLabel();
 		economyQuantityLabel.setText("Economy Seats Quantity:");
 		economyQuantityLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		economyQuantityLabel.setForeground(new java.awt.Color(255, 255, 255));
-		economyQuantityLabel.setBounds(40, 240, 120, 17);
+		economyQuantityLabel.setBounds(40, 240, 200, 17);
 		airplanePanel.add(economyQuantityLabel);
 		
 		economyQuantityField = new JTextField("0", 40);
-		economyQuantityField.setBounds(160, 240, 240, 20);
+		economyQuantityField.setBounds(220, 240, 230, 20);
 		airplanePanel.add(economyQuantityField);
 		
 		businessQuantityLabel = new JLabel();
 		businessQuantityLabel.setText("Business Seats Quantity:");
 		businessQuantityLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		businessQuantityLabel.setForeground(new java.awt.Color(255, 255, 255));
-		businessQuantityLabel.setBounds(40, 320, 120, 17);
+		businessQuantityLabel.setBounds(40, 320, 200, 17);
 		airplanePanel.add(businessQuantityLabel);
 		
 		businessQuantityField = new JTextField("0", 40);
-		businessQuantityField.setBounds(160, 320, 240, 20);
+		businessQuantityField.setBounds(220, 320, 240, 20);
 		airplanePanel.add(businessQuantityField);
 		
-		airplaneDescriptionLabel = new JLabel();
-		airplaneDescriptionLabel.setText("Description:");
-		airplaneDescriptionLabel.setFont(new java.awt.Font("Georgia", 1, 14));
-		airplaneDescriptionLabel.setForeground(new java.awt.Color(255, 255, 255));
-		airplaneDescriptionLabel.setBounds(438, 80, 120, 17);
-		airplanePanel.add(airplaneDescriptionLabel);
+		airplaneNotesLabel = new JLabel();
+		airplaneNotesLabel.setText("Additional Notes:");
+		airplaneNotesLabel.setFont(new java.awt.Font("Georgia", 1, 14));
+		airplaneNotesLabel.setForeground(new java.awt.Color(255, 255, 255));
+		airplaneNotesLabel.setBounds(40, 400, 200, 17);
+		airplanePanel.add(airplaneNotesLabel);
 		
-		
-		
-		airplaneDescriptionField = new JTextArea(10,40);
-		airplaneDescriptionField.setLineWrap(true);
-		JScrollPane scroller = new JScrollPane(airplaneDescriptionField);
+		airplaneNotesField = new JTextArea(10,40);
+		airplaneNotesField.setLineWrap(true);
+		JScrollPane scroller = new JScrollPane(airplaneNotesField);
 		scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scroller.setBounds(585, 80,600, 600);
+		scroller.setBounds(220, 400,600, 200);
 		airplanePanel.add(scroller);
 		
 		
@@ -253,7 +251,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 				airplaneModelField.getText(),
 				Integer.parseInt(economyQuantityField.getText()),
 				Integer.parseInt(businessQuantityField.getText()),
-				airplaneDescriptionField.getText()
+				airplaneNotesField.getText()
 		);
 		return airplane;
 	}

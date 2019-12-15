@@ -63,7 +63,7 @@ public class UserServiceImpl implements IUserService {
 	}
     @SuppressWarnings("unchecked")  
     @Override
-    public User checkLogin(String Email) throws VerifyUserException {
+    public User checkLogin(String Email, String Password) throws VerifyUserException {
        System.out.println("Entering method UserServiceImpl:: checkLogin");
 		try {
 				try {

@@ -62,7 +62,7 @@ public class UserServiceImplTest {
 		try {
 			findUserService = (IUserService) testServiceFactory.getService(IUserService.NAME);
 			assertNotNull("should not be null", UserServiceImpl.getUserHashtable());
-			searchUserResults = findUserService.checkLogin("alysha@gmail.com");
+			searchUserResults = findUserService.checkLogin("alysha@gmail.com","password");
 			assertNotNull("should not be null", searchUserResults);
 			System.out.println(searchUserResults.toString());
 			System.out.println("UserServiceImplTest: testCheckLogin() PASSED");

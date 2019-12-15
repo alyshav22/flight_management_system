@@ -30,7 +30,6 @@ public class SearchAirplaneJFrameView extends JInternalFrame {
 	 */
 	public SearchAirplaneJFrameView() {
 		createGUIComponents();
-		
 		airplaneFrame.setSize(600, 175);
 		airplaneFrame.setVisible(true);
 	}
@@ -45,7 +44,7 @@ public class SearchAirplaneJFrameView extends JInternalFrame {
 
 		label = new JLabel();
 		label.setFont(new java.awt.Font("Arial", 1, 16));
-		label.setText("Enter Exhibit ID:");
+		label.setText("Enter Airplane ID:");
 		label.setForeground(new java.awt.Color(255, 255, 255));
 		airplanePanel.add(label);
 
@@ -56,14 +55,14 @@ public class SearchAirplaneJFrameView extends JInternalFrame {
 		searchAirplaneButton.setFont(new java.awt.Font("Arial", 1, 14));
 		airplanePanel.add(searchAirplaneButton);
 
-		airplanePanel.setBackground(new java.awt.Color(48, 48, 48));
+		airplanePanel.setBackground(new java.awt.Color(24, 108, 144));
 		airplanePanel.setFont(new java.awt.Font("Arial", 1, 11));
 		airplaneFrame.getContentPane().add(airplanePanel);
 
 	}
 	
 	/**
-	 * UI Error Handle for Airplane ID VIA controller
+	 * UI Error Handle for Airplane ID via controller
 	 * @param error
 	 */
 	public void setAirplaneIDError(String error) {
@@ -72,7 +71,7 @@ public class SearchAirplaneJFrameView extends JInternalFrame {
 	}
 
 	/**
-	 * Getter for exhibit ID
+	 * Getter for Airline ID
 	 * @return
 	 */
 	public JTextField getAirplaneIDField() {
