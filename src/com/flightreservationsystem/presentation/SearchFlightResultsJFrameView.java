@@ -34,7 +34,7 @@ public class SearchFlightResultsJFrameView extends JInternalFrame {
 	public SearchFlightResultsJFrameView(Flight flight) {
 		this.flight = flight;
 		createGUIComponents();
-		flightResultsFrame.setSize(1366, 868);
+		flightResultsFrame.setSize(900, 600);
 		flightResultsFrame.setVisible(true);
 		flightResultsFrame.setResizable(true);
 	}
@@ -47,7 +47,7 @@ public class SearchFlightResultsJFrameView extends JInternalFrame {
 		FlowLayout layout = new FlowLayout();
 		flightResultsPanel = new JPanel(layout);
 		
-		flightResultsPanel.setBackground(new java.awt.Color(48, 48, 48));
+		flightResultsPanel.setBackground(new java.awt.Color(24, 108, 144));
 		flightResultsPanel.setFont(new java.awt.Font("Arial", 1, 11));
 		flightResultsPanel.setLayout(null);
 		

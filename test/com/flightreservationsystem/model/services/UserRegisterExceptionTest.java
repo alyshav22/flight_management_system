@@ -6,8 +6,8 @@ import org.junit.Test;
 public class UserRegisterExceptionTest {
 
 	/**
-	 * Test the expected Exception to be thrown from Service Layer Service Implementation flight save method
-	 *@throws FlightSaveException
+	 * Test the expected Exception to be thrown from Service Layer Service Implementation User register method
+	 * @throws UserRegisterException
 	 */
 	@Test
 	public void testUserRegisterException(){

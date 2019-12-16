@@ -6,16 +6,15 @@ public class FlightSaveExceptionTest {
 
 	/**
 	 * Test the expected Exception to be thrown from Service Layer Service Implementation flight save method
-	 *@throws FlightSaveException
+	 * @throws FlightSaveException
 	 */
-
 	@Test
 	public void testFlightSaveException(){
 		System.out.println("Starting testFlightSaveException()");
 		try {
 			throw new FlightSaveException("Testing throwing a Flight Save Exception", null);
 		}  catch (FlightSaveException e) {
-			System.out.println("SaveExceptionTest: testFlightSaveException() PASSED ");
+			System.out.println("FlightSaveExceptionTest: testFlightSaveException() PASSED ");
 			System.out.println(e);
 		}
 	}

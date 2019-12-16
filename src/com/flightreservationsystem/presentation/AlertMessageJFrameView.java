@@ -33,13 +33,13 @@ public class AlertMessageJFrameView extends JDialog {
 	 */
 	private void createGUIComponents() {
 		setBackground(new java.awt.Color(48, 48, 48));
-		setFont(new java.awt.Font("Georgia", 1, 11));
+		setFont(new java.awt.Font("Arial", 1, 11));
 		
 		confirmButtonLabel.setBounds(56, 15, 240, 40); 
-		confirmButtonLabel.setFont(new java.awt.Font("Georgia", 1, 14));
+		confirmButtonLabel.setFont(new java.awt.Font("Arial", 1, 14));
 		
 		confirmButton.setBounds(114, 70, 68, 23);
-		confirmButton.setFont(new java.awt.Font("Georgia", 1, 14));
+		confirmButton.setFont(new java.awt.Font("Arial", 1, 14));
 		this.getContentPane().add(confirmButtonLabel);
 		this.getContentPane().add(confirmButton);
 		getContentPane().setLayout(null);

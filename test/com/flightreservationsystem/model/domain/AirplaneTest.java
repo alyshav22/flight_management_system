@@ -9,7 +9,7 @@ import org.junit.Test;
  * 
  * Domain AirplaneTest class that test methods in the Domain Airplane
  * 
- * @author Alysha
+ * @author ALYSHA
  */
 
 public class AirplaneTest {

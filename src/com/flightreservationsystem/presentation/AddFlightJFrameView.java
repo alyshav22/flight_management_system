@@ -70,7 +70,7 @@ public class AddFlightJFrameView extends JInternalFrame{
 
 		flightBoxLayout.add(cancelFlightButton);
 		flightBoxLayout.add(saveFlightButton);
-		flightBoxLayout.setBounds(600, 300, 200, 50);
+		flightBoxLayout.setBounds(600, 500, 200, 50);
 		flightPanel.add(flightBoxLayout);
 
 		flightMenuBar = new JMenuBar();

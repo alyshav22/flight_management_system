@@ -13,7 +13,7 @@ import com.flightreservationsystem.model.domain.Flight;
 /**
  * 
  * Business FlightMgrTest class that test methods in the Business layer Flight
- * @author Alysha
+ * @author ALYSHA
  */
 
 public class FlightMgrTest {

@@ -51,6 +51,7 @@ public class SearchAirplaneJFrameController implements ActionListener{
 	 * Pass data to the business layer
 	 * @param event
 	 */
+	@SuppressWarnings("unused")
 	private void airplaneSearchButton_actionPerformed(ActionEvent event) {
 		System.out.println ("Searching........");
 		// Get an instance of the Airplane Business layer facade via the manager
@@ -64,7 +65,7 @@ public class SearchAirplaneJFrameController implements ActionListener{
 			}else {
 			 System.out.println("AirplaneFound!!!");
 			 System.out.println(airplane.toString());
-			 SearchAirplaneResultsJFrameView searchExhibitResultsJFrameView = new SearchAirplaneResultsJFrameView(airplane);
+			 SearchAirplaneResultsJFrameView searchAirplaneResultsJFrameView = new SearchAirplaneResultsJFrameView(airplane);
 		 }
 			
 		}else {

@@ -52,7 +52,7 @@ public class UserServiceImplTest {
 	}
 
 	/**
-	 * Asserts if you can find an artist using services.
+	 * Asserts if you can verify user using services.
 	 */
 	@Test
 	public final void testCheckLogin() {

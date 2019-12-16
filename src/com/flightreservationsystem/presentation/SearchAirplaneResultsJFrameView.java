@@ -30,7 +30,7 @@ public class SearchAirplaneResultsJFrameView extends JInternalFrame {
 	public SearchAirplaneResultsJFrameView(Airplane airplane) {
 		this.airplane = airplane;
 		 createGUIComponents();
-		 airplaneMainFrame.setSize(1366, 868);
+		 airplaneMainFrame.setSize(900, 700);
 		airplaneMainFrame.setVisible(true);
 		
 	}

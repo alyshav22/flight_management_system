@@ -53,9 +53,9 @@ public class AirplaneMgr extends ManagerSuperType{
 	}
 	
 	/**
-	 * Query list of Flight
+	 * Query list of Airplane
 	 * @param AirplaneId
-	 * @return Airplane - found flight object, if error occurs return null
+	 * @return Airplane - found Airplane object, if error occurs return null
 	 */
 	public Airplane queryAirplanes(int airplaneId) {
 		try {

@@ -155,7 +155,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	 * @return
 	 */
 	public JMenuItem getAirplaneFileCloseItem() {
-		// TODO Auto-generated method stub
+		
 		return airplaneFileCloseItem;
 	}
 	/**
@@ -163,7 +163,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	 * @return
 	 */
 	public JButton getCancelAirplaneButton() {
-		// TODO Auto-generated method stub
+		
 		return cancelAirplaneButton;
 	}
 
@@ -172,7 +172,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	 * @return
 	 */
 	public JButton getSaveAirplaneButton() {
-		// TODO Auto-generated method stub
+		
 		return saveAirplaneButton;
 	}
 
@@ -223,7 +223,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	}
 	
 	/**
-	 * UI Error Handle forEconomy Quantity Seats Via controller
+	 * UI Error Handle for Economy Quantity Seats Via controller
 	 * @param error
 	 */
 	public void setAirplaneEconomyQuantityError(String error) {
@@ -232,7 +232,7 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	}
 	
 	/**
-	 * UI Error Handle forEconomy Quantity Seats Via controller
+	 * UI Error Handle for Business Quantity Seats Via controller
 	 * @param error
 	 */
 	public void setAirplaneBusinessQuantityError(String error) {
@@ -241,11 +241,11 @@ public class AddAirplaneJFrameView extends JInternalFrame{
 	}
 	
 	/**
-	 * This methods initializes and returns a Exhibit object 
+	 * This methods initializes and returns a Airplane object 
 	 * @return exhibit 
 	 */
 	public Airplane getAirplaneData() {
-		// Create Exhibit object based on user input
+		// Create Airplane object based on user input
 		Airplane airplane = new Airplane(
 				Integer.parseInt(airplaneIDField.getText()),
 				airplaneModelField.getText(),

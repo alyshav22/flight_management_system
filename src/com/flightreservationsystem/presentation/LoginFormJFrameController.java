@@ -34,7 +34,6 @@ class LoginFormJFrameController implements ActionListener {
 		// Listens and checks the value of each action and performs the correct logic
 		// based on action
 		if (event.getSource().equals(loginFormJFrameView.getLoginMenuCloseItem())) {
-
 			System.out.println("Login User File menu exit button clicked !!");
 			registerFileCloseItem_actionPerformed(event);
 
@@ -46,7 +45,7 @@ class LoginFormJFrameController implements ActionListener {
 			System.out.println("Login  button clicked!");
 
 			if ((loginFormJFrameView.getEmailAddressField().getText().isEmpty())
-					|| (loginFormJFrameView.getEmailAddressField().getText().equals(""))) {
+					|| (loginFormJFrameView.getEmailAddressField().getText().equals("abc@gmail.com"))) {
 				System.out.println("Email Field cannot be empty!");
 				loginFormJFrameView.setEmailError("Error: Email must be entered!");
 
@@ -77,7 +76,6 @@ class LoginFormJFrameController implements ActionListener {
 				System.out.println("Search error no user found!!!");
 			} else {
 				System.out.println("User Found!!!");
-				System.out.println(user.toString());
 				LoginFormResultJFrameView loginFormResultJFrameView = new LoginFormResultJFrameView();
 
 			}

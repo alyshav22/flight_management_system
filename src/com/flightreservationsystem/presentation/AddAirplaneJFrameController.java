@@ -47,7 +47,6 @@ public class AddAirplaneJFrameController implements ActionListener {
 			AirplaneCancelButton_actionPerformed(event);
 		} else if (event.getSource().equals(addAirplaneJFrameView.getSaveAirplaneButton())) {
 			System.out.println("Airplane save button clicked !!");
-
 			// Validate User Input before airplaneSaveButton_actionPerfomed()
 			if ((addAirplaneJFrameView.getAirplaneIDField().getText().isEmpty())
 					|| (addAirplaneJFrameView.getAirplaneIDField().getText().equals("123456"))) {

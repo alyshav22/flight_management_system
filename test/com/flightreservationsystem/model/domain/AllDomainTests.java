@@ -8,7 +8,7 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * Test Suite for domain layer components
  * 
- * @author Alysha
+ * @author ALYSHA
  *
  */
 @RunWith(Suite.class)

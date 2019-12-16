@@ -10,7 +10,7 @@ import com.flightreservationsystem.model.services.ServiceLoadException;
 /**
  * Business layer super type to provide a common definition for all classes in the business layer
  * 
- * @author Alysha 
+ * @author ALYSHA
  *
  */
 

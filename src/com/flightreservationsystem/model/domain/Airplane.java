@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Domain airplane class holds airplaneID, airplaneModel, economySeatsQuantity, and businessSeatQuantity
+ * Domain airplane class holds airplaneID, airplaneModel, economySeatsQuantity, businessSeatQuantity, and notes
  * @author ALYSHA
  */
 

@@ -10,7 +10,7 @@ import com.flightreservationsystem.model.domain.User;
 /**
  * 
  * Business UserMgrTest class that test methods in the Business layer User
- * @author Alysha
+ * @author ALYSHA
  */
 public class UserMgrTest {
 

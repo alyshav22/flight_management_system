@@ -5,7 +5,6 @@
  */
 package com.flightreservationsystem.model.services;
 
-
 import com.flightreservationsystem.model.domain.User;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,18 +14,30 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Hashtable;
 
+/**
+ * User Service Interface Implementation
+ * @author ALYSHA
+ *
+ */
 public class UserServiceImpl implements IUserService {
-    
-    private static Hashtable<String, User> userHashTable = new Hashtable<String, User>();
-    
-    	ObjectOutputStream output;
+
+	private static Hashtable<String, User> userHashTable = new Hashtable<String, User>();
+
+	ObjectOutputStream output;
 	ObjectInputStream input;
-        
-        public static Hashtable<String, User> getUserHashtable() {
+
+	public static Hashtable<String, User> getUserHashtable() {
 		return userHashTable;
 	}
-        
-        @SuppressWarnings("unchecked")
+	/**
+	 * Implements saveUser from the interface
+	 * 
+	 * @param user- contains airplane information to save
+	 * @throws UserRegisterException - If the user cannot be saved because of
+	 *                               null reference or other exceptions
+	 * @return boolean - true
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean saveUser(User user) throws UserRegisterException {
 		try {
@@ -61,30 +72,29 @@ public class UserServiceImpl implements IUserService {
 			}
 		}
 	}
-    @SuppressWarnings("unchecked")  
-    @Override
-    public User checkLogin(String Email, String Password) throws VerifyUserException {
-       System.out.println("Entering method UserServiceImpl:: checkLogin");
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public User checkLogin(String Email, String Password) throws VerifyUserException {
+		System.out.println("Entering method UserServiceImpl:: checkLogin");
 		try {
-				try {
-					input = new ObjectInputStream(new FileInputStream("saveUser.ser"));
-					userHashTable = (Hashtable<String, User>) input.readObject();
-				}catch (FileNotFoundException e) {
-					System.out.println("saveUser.ser does not exist for input, but will be created for output");
-					}
-				
+			try {
+				input = new ObjectInputStream(new FileInputStream("saveUser.ser"));
+				userHashTable = (Hashtable<String, User>) input.readObject();
+			} catch (FileNotFoundException e) {
+				System.out.println("saveUser.ser does not exist for input, but will be created for output");
+			}
 			User user = userHashTable.get(Email);
 			return user;
-			
-		}catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			System.out.println("File containing saved user not found!");
 			throw new VerifyUserException("File containing saved user not found!", e);
 		} catch (ClassNotFoundException e) {
-			
+
 			System.out.println("IOException while accessing file containing saved user!");
-			throw new VerifyUserException("IOException while accessing file containing saved user!",e);
+			throw new VerifyUserException("IOException while accessing file containing saved user!", e);
 		} catch (IOException e) {
-			throw new VerifyUserException("ClassNotFoundException while reading file containing saved user",e);
+			throw new VerifyUserException("ClassNotFoundException while reading file containing saved user", e);
 		} finally {
 			if (input != null) {
 				try {
@@ -92,10 +102,10 @@ public class UserServiceImpl implements IUserService {
 				} catch (IOException e) {
 					// If an error occurs trying to close out stream print stack trace
 					e.printStackTrace();
-			
+
 				}
 			}
 		}
-    }
-    
+	}
+
 }
