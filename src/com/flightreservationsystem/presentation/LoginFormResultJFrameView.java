@@ -26,7 +26,7 @@ public class LoginFormResultJFrameView {
 		mainframe.setVisible(true);
 	}
 	/**
-	 * Creates all the required components of the Home page
+	 * Creates all the required components 
 	 */
 	private void createGUIComponents() {
 		mainframe = new JFrame("Flight Management System");
