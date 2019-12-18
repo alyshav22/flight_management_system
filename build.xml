@@ -41,7 +41,7 @@
 			    <include name="**/*.class"/>
 			</fileset>
 			<manifest>
-			    <attribute name="Main-Class" value="com.flightmanagementsystem.presentation.MainGUIJFrameView"/>
+			    <attribute name="Main-Class" value="com.flightreservationsystem.presentation.MainGUIJFrameView"/>
 		    </manifest>
 		</jar>
 		
