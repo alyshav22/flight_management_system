@@ -30,9 +30,9 @@ public class AirplaneMgrTest {
 	 */
 	@Test
 	public void testGetAirplaneMgr() {
-		System.out.println("Starting testGetMuseumMgr() ");
+		System.out.println("Starting testGetAirplaneMgr() ");
 		assertNotNull("FlightMgr Should not be null", airplaneMgr);
-		System.out.println("FlightMgrTest: testGetMuseumMgr() PASSED");
+		System.out.println("FlightMgrTest: testGetAirplaneMgr() PASSED");
 	}
 
 	/**
@@ -52,11 +52,11 @@ public class AirplaneMgrTest {
 	 */
 	@Test
 	public void testQueryAirplanes() {
-		System.out.println("Starting testQueryFlights()");
+		System.out.println("Starting testQueryAirplanes()");
 		foundAirplane = airplaneMgr.queryAirplanes(123456);
-		assertNotNull("found Flight Should not be null", foundAirplane);
+		assertNotNull("found Airplane Should not be null", foundAirplane);
 		assertTrue(foundAirplane instanceof Airplane);
-		System.out.println("FlightMgrTest: testFlightExhibits() PASSED");
+		System.out.println("AirplaneMgrTest: testQueryAirplanes() PASSED");
 	}
 
 }

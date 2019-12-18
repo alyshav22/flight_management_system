@@ -36,7 +36,7 @@ public class SearchAirplaneResultsJFrameView extends JInternalFrame {
 	}
 
 	private void createGUIComponents() {
-		airplaneMainFrame = new JFrame("Exhibit Search Results");
+		airplaneMainFrame = new JFrame("Airplane Search Results");
 		FlowLayout layout = new FlowLayout();
 		airplanePanel = new JPanel(layout);
 		

@@ -38,9 +38,9 @@ public class UserServiceImplTest {
 			saveUserService = (IUserService) testServiceFactory.getService(IUserService.NAME);
 			assertTrue(saveUserService.saveUser(user));
 			assertNotNull("should not be null", UserServiceImpl.getUserHashtable());
-			assertEquals("failure - Artist objects are not equal",
+			assertEquals("failure - User objects are not equal",
 					UserServiceImpl.getUserHashtable().get(user.getEmailAddress()), user);
-			System.out.println("UserServiceImplTest: testRegisterArtist() PASSED");
+			System.out.println("UserServiceImplTest: testRegisterUser() PASSED");
 		} catch (ServiceLoadException e) {
 			e.printStackTrace();
 			fail("ServiceLoadException");

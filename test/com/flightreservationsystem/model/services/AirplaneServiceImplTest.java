@@ -41,7 +41,7 @@ public class AirplaneServiceImplTest {
 			assertNotNull("should not be null", AirplaneServiceImpl.getAirplaneHashtable());
 			assertEquals("failure - Airplane objects are not equal",
 					AirplaneServiceImpl.getAirplaneHashtable().get(airplane.getAirplaneID()), airplane);
-			System.out.println("AirplaneServiceImplTest: testSaveFlight() PASSED");
+			System.out.println("AirplaneServiceImplTest: testSaveAirplane() PASSED");
 		} catch (ServiceLoadException e) {
 			e.printStackTrace();
 			fail("ServiceLoadException");
