@@ -47,7 +47,7 @@ public class AirplaneMgrTest {
 	}
 
 	/**
-	 * Test querying list of exhibits to find Airplane. Throws service load exception
+	 * Test querying list to find Airplane. Throws service load exception
 	 * if there are errors.
 	 */
 	@Test
